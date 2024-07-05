@@ -1,5 +1,5 @@
 
-import Fotter from "@/app/components/fotter";
+import Footer from "@/app/components/footer";
 
 export default function PageRootLayout({ children }) {
   return (
@@ -8,7 +8,7 @@ export default function PageRootLayout({ children }) {
         <main>
             {children}
         </main>
-        <Fotter />
+        <Footer />
     </>
   );
 }
