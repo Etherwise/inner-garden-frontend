@@ -1,0 +1,15 @@
+.octa-input-up{
+    clip-path: polygon(12% 0, 88% 0, 98% 100%, 2% 100%);
+}
+
+.octa-input-down{
+    clip-path: polygon(2% 0%, 98% 0, 88% 100%, 12% 100%);
+}
+
+.login-button{
+    clip-path: polygon(10% 0%, 90% 0%, 100% 50% , 90% 100%, 10% 100%,0% 50%);
+}
+
+.octa{
+    clip-path: polygon(50% 0, 85% 15%, 100% 50%, 85% 85%, 50% 100%, 15% 85%, 0 50%, 15% 15%);
+}
