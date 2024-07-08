@@ -25,7 +25,7 @@ const Shape = ({children,width,anglePixel,className}) => {
 
   return (
     <div
-      className={` ${className} py-1 px-8 w-[${width}px]`}
+      className={` ${className} py-1 px-8 ${width}`}
       ref={shapeRef}
       style={{ clipPath }}>
       {children}
