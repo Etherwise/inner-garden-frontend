@@ -33,7 +33,7 @@ export default function Footer({
           src={FooterLogo}
           width={300}
           height={300}
-          alt="Picture of the author"
+          alt="Inner Logo"
         />
       </section>
       <section className="
