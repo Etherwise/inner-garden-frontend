@@ -41,9 +41,9 @@ body {
   @apply bg-purple-bg-light;
 }
 
-footer {
-  box-shadow: inset 0px 60px 60px var(--light-purple-1);
-}
+/* footer {
+  box-shadow: inset 0px 30px 60px var(--light-purple-1);
+} */
 /* 
 
 .hexagon {

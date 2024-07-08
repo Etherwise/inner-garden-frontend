@@ -13,18 +13,18 @@ export default function Footer({
 }) {
   return (
     <footer className="
-    flex flex-col items-center justify-center gap-y-12
-    min-h-screen w-full text-white
-    bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center lg:bg-bottom">
+    flex flex-col items-center justify-center gap-y-[6vh]
+    min-h-screen w-full text-white md:pt-[9vh] px-3
+    bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center">
       <section className="
       flex flex-col items-center
       text-center
       w-full space-y-2">
-        <strong className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold">
-            {heading}
+        <strong className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl 3xl:text-6xl font-extrabold">
+          {heading}
         </strong>
-        <p className="text-xl lg:text-2xl xl:text-3xl md:w-1/2">
-            {sub}
+        <p className="text-xl md:text-xl xl:text-2xl md:w-1/2">
+          {sub}
         </p>
       </section>
       <MailSubscribeComp />
