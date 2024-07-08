@@ -13,8 +13,8 @@ export default function Footer({
 }) {
   return (
     <footer className="
-    flex flex-col items-center justify-center gap-y-[6vh]
-    min-h-screen w-full text-white md:pt-[9vh] px-3
+    flex flex-col items-center justify-center gap-y-[4vh] md:gap-y-[5vh] lg:gap-y-[6vh]
+    min-h-screen w-full text-white md:pt-[9vh] px-9
     bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center">
       <section className="
       flex flex-col items-center
@@ -32,7 +32,7 @@ export default function Footer({
         <Image
           src={FooterLogo}
           alt="Inner Logo"
-          className="w-[60%] lg:w-[80%] xl:w-full"
+          className="w-[60%] md:w-[70%] lg:w-[80%] xl:w-[90%] 3xl:w-full"
         />
       </section>
       <section className="
@@ -42,7 +42,7 @@ export default function Footer({
         <LinkComp text="donate" href="/donate" />
       </section>
 
-      <div className="flex flex-col items-center justify-center gap-y-3">
+      <div className="flex flex-col items-center justify-center gap-y-[2vh]">
         <section className="flex justify-between items-center gap-9
         text-xl w-max">
           <Link href="/academy">(inner) Academy</Link>
