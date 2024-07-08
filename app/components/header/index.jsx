@@ -6,14 +6,14 @@ import MailSubscribeComp from "./mail_subscribe";
 import LinkComp from "./link";
 
 // #TODO update 'strong' with 'heading' tag later
-export default function Footer({
+export default function Header({
   heading="subscribe to Wellgorithms  Weekly",
   sub=`a weekly dose of Wellgorithms to warm your heart, 
       invigorate your mind, and inspire resilience in adversity.`,
 }) {
   return (
-    <footer className="
-    flex flex-col items-center justify-center gap-y-12
+    <header className="
+    flex items-center justify-center gap-y-12
     min-h-screen w-full text-white
     bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center lg:bg-bottom">
       <section className="
@@ -33,7 +33,7 @@ export default function Footer({
           src={FooterLogo}
           width={300}
           height={300}
-          alt="Inner Logo"
+          alt="Picture of the author"
         />
       </section>
       <section className="
@@ -58,6 +58,6 @@ export default function Footer({
           <Link href="/contact">contact</Link>
         </section>
       </div>
-    </footer>
+    </header>
   );
 }

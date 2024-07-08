@@ -4,148 +4,44 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.montserrat-alternates-thin {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.montserrat-alternates-extralight {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.montserrat-alternates-light {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.montserrat-alternates-regular {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.montserrat-alternates-medium {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.montserrat-alternates-semibold {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.montserrat-alternates-bold {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.montserrat-alternates-extrabold {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.montserrat-alternates-black {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.montserrat-alternates-thin-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.montserrat-alternates-extralight-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.montserrat-alternates-light-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.montserrat-alternates-regular-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.montserrat-alternates-medium-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.montserrat-alternates-semibold-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.montserrat-alternates-bold-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.montserrat-alternates-extrabold-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.montserrat-alternates-black-italic {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
+  --light-purple-1: #C4CAF0;
+  --light-purple-2: #DBB7FC;
+  --mid-purple-1: #AA9DD0;
+  --mid-purple-2: #9368BC;
+  --mid-purple-3: #8858B5;
+  --mid-purple-4: #AF5CAA;
+  --mid-purple-5: #BB4BAD;
+  --dark-purple-1: #8757B5;
+  --dark-purple-2: #5E3D84;
+  --dark-purple-3: #3F225B;
+  --orange-1: #F9A819;
+  --orange-2: #FAA81A;
+  --pink-1: #FF008A;
+  --yellow-1: #FFF500;
+  --yellow-2: #FFF200;
 }
+
+::selection {
+  color: var(--light-purple-1);
+  background: var(--dark-purple-3);
+}
+
 * {
   font-family: "Montserrat Alternates", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
-/*@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}*/
-
-/*body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body {
+  @apply bg-purple-bg-light;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+footer {
+  box-shadow: inset 0px 60px 60px var(--light-purple-1);
 }
-*/
+/* 
+
+.hexagon {
+  clip-path: ;
+} */
