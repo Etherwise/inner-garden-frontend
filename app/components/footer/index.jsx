@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import FooterLogo from "@/public/footer/footer_logo.svg";
-import MailSubscribeComp from "./mail_subscribe";
 import LinkComp from "./link";
+import MailSubscribeComp from "./mail_subscribe";
 
 // #TODO update 'strong' with 'heading' tag later
 export default function Footer({

@@ -5,13 +5,13 @@ import rightb from '@/public/brackets/right-bracket.svg'
 
 
 
-const BracketsWithText = ({bracketsData}) => {
+const BracketsWithText = ({bracketsData,className}) => {
   return (
-    <p className={`flex justify-center items-center lg:h-fit h-full`}>
+    <p className={`flex justify-center items-center lg:h-fit ${className}`}>
     <span className={`${bracketsData?.leftText?.properties} md:mx-1 mx-[2px] `}>{bracketsData?.leftText?.text}</span>
-    <Image src={leftb} alt="leftb" className={`h-[80%] w-auto`} />
+    <Image src={leftb} alt="leftb" className={`${bracketsData?.brackets?.properties}`} />
     <span className={`${bracketsData?.middleText?.properties} md:mx-1 mx-[2px] `}>{bracketsData?.middleText?.text}</span>
-    <Image src={rightb} alt="rightb" className={`h-[80%] w-auto`} />
+    <Image src={rightb} alt="rightb" className={`${bracketsData?.brackets?.properties}`} />
     <span className={`${bracketsData?.rightText?.properties} md:mx-1 mx-[2px] `}>{bracketsData?.rightText?.text}</span>
   </p>
   )

@@ -1,6 +1,4 @@
 "use client"
-
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 import useClipPath from "@/app/hooks/clip_path_calculations";
