@@ -28,12 +28,11 @@ export default function Footer({
         </p>
       </section>
       <MailSubscribeComp />
-      <section>
+      <section className="grid place-items-center">
         <Image
           src={FooterLogo}
-          width={300}
-          height={300}
           alt="Inner Logo"
+          className="w-[60%] lg:w-[80%] xl:w-full"
         />
       </section>
       <section className="
