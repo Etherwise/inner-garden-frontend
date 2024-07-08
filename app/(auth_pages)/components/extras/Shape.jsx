@@ -10,7 +10,6 @@ const Shape = ({children,width,anglePixel,className}) => {
     const adjustClipPath = () => {
       if (shapeRef.current) {
         const width = shapeRef.current.offsetWidth;
-        console.log(width);
         const leftEdge = (anglePixel / width) * 100; //
         const rightEdge1 = 100-leftEdge;
         const rightEdge2 = 100-leftEdge;
