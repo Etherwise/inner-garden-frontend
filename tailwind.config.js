@@ -28,7 +28,7 @@ module.exports = {
         'yellow-light' : '#FFF200',
 
 
-    },
+      },
     },
   },
   plugins: [],
