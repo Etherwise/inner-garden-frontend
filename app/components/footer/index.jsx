@@ -44,15 +44,15 @@ const Footer = ({
 
       <div className="flex flex-col items-center justify-center gap-y-[2vh]">
         <section className="flex justify-between items-center gap-9
-        text-xl w-max">
+        md:text-xl w-max">
           <Link href="/academy">(inner) Academy</Link>
           <Link href="/tv">(inner) TV</Link>
         </section>
-        <section className="text-center">
+        <section className="text-center text-sm">
           <span>copyright 2024 Lightworkers of the Sphere, LLC. All rights reserved.</span>
         </section>
         <section className="flex justify-between items-center gap-9
-        text-xl w-max">
+        md:text-xl w-max">
           <Link href="/policies">policies</Link>
           <Link href="/contact">contact</Link>
         </section>

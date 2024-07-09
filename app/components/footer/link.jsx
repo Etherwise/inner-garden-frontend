@@ -15,7 +15,7 @@ const LinkComp = ({text="", href="", className=""}) => {
   }, [hexagonClip]);
 
   return (
-    <Link ref={elementRef} href={href} className={`w-full py-3 px-9 bg-orange-mid
+    <Link ref={elementRef} href={href} className={`w-full py-2 lg:py-3 px-6 lg:px-9 bg-orange-mid
     text-center text-white font-bold ${className}`}>
         {text}
     </Link>
