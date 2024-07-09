@@ -24,11 +24,11 @@ const Screen = () => {
   const [password, setPassword] = useState('')
 
   const buttonRef = useRef(null)
-  const {addClipPath} = useClipPath();
+  const {hexagonClip} = useClipPath();
 
   useEffect(() => {
-    addClipPath(12, buttonRef);
-  }, [addClipPath]);
+    hexagonClip(12, buttonRef);
+  }, [hexagonClip]);
 
   const handleSubmit = ()=>{
 

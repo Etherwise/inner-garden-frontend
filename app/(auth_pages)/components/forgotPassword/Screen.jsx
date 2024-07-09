@@ -25,12 +25,12 @@ const Screen = () => {
 
   const formRef = useRef(null);
   const buttonRef = useRef(null);
-  const { addClipPath } = useClipPath();
+  const { hexagonClip } = useClipPath();
 
   useEffect(() => {
-    addClipPath(14, formRef);
-    addClipPath(14, buttonRef);
-  }, [addClipPath]);
+    hexagonClip(14, formRef);
+    hexagonClip(14, buttonRef);
+  }, [hexagonClip]);
 
   const handleSubmit = () => {
     // TODO : /api/forgotpassword
