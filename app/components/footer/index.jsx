@@ -2,15 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 import FooterLogo from "@/public/footer/footer_logo.svg";
-import MailSubscribeComp from "./mail_subscribe";
 import LinkComp from "./link";
+import MailSubscribeComp from "./mail_subscribe";
 
 // #TODO update 'strong' with 'heading' tag later
-export default function Footer({
+const Footer = ({
   heading="subscribe to Wellgorithms  Weekly",
   sub=`a weekly dose of Wellgorithms to warm your heart, 
       invigorate your mind, and inspire resilience in adversity.`,
-}) {
+}) => {
   return (
     <footer className="
     flex flex-col items-center justify-center gap-y-[4vh] md:gap-y-[5vh] lg:gap-y-[6vh]
@@ -44,15 +44,15 @@ export default function Footer({
 
       <div className="flex flex-col items-center justify-center gap-y-[2vh]">
         <section className="flex justify-between items-center gap-9
-        text-xl w-max">
+        md:text-xl w-max">
           <Link href="/academy">(inner) Academy</Link>
           <Link href="/tv">(inner) TV</Link>
         </section>
-        <section className="text-center">
+        <section className="text-center text-sm">
           <span>copyright 2024 Lightworkers of the Sphere, LLC. All rights reserved.</span>
         </section>
         <section className="flex justify-between items-center gap-9
-        text-xl w-max">
+        md:text-xl w-max">
           <Link href="/policies">policies</Link>
           <Link href="/contact">contact</Link>
         </section>
@@ -60,3 +60,5 @@ export default function Footer({
     </footer>
   );
 }
+
+export default Footer;

@@ -4,16 +4,14 @@ import Link from "next/link";
 import HeaderLogo from "@/public/header/header_logo.svg";
 import HeaderAvatar from "@/public/header/header_avatar.svg";
 
-// #TODO update 'strong' with 'heading' tag later
+import FilterBtnsSec from "./filter_btns";
+
 const Header = ({
-  heading="subscribe to Wellgorithms  Weekly",
-  sub=`a weekly dose of Wellgorithms to warm your heart, 
-      invigorate your mind, and inspire resilience in adversity.`,
 }) => {
   return (
     <header className="
     flex items-center justify-between gap-y-12
-    min-h-max w-full text-white py-6 px-9
+    min-h-max w-full text-white py-3 px-9
     bg-black">
       <section>
         <Image
@@ -29,6 +27,7 @@ const Header = ({
           className="w-[60%] lg:w-[80%] xl:w-full"
         />
       </section>
+      <FilterBtnsSec />
       {/* <section>
         <Image
           src={FooterLogo}
