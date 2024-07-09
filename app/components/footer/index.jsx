@@ -6,11 +6,11 @@ import MailSubscribeComp from "./mail_subscribe";
 import LinkComp from "./link";
 
 // #TODO update 'strong' with 'heading' tag later
-export default function Footer({
+const Footer = ({
   heading="subscribe to Wellgorithms  Weekly",
   sub=`a weekly dose of Wellgorithms to warm your heart, 
       invigorate your mind, and inspire resilience in adversity.`,
-}) {
+}) => {
   return (
     <footer className="
     flex flex-col items-center justify-center gap-y-[4vh] md:gap-y-[5vh] lg:gap-y-[6vh]
@@ -60,3 +60,5 @@ export default function Footer({
     </footer>
   );
 }
+
+export default Footer;
