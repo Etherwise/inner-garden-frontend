@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-const useClipPath = () => {
+const useClipBuilder = () => {
   const hexagonClip = (anglePixel=12, shapeRef) => {
     if (shapeRef.current) {
       const width = shapeRef.current.clientWidth;
@@ -16,4 +16,4 @@ const useClipPath = () => {
   return { hexagonClip };
 };
 
-export default useClipPath;
+export default useClipBuilder;
