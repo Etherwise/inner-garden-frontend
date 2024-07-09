@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 const useClipPath = () => {
-  const addClipPath = (anglePixel=12, shapeRef) => {
+  const hexagonClip = (anglePixel=12, shapeRef) => {
     if (shapeRef.current) {
       const width = shapeRef.current.clientWidth;
       const leftEdge = (anglePixel / width) * 100;
@@ -13,7 +13,7 @@ const useClipPath = () => {
     }
   }
 
-  return { addClipPath };
+  return { hexagonClip };
 };
 
 export default useClipPath;

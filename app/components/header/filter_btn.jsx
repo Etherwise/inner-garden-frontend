@@ -1,11 +1,10 @@
 "use client"
 
-import Link from 'next/link';
 import { useEffect, useRef } from "react";
 
 import useClipPath from "@/app/hooks/clip_path_calculations";
 
-const LinkComp = ({text="", href="", className=""}) => {
+const FilterBtn = ({text="", className=""}) => {
   const elementRef = useRef();
 
   const { hexagonClip } = useClipPath();
@@ -15,10 +14,10 @@ const LinkComp = ({text="", href="", className=""}) => {
   }, [hexagonClip]);
 
   return (
-    <Link ref={elementRef} href={href} className={`w-full py-2 lg:py-3 px-6 lg:px-9 bg-orange-mid
-    text-center text-white font-bold ${className}`}>
+    <button ref={elementRef}className={`w-full py-3 px-9
+    text-center font-bold ${className}`}>
         {text}
-    </Link>
+    </button>
   );
 }
-export default LinkComp;
+export default FilterBtn;
