@@ -6,16 +6,16 @@ import { useEffect, useRef } from "react";
 import useClipPath from "@/app/hooks/clip_path_calculations";
 
 // #TODO update 'strong' with 'heading' tag later
-export default function MailSubscribeComp({}) {
+const MailSubscribeComp = ({}) => {
   const mailSubscribeSecRef = useRef();
   const subscribeBtnRef = useRef();
 
-  const { addClipPath } = useClipPath();
+  const { hexagon } = useClipPath();
 
   useEffect(() => {
-    addClipPath(24, mailSubscribeSecRef);
-    addClipPath(19, subscribeBtnRef);
-  }, [addClipPath]);
+    hexagon(24, mailSubscribeSecRef);
+    hexagon(19, subscribeBtnRef);
+  }, [hexagon]);
 
   return (
     <section ref={mailSubscribeSecRef} className="
@@ -26,3 +26,5 @@ export default function MailSubscribeComp({}) {
     </section>
   );
 }
+
+export default MailSubscribeComp;

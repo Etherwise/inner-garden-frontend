@@ -3,14 +3,13 @@ import Link from "next/link";
 
 import HeaderLogo from "@/public/header/header_logo.svg";
 import HeaderAvatar from "@/public/header/header_avatar.svg";
-import LinkComp from "./link";
 
 // #TODO update 'strong' with 'heading' tag later
-export default function Header({
+const Header = ({
   heading="subscribe to Wellgorithms  Weekly",
   sub=`a weekly dose of Wellgorithms to warm your heart, 
       invigorate your mind, and inspire resilience in adversity.`,
-}) {
+}) => {
   return (
     <header className="
     flex items-center justify-between gap-y-12
@@ -83,3 +82,4 @@ export default function Header({
     </header>
   );
 }
+export default Header;

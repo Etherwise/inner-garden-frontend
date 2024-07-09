@@ -7,14 +7,14 @@ import { useEffect, useRef } from "react";
 import useClipPath from "@/app/hooks/clip_path_calculations";
 
 // #TODO update 'strong' with 'heading' tag later
-export default function LinkComp({text="", href="", className=""}) {
+const LinkComp = ({text="", href="", className=""}) => {
   const elementRef = useRef();
 
-  const { addClipPath } = useClipPath();
+  const { hexagon } = useClipPath();
 
   useEffect(() => {
-    addClipPath(9, elementRef);
-  }, [addClipPath]);
+    hexagon(9, elementRef);
+  }, [hexagon]);
 
   return (
     <Link ref={elementRef} href={href} className={`w-full py-3 px-9 bg-orange-mid
@@ -23,3 +23,4 @@ export default function LinkComp({text="", href="", className=""}) {
     </Link>
   );
 }
+export default LinkComp;
