@@ -2,13 +2,13 @@
 
 import { useEffect, useRef } from "react";
 
-import useClipPath from "@/app/hooks/clip_path_calculations";
+import useClipBuilder from "@/app/hooks/clip_path_calculations";
 
 const MailSubscribeComp = ({}) => {
   const mailSubscribeSecRef = useRef();
   const subscribeBtnRef = useRef();
 
-  const { hexagonClip } = useClipPath();
+  const { hexagonClip } = useClipBuilder();
 
   useEffect(() => {
     hexagonClip(24, mailSubscribeSecRef);
