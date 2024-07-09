@@ -1,21 +1,19 @@
 "use client"
 
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 import useClipPath from "@/app/hooks/clip_path_calculations";
 
-// #TODO update 'strong' with 'heading' tag later
 const MailSubscribeComp = ({}) => {
   const mailSubscribeSecRef = useRef();
   const subscribeBtnRef = useRef();
 
-  const { hexagon } = useClipPath();
+  const { hexagonClip } = useClipPath();
 
   useEffect(() => {
-    hexagon(24, mailSubscribeSecRef);
-    hexagon(19, subscribeBtnRef);
-  }, [hexagon]);
+    hexagonClip(24, mailSubscribeSecRef);
+    hexagonClip(19, subscribeBtnRef);
+  }, [hexagonClip]);
 
   return (
     <section ref={mailSubscribeSecRef} className="

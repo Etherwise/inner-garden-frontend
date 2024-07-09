@@ -1,20 +1,18 @@
 "use client"
 
-import Image from "next/image";
 import Link from 'next/link';
 import { useEffect, useRef } from "react";
 
 import useClipPath from "@/app/hooks/clip_path_calculations";
 
-// #TODO update 'strong' with 'heading' tag later
 const LinkComp = ({text="", href="", className=""}) => {
   const elementRef = useRef();
 
-  const { hexagon } = useClipPath();
+  const { hexagonClip } = useClipPath();
 
   useEffect(() => {
-    hexagon(9, elementRef);
-  }, [hexagon]);
+    hexagonClip(9, elementRef);
+  }, [hexagonClip]);
 
   return (
     <Link ref={elementRef} href={href} className={`w-full py-3 px-9 bg-orange-mid
