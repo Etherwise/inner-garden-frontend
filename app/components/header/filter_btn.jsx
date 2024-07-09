@@ -2,22 +2,33 @@
 
 import { useEffect, useRef } from "react";
 
-import useClipPath from "@/app/hooks/clip_path_calculations";
+import useClipBuilder from "@/app/hooks/clip_path_calculations";
+import useHeaderFilters from "@/app/state_hooks/header_filters";
 
-const FilterBtn = ({text="", className=""}) => {
+const FilterBtn = ({id=0, text="", className=""}) => {
   const elementRef = useRef();
 
-  const { hexagonClip } = useClipPath();
+  const { hexagonClip } = useClipBuilder();
+  const headerFilter = useHeaderFilters();
+
+  const handleClick = () => {
+    headerFilter.setActiveFilter(id, text);
+  }
 
   useEffect(() => {
-    hexagonClip(9, elementRef);
+    hexagonClip(15, elementRef);
   }, [hexagonClip]);
 
   return (
-    <button ref={elementRef}className={`w-full py-3 px-9
-    text-center font-bold ${className}`}>
-        {text}
+    <button ref={elementRef} className={
+      `${headerFilter.activeFilter.id == id ? "text-yellow-dark bg-purple-mid" : "text-slate-400"}
+      w-full py-2 px-9
+      text-center font-bold ${className}`}
+      onClick={handleClick}
+      >
+      {text}
     </button>
   );
 }
+
 export default FilterBtn;

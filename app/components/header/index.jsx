@@ -3,14 +3,18 @@ import Link from "next/link";
 
 import HeaderLogo from "@/public/header/header_logo.svg";
 import HeaderAvatar from "@/public/header/header_avatar.svg";
+import HeaderExtra from "@/public/header/header_extras.svg";
+import HeaderWellgorithm from "@/public/header/header_wellgorithm.svg";
+import HeaderSearch from "@/public/header/header_search.svg";
 
-import FilterBtnsSec from "./filter_btns";
+import FilterBtn from "./filter_btn";
+import LinkComp from "../link_component";
 
 const Header = ({
 }) => {
   return (
     <header className="
-    flex items-center justify-between gap-y-12
+    flex items-center justify-between
     min-h-max w-full text-white py-3 px-9
     bg-black">
       <section>
@@ -20,48 +24,66 @@ const Header = ({
           className="w-[60%] lg:w-[80%] xl:w-full"
         />
       </section>
+      
       <section>
         <Image
           src={HeaderAvatar}
-          alt="Picture of the author"
+          alt="Avatar"
           className="w-[60%] lg:w-[80%] xl:w-full"
         />
       </section>
-      <FilterBtnsSec />
-      {/* <section>
-        <Image
-          src={FooterLogo}
-          width={300}
-          height={300}
-          alt="Picture of the author"
-        />
-      </section> */}
-      {/* <section className="
-      flex flex-col items-center
-      text-center
-      w-full space-y-2">
-        <strong className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold">
-            {heading}
-        </strong>
-        <p className="text-xl lg:text-2xl xl:text-3xl md:w-1/2">
-            {sub}
-        </p>
+
+      <section className="flex gap-1">
+        <FilterBtn id={1} text="Gardens" />
+        <FilterBtn id={2} text="Adversities" />
+        <FilterBtn id={3} text="Activities" />
       </section>
-      <MailSubscribeComp />
+
+      <section className="flex items-center">
+        <Image
+          src={HeaderExtra}
+          alt="extra"
+          className="w-[60%] lg:w-[80%] xl:w-full"
+        />
+        <Image
+          src={HeaderExtra}
+          alt="extra"
+          className="w-[60%] lg:w-[80%] xl:w-full"
+        />
+        <Image
+          src={HeaderExtra}
+          alt="extra"
+          className="w-[60%] lg:w-[80%] xl:w-full"
+          style={{fill: "yellow", stroke: "yellow"}}
+        />
+      </section>
+
       <section>
         <Image
-          src={FooterLogo}
-          width={300}
-          height={300}
-          alt="Picture of the author"
+          src={HeaderWellgorithm}
+          alt="Avatar"
+          className="w-[60%] lg:w-[80%] xl:w-full"
         />
       </section>
-      <section className="
-      flex justify-between items-center gap-9 w-max
-      text-xl xl:text-2xl">
-        <LinkComp text="welcome" href="/login" />
-        <LinkComp text="donate" href="/donate" />
+
+      <section>
+        <Image
+          src={HeaderSearch}
+          alt="Avatar"
+          className="w-[60%] lg:w-[80%] xl:w-full"
+        />
       </section>
+
+      <section className="
+      flex items-center gap-3 w-1/6
+      ">
+        <LinkComp text="login" href="/login" className="text-purple-mid" />
+        <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2" angle={15} />
+      </section>
+      
+      
+      {/* 
+      
 
       <div className="flex flex-col items-center justify-center gap-y-3">
         <section className="flex justify-between items-center gap-9
