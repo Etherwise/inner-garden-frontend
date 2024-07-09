@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import FooterLogo from "@/public/footer/footer_logo.svg";
-import MailSubscribeComp from "./mail_subscribe";
+import HeaderLogo from "@/public/header/header_logo.svg";
+import HeaderAvatar from "@/public/header/header_avatar.svg";
 import LinkComp from "./link";
 
 // #TODO update 'strong' with 'heading' tag later
@@ -13,10 +13,32 @@ export default function Header({
 }) {
   return (
     <header className="
-    flex items-center justify-center gap-y-12
-    min-h-screen w-full text-white
-    bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center lg:bg-bottom">
-      <section className="
+    flex items-center justify-between gap-y-12
+    min-h-max w-full text-white py-6 px-9
+    bg-black">
+      <section>
+        <Image
+          src={HeaderLogo}
+          alt="Inner Logo"
+          className="w-[60%] lg:w-[80%] xl:w-full"
+        />
+      </section>
+      <section>
+        <Image
+          src={HeaderAvatar}
+          alt="Picture of the author"
+          className="w-[60%] lg:w-[80%] xl:w-full"
+        />
+      </section>
+      {/* <section>
+        <Image
+          src={FooterLogo}
+          width={300}
+          height={300}
+          alt="Picture of the author"
+        />
+      </section> */}
+      {/* <section className="
       flex flex-col items-center
       text-center
       w-full space-y-2">
@@ -57,7 +79,7 @@ export default function Header({
           <Link href="/policies">policies</Link>
           <Link href="/contact">contact</Link>
         </section>
-      </div>
+      </div> */}
     </header>
   );
 }
