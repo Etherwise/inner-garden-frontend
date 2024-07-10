@@ -15,14 +15,16 @@ const Header = ({
   return (
     <header className="
     flex items-center justify-between
-    min-h-max w-full text-white py-3 px-9
+    min-h-max w-full text-white py-3 px-6
     bg-black">
       <section>
-        <Image
-          src={HeaderLogo}
-          alt="Inner Logo"
-          className="w-[60%] lg:w-[80%] xl:w-full"
-        />
+        <Link href={"/"}>
+          <Image
+            src={HeaderLogo}
+            alt="Inner Logo"
+            className="w-[80%] xl:w-full"
+          />
+        </Link>
       </section>
       
       <section>
@@ -33,28 +35,26 @@ const Header = ({
         />
       </section>
 
-      <section className="flex gap-1">
+      <section className="hidden gap-1 lg:flex">
         <FilterBtn id={1} text="Gardens" />
         <FilterBtn id={2} text="Adversities" />
         <FilterBtn id={3} text="Activities" />
       </section>
 
-      <section className="flex items-center">
+      <section className="hidden gap-1 lg:flex items-center">
         <Image
           src={HeaderExtra}
           alt="extra"
-          className="w-[60%] lg:w-[80%] xl:w-full"
         />
         <Image
           src={HeaderExtra}
           alt="extra"
-          className="w-[60%] lg:w-[80%] xl:w-full"
         />
         <Image
           src={HeaderExtra}
           alt="extra"
-          className="w-[60%] lg:w-[80%] xl:w-full"
-          style={{fill: "yellow", stroke: "yellow"}}
+          className="fill-red-600 stroke-black"
+          style={{fill: "black", stroke: "black"}}
         />
       </section>
 
@@ -66,40 +66,22 @@ const Header = ({
         />
       </section>
 
-      <section>
+      <section className="w-max">
         <Image
           src={HeaderSearch}
           alt="Avatar"
-          className="w-[60%] lg:w-[80%] xl:w-full"
+          className="w-[60%] lg:w-[80%] xl:w-full ml-auto"
         />
       </section>
 
-      <section className="
-      flex items-center gap-3 w-1/6
+      <section className="hidden
+      lg:flex items-center gap-3
+      w-[24%] lg:w-[21%] xl:w-[18%]
       ">
-        <LinkComp text="login" href="/login" className="text-purple-mid" />
-        <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2" angle={15} />
+        <LinkComp text="login" href="/login" className="text-purple-mid text-sm xl:text-base" />
+        <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />
       </section>
       
-      
-      {/* 
-      
-
-      <div className="flex flex-col items-center justify-center gap-y-3">
-        <section className="flex justify-between items-center gap-9
-        text-xl w-max">
-          <Link href="/academy">(inner) Academy</Link>
-          <Link href="/tv">(inner) TV</Link>
-        </section>
-        <section className="text-center">
-          <span>copyright 2024 Lightworkers of the Sphere, LLC. All rights reserved.</span>
-        </section>
-        <section className="flex justify-between items-center gap-9
-        text-xl w-max">
-          <Link href="/policies">policies</Link>
-          <Link href="/contact">contact</Link>
-        </section>
-      </div> */}
     </header>
   );
 }

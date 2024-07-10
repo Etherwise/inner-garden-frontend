@@ -23,7 +23,8 @@ const FilterBtn = ({id=0, text="", className=""}) => {
     <button ref={elementRef} className={
       `${headerFilter.activeFilter.id == id ? "text-yellow-dark bg-purple-mid" : "text-slate-400"}
       w-full py-2 px-9
-      text-center font-bold ${className}`}
+      text-center font-bold text-sm xl:text-base
+      ${className}`}
       onClick={handleClick}
       >
       {text}
