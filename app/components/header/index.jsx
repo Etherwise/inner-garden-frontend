@@ -1,20 +1,32 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { useState } from "react";
 
 import HeaderLogo from "@/public/header/header_logo.svg";
 import HeaderAvatar from "@/public/header/header_avatar.svg";
 import HeaderExtra from "@/public/header/header_extras.svg";
 import HeaderWellgorithm from "@/public/header/header_wellgorithm.svg";
 import HeaderSearch from "@/public/header/header_search.svg";
+import HeaderMenu from "@/public/header/header_menu.svg";
 
 import FilterBtn from "./filter_btn";
+import MobileNav from "./mobile_nav";
 import LinkComp from "../link_component";
 
 const Header = ({
 }) => {
+  const [openMobileNav, setOpenMobileNav] = useState(false);
+
+  const handleMenuClick = () => {
+    setOpenMobileNav(!openMobileNav);
+  }
+
   return (
     <header className="
-    flex items-center justify-between
+    flex items-center justify-between gap-3
     min-h-max w-full text-white py-3 px-6
     bg-black">
       <section>
@@ -22,16 +34,16 @@ const Header = ({
           <Image
             src={HeaderLogo}
             alt="Inner Logo"
-            className="w-[80%] xl:w-full"
+            className="w-[90%] xl:w-full"
           />
         </Link>
       </section>
       
-      <section>
+      <section className="hidden lg:inline">
         <Image
           src={HeaderAvatar}
           alt="Avatar"
-          className="w-[60%] lg:w-[80%] xl:w-full"
+          className="w-[60%] lg:w-[90%] xl:w-full"
         />
       </section>
 
@@ -41,7 +53,7 @@ const Header = ({
         <FilterBtn id={3} text="Activities" />
       </section>
 
-      <section className="hidden gap-1 lg:flex items-center">
+      <section className="hidden lg:flex items-center w-[6%] lg:w-[3%]">
         <Image
           src={HeaderExtra}
           alt="extra"
@@ -58,20 +70,29 @@ const Header = ({
         />
       </section>
 
-      <section>
+      <section className="hidden lg:inline w-max">
         <Image
           src={HeaderWellgorithm}
           alt="Avatar"
-          className="w-[60%] lg:w-[80%] xl:w-full"
+          className="w-[60%] lg:w-[70%]"
         />
       </section>
 
-      <section className="w-max">
-        <Image
-          src={HeaderSearch}
-          alt="Avatar"
-          className="w-[60%] lg:w-[80%] xl:w-full ml-auto"
-        />
+      <section className="flex items-center justify-between gap-6">
+        <button>
+          <Image
+            src={HeaderSearch}
+            alt="Avatar"
+            className="w-[80%] lg:w-full"
+          />
+        </button>
+        <button onClick={handleMenuClick}>
+          <Image
+            src={HeaderMenu}
+            alt="Avatar"
+            className="w-[70%] lg:hidden"
+          />
+        </button>
       </section>
 
       <section className="hidden
@@ -81,6 +102,8 @@ const Header = ({
         <LinkComp text="login" href="/login" className="text-purple-mid text-sm xl:text-base" />
         <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />
       </section>
+
+      <MobileNav open={openMobileNav} />
       
     </header>
   );
