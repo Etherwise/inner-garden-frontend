@@ -1,12 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import HeaderLogo from "@/public/header/header_logo.svg";
-import HeaderAvatar from "@/public/header/header_avatar.svg";
-import HeaderExtra from "@/public/header/header_extras.svg";
 import HeaderWellgorithm from "@/public/header/header_wellgorithm.svg";
-import HeaderSearch from "@/public/header/header_search.svg";
-import HeaderMenu from "@/public/header/header_menu.svg";
 
 import FilterBtn from "./filter_btn";
 import LinkComp from "../link_component";
