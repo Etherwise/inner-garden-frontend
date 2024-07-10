@@ -14,8 +14,9 @@ module.exports = {
       },
       colors: {
         "purple-bg-light": "#C4CAF0",
+        "purple-bg-extra-light": "#DBB7FC",
         "purple-bg-dark": "#3F225B",
-
+        
         "purple-outer-octagon": "#AA9DD0",
         "purple-inner-octagon": "#8757B5",
 
@@ -32,8 +33,12 @@ module.exports = {
 
         "yellow-dark": "#FFF500",
         "yellow-light": "#FFF200",
-        "purple-bg-extra-light": "#DBB7FC",
       },
+      dropShadow : {
+       'purple': [
+            '0 6px 6px rgba(127, 17, 224, 0.4)'
+        ]
+      }
     },
   },
   plugins: [],
