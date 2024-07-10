@@ -29,19 +29,19 @@ const ExpressionFilter = ({
   return (
     <div className="
     flex items-center justify-between gap-3
-    min-h-max w-full py-2 px-6">
+    min-h-max w-full py-2 px-6 pt-6">
 
-      <section className="hidden lg:inline w-max">
+      <section className="grid place-items-center">
         <button>
           <Image
             src={LeftHandle}
-            alt="Avatar"
+            alt="left"
             className="w-[60%] lg:w-[70%]"
           />
         </button>
       </section>
 
-      <section className="flex gap-3 w-full overflow-auto border-2 border-black no-scrollbar">
+      <section className="flex gap-9 w-full overflow-auto no-scrollbar">
         {
           expressions.map((z, i) => 
             <FilterBtn key={z.id} id={z.id} text={z.name} />
@@ -49,11 +49,11 @@ const ExpressionFilter = ({
         }
       </section>
 
-      <section className="hidden lg:inline w-max">
+      <section className="grid place-items-center">
         <button>
           <Image
             src={RightHandle}
-            alt="Avatar"
+            alt="right"
             className="w-[60%] lg:w-[70%]"
           />
         </button>
