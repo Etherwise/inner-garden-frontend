@@ -1,7 +1,7 @@
 'use client'
 import React, { useState,useRef, useEffect } from "react";
 import "./style.css";
-import TextWithBrackets from "../../components/text_with_brackets";
+import TextWithBrackets from "../../components/texts/text_with_brackets";
 import Octagon from "../components/octogon";
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
 
