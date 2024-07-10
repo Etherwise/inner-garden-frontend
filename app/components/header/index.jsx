@@ -71,11 +71,13 @@ const Header = ({
       </section>
 
       <section className="hidden lg:inline w-max">
-        <Image
-          src={HeaderWellgorithm}
-          alt="Avatar"
-          className="w-[60%] lg:w-[70%]"
-        />
+        <Link href="/wellgorithms">
+          <Image
+            src={HeaderWellgorithm}
+            alt="Avatar"
+            className="w-[60%] lg:w-[70%]"
+          />
+        </Link>
       </section>
 
       <section className="flex items-center justify-between gap-6">
