@@ -1,8 +1,8 @@
 'use client'
 import React, { useState,useRef, useEffect } from "react";
 import "./style.css";
-import BracketsWithText from "../extras/brackets_with_text";
-import Octagon from "../extras/octagon";
+import TextWithBrackets from "../../components/text_with_brackets";
+import Octagon from "../components/octogon";
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
 
 const Screen = () => {
@@ -39,7 +39,7 @@ const Screen = () => {
   return (
     <Octagon>
       <div className="flex items-center h-[25%] lg:pt-[10%] pt-[11%]">
-        <BracketsWithText bracketsData={bracketsData} className={"h-full"} />
+        <TextWithBrackets bracketsData={bracketsData} className={"h-full"} />
       </div>
       
       <form className=" w-[90%] h-[50%] flex flex-col items-center justify-center ">

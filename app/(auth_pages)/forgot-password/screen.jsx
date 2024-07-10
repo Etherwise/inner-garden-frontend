@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Octagon from "../extras/octagon";
+import Octagon from "../components/octogon";
 import "./style.css";
-import BracketsWithText from "../extras/brackets_with_text";
+import TextWithBrackets from "../../components/text_with_brackets";
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
 
 const Screen = () => {
@@ -40,7 +40,7 @@ const Screen = () => {
     <Octagon>
       <h1 className="text-white font-semibold text-xs md:text-lg">oops, i forgot my</h1>
 
-      <BracketsWithText
+      <TextWithBrackets
         bracketsData={bracketsData}
         className={"flex items-center"}
       />
