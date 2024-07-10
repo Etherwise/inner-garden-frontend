@@ -1,4 +1,4 @@
-const useClipPath = () => {
+const useClipBuilder = () => {
   
   const hexagonClip = (anglePixel=12, shapeRef) => {
     if (shapeRef.current) {
@@ -78,4 +78,4 @@ const useClipPath = () => {
   return { hexagonClip , squareClip , arrowClip , rectClip };
 };
 
-export default useClipPath;
+export default useClipBuilder;
