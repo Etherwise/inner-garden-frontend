@@ -1,5 +1,5 @@
 import React from 'react'
-import Screen from '../components/forgotPassword/Screen'
+import Screen from './screen'
 
 const page = () => {
   return (

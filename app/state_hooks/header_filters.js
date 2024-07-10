@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 const useHeaderFilters = create((set) => ({
-  activeFilter: {id: 0, name: "Gardens"},
+  activeFilter: {id: 1, name: "Gardens"},
   setActiveFilter: (id, name) => set((state) => ({ activeFilter: {id, name} })),
 }));
 

@@ -1,12 +1,12 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
-import useClipPath from '../hooks/clip_path_calculations';
+import useClipBuilder from '../hooks/clip_path_calculations';
 
 const Page = () => {
 
 
     const shapeRef = useRef(null);
-    const {hexagonClip} = useClipPath();
+    const {hexagonClip} = useClipBuilder();
 
     useEffect(() => {
     

@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import FooterLogo from "@/public/footer/footer_logo.svg";
-import LinkComp from "./link";
+
+import LinkComp from "../link_component";
 import MailSubscribeComp from "./mail_subscribe";
 
 // #TODO update 'strong' with 'heading' tag later
@@ -13,8 +14,8 @@ const Footer = ({
 }) => {
   return (
     <footer className="
-    flex flex-col items-center justify-center gap-y-[4vh] md:gap-y-[5vh] lg:gap-y-[6vh]
-    min-h-screen w-full text-white md:pt-[9vh] px-9
+    flex flex-col items-center justify-center gap-y-[5vh] md:gap-y-[6vh]
+    min-h-screen w-full text-white md:pt-[12vh] px-6
     bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center">
       <section className="
       flex flex-col items-center
@@ -36,10 +37,10 @@ const Footer = ({
         />
       </section>
       <section className="
-      flex justify-between items-center gap-9 w-max
+      flex justify-between items-center gap-6 sm:gap-9 w-max
       text-xl xl:text-2xl">
-        <LinkComp text="welcome" href="/login" />
-        <LinkComp text="donate" href="/donate" />
+        <LinkComp text="welcome" href="/login" className="bg-orange-mid py-2 lg:py-3 px-6 lg:px-9" angle={9} />
+        <LinkComp text="donate" href="/donate" className="bg-orange-mid py-2 lg:py-3 px-6 lg:px-9" angle={9} />
       </section>
 
       <div className="flex flex-col items-center justify-center gap-y-[2vh]">

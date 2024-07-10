@@ -1,83 +1,110 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 
+import { useState } from "react";
+
 import HeaderLogo from "@/public/header/header_logo.svg";
 import HeaderAvatar from "@/public/header/header_avatar.svg";
+import HeaderExtra from "@/public/header/header_extras.svg";
+import HeaderWellgorithm from "@/public/header/header_wellgorithm.svg";
+import HeaderSearch from "@/public/header/header_search.svg";
+import HeaderMenu from "@/public/header/header_menu.svg";
 
-import FilterBtnsSec from "./filter_btns";
+import FilterBtn from "./filter_btn";
+import MobileNav from "./mobile_nav";
+import LinkComp from "../link_component";
 
 const Header = ({
 }) => {
+  const [openMobileNav, setOpenMobileNav] = useState(false);
+
+  const handleMenuClick = () => {
+    setOpenMobileNav(!openMobileNav);
+  }
+
   return (
     <header className="
-    flex items-center justify-between gap-y-12
-    min-h-max w-full text-white py-3 px-9
+    flex items-center justify-between gap-3
+    min-h-max w-full text-white py-3 px-6
     bg-black">
       <section>
-        <Image
-          src={HeaderLogo}
-          alt="Inner Logo"
-          className="w-[60%] lg:w-[80%] xl:w-full"
-        />
+        <Link href={"/"}>
+          <Image
+            src={HeaderLogo}
+            alt="Inner Logo"
+            className="w-[90%] xl:w-full"
+          />
+        </Link>
       </section>
-      <section>
+      
+      <section className="hidden lg:inline">
         <Image
           src={HeaderAvatar}
-          alt="Picture of the author"
-          className="w-[60%] lg:w-[80%] xl:w-full"
+          alt="Avatar"
+          className="w-[60%] lg:w-[90%] xl:w-full"
         />
-      </section>
-      <FilterBtnsSec />
-      {/* <section>
-        <Image
-          src={FooterLogo}
-          width={300}
-          height={300}
-          alt="Picture of the author"
-        />
-      </section> */}
-      {/* <section className="
-      flex flex-col items-center
-      text-center
-      w-full space-y-2">
-        <strong className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold">
-            {heading}
-        </strong>
-        <p className="text-xl lg:text-2xl xl:text-3xl md:w-1/2">
-            {sub}
-        </p>
-      </section>
-      <MailSubscribeComp />
-      <section>
-        <Image
-          src={FooterLogo}
-          width={300}
-          height={300}
-          alt="Picture of the author"
-        />
-      </section>
-      <section className="
-      flex justify-between items-center gap-9 w-max
-      text-xl xl:text-2xl">
-        <LinkComp text="welcome" href="/login" />
-        <LinkComp text="donate" href="/donate" />
       </section>
 
-      <div className="flex flex-col items-center justify-center gap-y-3">
-        <section className="flex justify-between items-center gap-9
-        text-xl w-max">
-          <Link href="/academy">(inner) Academy</Link>
-          <Link href="/tv">(inner) TV</Link>
-        </section>
-        <section className="text-center">
-          <span>copyright 2024 Lightworkers of the Sphere, LLC. All rights reserved.</span>
-        </section>
-        <section className="flex justify-between items-center gap-9
-        text-xl w-max">
-          <Link href="/policies">policies</Link>
-          <Link href="/contact">contact</Link>
-        </section>
-      </div> */}
+      <section className="hidden gap-1 lg:flex">
+        <FilterBtn id={1} text="Gardens" />
+        <FilterBtn id={2} text="Adversities" />
+        <FilterBtn id={3} text="Activities" />
+      </section>
+
+      <section className="hidden lg:flex items-center w-[6%] lg:w-[3%]">
+        <Image
+          src={HeaderExtra}
+          alt="extra"
+        />
+        <Image
+          src={HeaderExtra}
+          alt="extra"
+        />
+        <Image
+          src={HeaderExtra}
+          alt="extra"
+          className="fill-red-600 stroke-black"
+          style={{fill: "black", stroke: "black"}}
+        />
+      </section>
+
+      <section className="hidden lg:inline w-max">
+        <Image
+          src={HeaderWellgorithm}
+          alt="Avatar"
+          className="w-[60%] lg:w-[70%]"
+        />
+      </section>
+
+      <section className="flex items-center justify-between gap-6">
+        <button>
+          <Image
+            src={HeaderSearch}
+            alt="Avatar"
+            className="w-[80%] lg:w-full"
+          />
+        </button>
+        <button onClick={handleMenuClick}>
+          <Image
+            src={HeaderMenu}
+            alt="Avatar"
+            className="w-[70%] lg:hidden"
+          />
+        </button>
+      </section>
+
+      <section className="hidden
+      lg:flex items-center gap-3
+      w-[24%] lg:w-[21%] xl:w-[18%]
+      ">
+        <LinkComp text="login" href="/login" className="text-purple-mid text-sm xl:text-base" />
+        <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />
+      </section>
+
+      <MobileNav open={openMobileNav} />
+      
     </header>
   );
 }
