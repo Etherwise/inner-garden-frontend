@@ -37,7 +37,7 @@ const Footer = ({
         />
       </section>
       <section className="
-      flex justify-between items-center gap-9 w-max
+      flex justify-between items-center gap-6 sm:gap-9 w-max
       text-xl xl:text-2xl">
         <LinkComp text="welcome" href="/login" className="bg-orange-mid py-2 lg:py-3 px-6 lg:px-9" angle={9} />
         <LinkComp text="donate" href="/donate" className="bg-orange-mid py-2 lg:py-3 px-6 lg:px-9" angle={9} />
