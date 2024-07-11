@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Octagon from "../components/octogon";
 import "./style.css";
-import TextWithBrackets from "../../components/text_with_brackets";
+import TextWithBrackets from "../../components/texts/text_with_brackets";
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
 
 const Screen = () => {
