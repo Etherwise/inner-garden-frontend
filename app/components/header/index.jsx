@@ -12,7 +12,7 @@ import HeaderWellgorithm from "@/public/header/header_wellgorithm.svg";
 import HeaderSearch from "@/public/header/header_search.svg";
 import HeaderMenu from "@/public/header/header_menu.svg";
 
-import FilterBtn from "./filter_btn";
+import NavLink from "./nav_link";
 import MobileNav from "./mobile_nav";
 import LinkComp from "../link_component";
 
@@ -48,9 +48,9 @@ const Header = ({
       </section>
 
       <section className="hidden gap-1 lg:flex">
-        <FilterBtn id={1} text="Gardens" />
-        <FilterBtn id={2} text="Adversities" />
-        <FilterBtn id={3} text="Activities" />
+        <NavLink id={1} text="Gardens" href="/gardens" active={true} />
+        <NavLink id={2} text="Adversities" href="/adversities" />
+        <NavLink id={3} text="Activities" href="/activities" />
       </section>
 
       <section className="hidden lg:flex items-center w-[6%] lg:w-[3%]">

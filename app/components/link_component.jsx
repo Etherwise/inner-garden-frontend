@@ -17,7 +17,7 @@ const LinkComp = ({text="", href="", className="", angle=0}) => {
     setLoaded(true);
   }, [hexagonClip, angle]);
 
-  if (!loaded) return (<></>);
+  //if (!loaded) return (<></>);
   return (
     <Link ref={elementRef} href={href} className={`
       w-full
