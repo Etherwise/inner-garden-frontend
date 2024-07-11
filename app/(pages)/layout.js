@@ -6,7 +6,7 @@ export default function PageRootLayout({ children }) {
   return (
     <>
       <Header />
-      <main className="container">
+      <main className="responsive-container">
         {children}
       </main>
       <Footer />

@@ -26,9 +26,9 @@ const Header = ({
 
   return (
     <header className="
-    flex items-center justify-between gap-3
+    flex items-center justify-between gap-5
     min-h-max w-full text-white py-2
-    bg-black container">
+    bg-black responsive-container">
       <section>
         <Link href={"/"}>
           <Image
