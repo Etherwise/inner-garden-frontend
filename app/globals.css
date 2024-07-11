@@ -53,6 +53,10 @@ body {
   @apply bg-purple-bg-light;
 }
 
+.container {
+  @apply px-6;
+}
+
 /* footer {
   box-shadow: inset 0px 30px 60px var(--light-purple-1);
 } */
