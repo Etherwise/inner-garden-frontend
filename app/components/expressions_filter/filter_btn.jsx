@@ -3,16 +3,16 @@
 import { useEffect, useRef } from "react";
 
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
-import useHeaderFilters from "@/app/state_hooks/header_filters";
+import useExpressionsFilter from "@/app/state_hooks/expressions_filter";
 
 const FilterBtn = ({ id=0, text="", className="", angle=15 }) => {
   const elementRef = useRef();
 
   const { hexagonClip } = useClipBuilder();
-  const headerFilter = useHeaderFilters();
+  const expressionFilter = useExpressionsFilter();
 
   const handleClick = () => {
-    headerFilter.setActiveFilter(id, text);
+    expressionFilter.setActiveFilter(id, text);
   }
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const FilterBtn = ({ id=0, text="", className="", angle=15 }) => {
 
   return (
     <button ref={elementRef} className={
-      `${headerFilter.activeFilter.id == id ? "text-yellow-dark bg-purple-mid" : "text-purple-dark bg-white"}
+      `${expressionFilter.activeFilter.id == id ? "text-yellow-dark bg-purple-mid" : "text-purple-dark bg-white"}
       w-full py-1.5 px-6 xl:px-9 lg:py-2
       text-center font-bold text-sm xl:text-base
       ${className}`}

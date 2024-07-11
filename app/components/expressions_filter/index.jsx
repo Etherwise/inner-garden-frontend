@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { useState } from "react";
+import { useRef } from "react";
 
 import LeftHandle from "@/public/expressions_filter/left_handle.svg";
 import RightHandle from "@/public/expressions_filter/right_handle.svg";
@@ -25,6 +25,25 @@ const expressions = [
 ]
 const ExpressionFilter = ({
 }) => {
+  const sectionRef = useRef(null);
+
+  const handleLeftClick = () => {
+    if (!sectionRef) return 0;
+
+    sectionRef.current.scrollBy({
+      left: 100, // Scroll 100 pixels to the right
+      behavior: 'smooth'
+    });
+  }
+
+  const handleRightClick = () => {
+    if (!sectionRef) return 0;
+
+    sectionRef.current.scrollBy({
+      left: -100, // Scroll 100 pixels to the right
+      behavior: 'smooth'
+    });
+  }
 
   return (
     <div className="
@@ -32,7 +51,7 @@ const ExpressionFilter = ({
     min-h-max w-full py-2 px-6 pt-6">
 
       <section className="grid place-items-center">
-        <button>
+        <button onClick={handleLeftClick}>
           <Image
             src={LeftHandle}
             alt="left"
@@ -41,7 +60,7 @@ const ExpressionFilter = ({
         </button>
       </section>
 
-      <section className="flex gap-9 w-full overflow-auto no-scrollbar">
+      <section className="flex gap-6 md:gap-9 w-full overflow-auto no-scrollbar" ref={sectionRef}>
         {
           expressions.map((z, i) => 
             <FilterBtn key={z.id} id={z.id} text={z.name} />
@@ -50,7 +69,7 @@ const ExpressionFilter = ({
       </section>
 
       <section className="grid place-items-center">
-        <button>
+        <button onClick={handleRightClick}>
           <Image
             src={RightHandle}
             alt="right"
