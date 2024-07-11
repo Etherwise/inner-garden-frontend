@@ -11,8 +11,8 @@ const MailSubscribeComp = ({}) => {
   const { hexagonClip } = useClipBuilder();
 
   useEffect(() => {
-    hexagonClip(24, mailSubscribeSecRef);
-    hexagonClip(19, subscribeBtnRef);
+    hexagonClip(mailSubscribeSecRef, 24);
+    hexagonClip(subscribeBtnRef, 19);
   }, [hexagonClip]);
 
   return (

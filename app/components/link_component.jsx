@@ -13,7 +13,7 @@ const LinkComp = ({text="", href="", className="", angle=0}) => {
   const { hexagonClip } = useClipBuilder();
 
   useEffect(() => {
-    hexagonClip(angle, elementRef);
+    hexagonClip(elementRef, angle);
     setLoaded(true);
   }, [hexagonClip, angle]);
 

@@ -10,7 +10,7 @@ const Page = () => {
 
     useEffect(() => {
     
-        hexagonClip(80,shapeRef)
+        hexagonClip(shapeRef, 80)
     
     }, [])
     
