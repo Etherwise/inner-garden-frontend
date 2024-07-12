@@ -19,8 +19,7 @@ import MobileNav from "./mobile_nav";
 import LinkComp from "../link_component";
 import TextInBrackets from "@/app/components/texts/text_in_brackets";
 
-const Header = ({
-}) => {
+const Header = () => {
   const [openMobileNav, setOpenMobileNav] = useState(false);
 
   const pathname = usePathname();
@@ -107,7 +106,7 @@ const Header = ({
         <LinkComp href="/login" className="flex items-center justify-center gap-0.5 text-purple-mid text-sm xl:text-base">
           <>
             log
-            <TextInBrackets text="in" className="md:w-1/3 lg:w-1/4 font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
+            <TextInBrackets text="in" className="w-1/3 lg:w-1/4 font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
           </>
         </LinkComp>
         <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />

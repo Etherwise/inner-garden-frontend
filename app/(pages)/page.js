@@ -8,7 +8,7 @@ function Home() {
     <>
       <ExpressionFilter />
       <div className="flex min-h-screen flex-col items-center justify-between mt-3">
-        <Banner className="h-[300px] w-full" angle={4} shape="rect" />
+        <Banner className="h-[400px] w-full" angle={4} shape="rect" />
       </div>
     </>
   );

@@ -53,6 +53,10 @@ body {
   @apply px-6;
 }
 
+.pseduo-clip-path::before {
+  clip-path: var(--path);
+}
+
 /* footer {
   box-shadow: inset 0px 30px 60px var(--light-purple-1);
 } */
