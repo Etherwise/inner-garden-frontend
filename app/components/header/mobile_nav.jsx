@@ -9,9 +9,7 @@ import HeaderWellgorithmActive from "@/public/header/header_wellgorithm_active.s
 import NavLink from "./nav_link";
 import LinkComp from "../link_component";
 
-const MobileNav = ({
-  open = false
-}) => {
+const MobileNav = ({ open = false }) => {
   const pathname = usePathname();
 
   return (
