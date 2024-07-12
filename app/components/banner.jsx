@@ -7,25 +7,25 @@ import useClipBuilder from "@/app/hooks/clip_path_calculations";
 const Banner = ({ className="", shape="rect", angle=0, children="" }) => {
   const elementRef = useRef();
 
-  const { hexagonClip, rectClip, pseduoRectClip, arrowClip } = useClipBuilder();
+  const { hexagonClip, rectClip, arrowClip } = useClipBuilder();
 
   useEffect(() => {
     switch(shape) {
       case "hexagon":
-        hexagonClip(elementRef, angle);
+        hexagonClip(elementRef, angle, true);
         break;
       case "rect":
-        pseduoRectClip(elementRef, angle, angle);
+        rectClip(elementRef, angle, angle, true);
         break;
       case "arrow":
-        arrowClip(elementRef, angle);
+        arrowClip(elementRef, angle, "left", true);
         break;
       default:
-        hexagonClip(elementRef, angle);
+        hexagonClip(elementRef, angle, true);
         break;
     }
     
-  }, [shape, hexagonClip, pseduoRectClip, arrowClip, angle]);
+  }, [shape, hexagonClip, rectClip, arrowClip, angle]);
 
   return (
     <div ref={elementRef} className={`relative
