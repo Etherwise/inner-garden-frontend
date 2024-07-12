@@ -39,7 +39,7 @@ module.exports = {
             '0 6px 6px rgba(127, 17, 224, 0.4)'
         ],
         'white': [
-            '-1px -1px 1px rgba(255, 255, 255, 1)'
+            '3px 3px 0 rgba(255, 255, 255, 1)'
         ]
       }
     },

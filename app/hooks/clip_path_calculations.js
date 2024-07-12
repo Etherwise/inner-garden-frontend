@@ -66,8 +66,6 @@ const useClipBuilder = () => {
   }
   
   const octagonClip = (shapeRef) => { 
-
-
     if (shapeRef.current) {
       console.log(shapeRef.current)
       shapeRef.current.style.clipPath = 'polygon(50% 0, 85% 15%, 100% 50%, 85% 85%, 50% 100%, 15% 85%, 0 50%, 15% 15%)'; 

@@ -56,3 +56,11 @@ body {
 /* footer {
   box-shadow: inset 0px 30px 60px var(--light-purple-1);
 } */
+
+.test-octa{
+
+  filter: drop-shadow(
+      0 6px 6px rgba(127, 17, 224, 0.4)
+  );
+
+}
