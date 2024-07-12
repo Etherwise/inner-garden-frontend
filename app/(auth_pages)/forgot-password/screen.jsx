@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Octagon from "../components/octogon";
 import "./style.css";
-import TextWithBrackets from "../../components/text_with_brackets";
+import TextWithBrackets from "../../components/texts/text_with_brackets";
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
 
 const Screen = () => {
@@ -28,8 +28,8 @@ const Screen = () => {
   const { hexagonClip } = useClipBuilder();
 
   useEffect(() => {
-    hexagonClip(14, formRef);
-    hexagonClip(14, buttonRef);
+    hexagonClip(formRef, 14);
+    hexagonClip(buttonRef, 14);
   }, [hexagonClip]);
 
   const handleSubmit = () => {

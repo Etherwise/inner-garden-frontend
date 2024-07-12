@@ -1,6 +1,6 @@
 const useClipBuilder = () => {
   
-  const hexagonClip = (anglePixel=12, shapeRef) => {
+  const hexagonClip = (shapeRef, anglePixel=12) => {
     if (shapeRef.current) {
       const width = shapeRef.current.clientWidth;
       const leftEdge1 = (anglePixel / width) * 100;
@@ -12,7 +12,7 @@ const useClipBuilder = () => {
     }
   }
 
-  const squareClip = (upperAnglePercent = 20 , lowerAnglePercent = 12 , shapeRef) => {
+  const squareClip = (shapeRef, upperAnglePercent = 20 , lowerAnglePercent = 12) => {
     if (shapeRef.current) {
       const width = shapeRef.current.clientWidth;
       
@@ -30,7 +30,7 @@ const useClipBuilder = () => {
     }
   }
 
-  const arrowClip = (anglePixel=80, shapeRef , side = "left") => {
+  const arrowClip = (shapeRef, anglePixel=80, side = "left") => {
     if (shapeRef.current) {
       
       const width = shapeRef.current.clientWidth;
@@ -43,7 +43,7 @@ const useClipBuilder = () => {
     }
   }
 
-  const rectClip = (upperAnglePercent=20, lowerAnglePercent = 20, shapeRef) => {
+  const rectClip = (shapeRef, upperAnglePercent=20, lowerAnglePercent = 20) => {
     if (shapeRef.current) {
 
       const width = shapeRef.current.clientWidth;

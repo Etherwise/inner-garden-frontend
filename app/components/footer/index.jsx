@@ -15,8 +15,8 @@ const Footer = ({
   return (
     <footer className="
     flex flex-col items-center justify-center gap-y-[5vh] md:gap-y-[6vh]
-    min-h-screen w-full text-white md:pt-[12vh] px-6
-    bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center">
+    min-h-screen w-full text-white md:pt-[12vh]
+    bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center responsive-container">
       <section className="
       flex flex-col items-center
       text-center
