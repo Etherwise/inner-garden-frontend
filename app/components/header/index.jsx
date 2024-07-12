@@ -84,7 +84,7 @@ const Header = ({
       </section>
 
       <section className="flex items-center justify-between gap-6">
-        <button className="lg:w-full">
+        <button className="lg:w-full ml-6">
           <Image
             src={HeaderSearch}
             alt="Search"
@@ -107,7 +107,7 @@ const Header = ({
         <LinkComp href="/login" className="flex items-center justify-center gap-0.5 text-purple-mid text-sm xl:text-base">
           <>
             log
-            <TextInBrackets text="in" className="md:w-1/3 lg:w-1/4 font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
+            <TextInBrackets text="in" className="w-1/3 font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
           </>
         </LinkComp>
         <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />
