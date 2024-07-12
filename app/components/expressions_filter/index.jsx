@@ -51,7 +51,7 @@ const ExpressionFilter = ({
     min-h-max w-full py-2 pt-6">
 
       <section className="grid place-items-center">
-        <button onClick={handleLeftClick}>
+        <button onClick={handleRightClick}>
           <Image
             src={LeftHandle}
             alt="left"
@@ -69,7 +69,7 @@ const ExpressionFilter = ({
       </section>
 
       <section className="grid place-items-center">
-        <button onClick={handleRightClick}>
+        <button onClick={handleLeftClick}>
           <Image
             src={RightHandle}
             alt="right"
