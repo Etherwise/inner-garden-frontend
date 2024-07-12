@@ -7,9 +7,8 @@ function Home() {
   return (
     <>
       <ExpressionFilter />
-      <Banner />
-      <div className="flex min-h-screen flex-col items-center justify-between p-24">
-        asfsd
+      <div className="flex min-h-screen flex-col items-center justify-between mt-3">
+        <Banner className="h-[300px] w-full" angle={3} />
       </div>
     </>
   );
