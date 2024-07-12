@@ -1,34 +1,37 @@
-import Image from "next/image";
-import React from "react";
-import leftb from '@/public/brackets/left-bracket.svg'
-import rightb from '@/public/brackets/right-bracket.svg'
+/* eslint-disable react/display-name */
+'use client'
+  import React , {forwardRef} from "react";
 
+ 
+  const TextWithBrackets = forwardRef(({ bracketsData, className , text="", thin={apply: false, width: 0, color: "transparent"}}, ref) => {
+    return (
+      <p className={`flex justify-center items-center lg:h-fit ${className}`} ref={ref}>
+        {bracketsData.leftText ? (
+          <span className={`${bracketsData.leftText.properties} md:mx-1 mx-[2px] `}>
+            {bracketsData.leftText.text}
+          </span>
+        ) : null}
+        
+        <svg width="19" height="46" viewBox="0 0 19 46" fill="inherit" xmlns="http://www.w3.org/2000/svg"
+        strokeWidth={thin.apply ? thin.width : 0} stroke={thin.apply ? thin.color : "transparent"}>
+        <path d="M0.707688 22.848L8.96369 0.383998H18.9957L11.2677 22.848L18.9957 45.312H8.96369L0.707688 22.848Z" fill="inherit"/>
+      </svg>
+        <span className={`${bracketsData?.middleText?.properties} md:mx-1 mx-[2px] `}>
+          {bracketsData.middleText.text}
+        </span>
+        <svg width="19" height="46" viewBox="0 0 19 46" fill="inherit" xmlns="http://www.w3.org/2000/svg"
+        strokeWidth={thin.apply ? thin.width : 0} stroke={thin.apply ? thin.color : "transparent"}>
+        <path d="M18.2837 22.848L10.0277 45.312H-0.00431246L7.72369 22.848L-0.00431246 0.383998H10.0277L18.2837 22.848Z" fill="inherit"/>
+      </svg>
 
-
-const TextWithBrackets = ({ bracketsData, className }) => {
-  return (
-    <p className={`flex justify-center items-center lg:h-fit ${className}`}>
-      {
-        bracketsData.leftText
-        ? 
-        <span className={`${bracketsData.leftText.properties} md:mx-1 mx-[2px] `}>{bracketsData.leftText.text}</span>
-        :
-        <></>
-      }
-      
-      <Image src={leftb} alt="leftb" className={`${bracketsData?.brackets?.properties}`} />
-      <span className={`${bracketsData?.middleText?.properties} md:mx-1 mx-[2px] `}>{bracketsData.middleText.text}</span>
-      <Image src={rightb} alt="rightb" className={`${bracketsData?.brackets?.properties}`} />
-
-      {
-        bracketsData.rightText
-        ? 
-        <span className={`${bracketsData.rightText.properties} md:mx-1 mx-[2px] `}>{bracketsData.rightText.text}</span>
-        :
-        <></>
-      }
-    </p>
-  )
-}
-
-export default TextWithBrackets
+        
+        {bracketsData.rightText ? (
+          <span className={`${bracketsData.rightText.properties} md:mx-1 mx-[2px] `}>
+            {bracketsData.rightText.text}
+          </span>
+        ) : null}
+      </p>
+    );
+  });
+  
+  export default TextWithBrackets;
