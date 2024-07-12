@@ -15,6 +15,7 @@ import HeaderMenu from "@/public/header/header_menu.svg";
 import NavLink from "./nav_link";
 import MobileNav from "./mobile_nav";
 import LinkComp from "../link_component";
+import TextInBrackets from "@/app/components/texts/text_in_brackets";
 
 const Header = ({
 }) => {
@@ -47,13 +48,13 @@ const Header = ({
         />
       </section>
 
-      <section className="hidden gap-1 lg:flex">
+      <section className="hidden gap-3 lg:flex">
         <NavLink id={1} text="Gardens" href="/gardens" active={true} />
         <NavLink id={2} text="Adversities" href="/adversities" />
         <NavLink id={3} text="Activities" href="/activities" />
       </section>
 
-      <section className="hidden lg:flex items-center w-[6%] lg:w-[3%]">
+      <section className="hidden lg:flex items-center justify-center w-[6%] lg:w-[3%]">
         <Image
           src={HeaderExtra}
           alt="extra"
@@ -65,34 +66,32 @@ const Header = ({
         <Image
           src={HeaderExtra}
           alt="extra"
-          className="fill-red-600 stroke-black"
-          style={{fill: "black", stroke: "black"}}
         />
       </section>
 
-      <section className="hidden lg:inline w-max">
+      <section className="hidden lg:inline w-[30%] lg:w-[15%]">
         <Link href="/wellgorithms">
           <Image
             src={HeaderWellgorithm}
             alt="Avatar"
-            className="w-[60%] lg:w-[70%]"
+            className="w-full"
           />
         </Link>
       </section>
 
       <section className="flex items-center justify-between gap-6">
-        <button>
+        <button className="lg:w-full">
           <Image
             src={HeaderSearch}
-            alt="Avatar"
-            className="w-[80%] lg:w-full"
+            alt="Search"
+            className="w-full"
           />
         </button>
-        <button onClick={handleMenuClick}>
+        <button onClick={handleMenuClick} className="w-[25%] lg:hidden">
           <Image
             src={HeaderMenu}
-            alt="Avatar"
-            className="w-[70%] lg:hidden"
+            alt="Menu"
+            className="w-full"
           />
         </button>
       </section>
@@ -101,7 +100,12 @@ const Header = ({
       lg:flex items-center gap-3
       w-[24%] lg:w-[21%] xl:w-[18%]
       ">
-        <LinkComp text="login" href="/login" className="text-purple-mid text-sm xl:text-base" />
+        <LinkComp href="/login" className="flex items-center justify-center gap-1 text-purple-mid text-sm xl:text-base">
+          <>
+            log
+            <TextInBrackets text="in" className="w-1/5 font-bold text-white" />
+          </>
+        </LinkComp>
         <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />
       </section>
 

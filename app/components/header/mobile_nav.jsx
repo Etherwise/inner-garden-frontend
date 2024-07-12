@@ -36,7 +36,7 @@ const MobileNav = ({
 
         <section className="flex flex-col gap-3">
           <LinkComp text="login" href="/login" className="text-purple-mid text-sm xl:text-base" />
-          <LinkComp text="join us" href="/joinus" className="text-purple-mid text-sm xl:text-base" angle={0} />
+          <LinkComp text="join us" href="/joinus" className="text-purple-mid text-sm xl:text-base" />
         </section>
     </div>
   );
