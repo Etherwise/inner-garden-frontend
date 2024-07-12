@@ -29,7 +29,7 @@ const Banner = ({className="", shape="rect", angle=0, children=""}) => {
 
   return (
     <div ref={elementRef} className={`relative
-      bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center
+      bg-no-repeat bg-[url(/banner/banner.png)] bg-cover bg-center
       ${className}`}>
       {children}
     </div>
