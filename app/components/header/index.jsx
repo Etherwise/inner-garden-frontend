@@ -3,12 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { usePathname } from 'next/navigation';
 import { useState } from "react";
 
 import HeaderLogo from "@/public/header/header_logo.svg";
 import HeaderAvatar from "@/public/header/header_avatar.svg";
 import HeaderExtra from "@/public/header/header_extras.svg";
 import HeaderWellgorithm from "@/public/header/header_wellgorithm.svg";
+import HeaderWellgorithmActive from "@/public/header/header_wellgorithm_active.svg";
 import HeaderSearch from "@/public/header/header_search.svg";
 import HeaderMenu from "@/public/header/header_menu.svg";
 
@@ -21,10 +23,12 @@ const Header = ({
 }) => {
   const [openMobileNav, setOpenMobileNav] = useState(false);
 
+  const pathname = usePathname();
+
   const handleMenuClick = () => {
     setOpenMobileNav(!openMobileNav);
   }
-
+  
   return (
     <header className="
     flex items-center justify-between gap-5
@@ -49,9 +53,9 @@ const Header = ({
       </section>
 
       <section className="hidden gap-3 lg:flex">
-        <NavLink id={1} text="Gardens" href="/gardens" active={true} />
-        <NavLink id={2} text="Adversities" href="/adversities" />
-        <NavLink id={3} text="Activities" href="/activities" />
+        <NavLink id={1} text="Gardens" href="/gardens" active={pathname == "/gardens"} />
+        <NavLink id={2} text="Adversities" href="/adversities" active={pathname == "/adversities"} />
+        <NavLink id={3} text="Activities" href="/activities" active={pathname == "/activities"} />
       </section>
 
       <section className="hidden lg:flex items-center justify-center w-[6%] lg:w-[3%]">
@@ -72,7 +76,7 @@ const Header = ({
       <section className="hidden lg:inline w-[30%] lg:w-[15%]">
         <Link href="/wellgorithms">
           <Image
-            src={HeaderWellgorithm}
+            src={pathname == "/wellgorithms" ? HeaderWellgorithmActive : HeaderWellgorithm}
             alt="Avatar"
             className="w-full"
           />
