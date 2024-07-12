@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
 
@@ -21,15 +21,15 @@ const Banner = ({className="", shape="rect", angle=0, children=""}) => {
         arrowClip(elementRef, angle);
         break;
       default:
+        hexagonClip(elementRef, angle);
         break;
     }
     
   }, [shape, hexagonClip, rectClip, arrowClip, angle]);
 
   return (
-    <div ref={elementRef} className={`
+    <div ref={elementRef} className={`relative
       bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center
-      border-solid border-2
       ${className}`}>
       {children}
     </div>
