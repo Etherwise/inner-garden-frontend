@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
 
@@ -9,12 +9,11 @@ const ScrollContainer = ({
   containerClassName="", headClassName="", bodyClassName="",
   headAngle=27, bodyAngle=4
 }) => {
-  const [customStyle, setCustomStyle] = useState(null);
 
   const headElementRef = useRef();
   const bodyElementRef = useRef();
 
-  const { hexagonClip, rectClip, arrowClip } = useClipBuilder();
+  const { hexagonClip, rectClip } = useClipBuilder();
 
   useEffect(() => {
     hexagonClip(headElementRef, headAngle);
