@@ -29,7 +29,7 @@ const ScrollContainer = ({
         bg-purple-inner-octagon w-full p-9 ${headClassName}`}>
         {heading}
       </section>
-      <div ref={bodyElementRef} className={`relative min-h-[300px] w-[95.6%] bg-purple-soft-light ${bodyClassName}`}>
+      <div ref={bodyElementRef} className={`relative p-9 min-h-[300px] w-[95.6%] bg-purple-soft-light ${bodyClassName}`}>
         {children}
       </div>
     </div>
