@@ -104,10 +104,10 @@ const Header = ({
       lg:flex items-center gap-3
       w-[24%] lg:w-[21%] xl:w-[18%]
       ">
-        <LinkComp href="/login" className="flex items-center justify-center gap-1 text-purple-mid text-sm xl:text-base">
+        <LinkComp href="/login" className="flex items-center justify-center gap-0.5 text-purple-mid text-sm xl:text-base">
           <>
             log
-            <TextInBrackets text="in" className="w-1/5 font-bold text-white" />
+            <TextInBrackets text="in" className="w-1/3 font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
           </>
         </LinkComp>
         <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />

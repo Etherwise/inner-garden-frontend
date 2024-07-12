@@ -1,11 +1,10 @@
 "use client"
 
-import Link from 'next/link';
 import { useEffect, useRef, useState } from "react";
 
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
 
-const Banner = ({className="", shape="octagon", angle=0, children=""}) => {
+const Banner = ({className="", shape="rect", angle=0, children=""}) => {
   const elementRef = useRef();
 
   const { hexagonClip, rectClip, arrowClip } = useClipBuilder();
@@ -15,7 +14,7 @@ const Banner = ({className="", shape="octagon", angle=0, children=""}) => {
       case "hexagon":
         hexagonClip(elementRef, angle);
         break;
-      case "octagon":
+      case "rect":
         rectClip(elementRef, angle, angle);
         break;
       case "arrow":

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
 
-const LinkComp = ({text=null, children=null, href="", className="", angle=0}) => {
+const LinkComp = ({ text=null, children=null, href="", className="", angle=0 }) => {
   const elementRef = useRef();
 
   const { hexagonClip } = useClipBuilder();
