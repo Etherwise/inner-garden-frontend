@@ -42,7 +42,7 @@ const Screen = () => {
         <TextWithBrackets bracketsData={bracketsData} className={"h-full"} />
       </div>
       
-      <form className=" w-[90%] h-[50%] flex flex-col items-center justify-center ">
+      <form className=" w-[90%] h-[50%] flex flex-col items-center justify-center relative">
         <section className="px-10 lg:px-14 relative octa-input-up w-full h-[50%]  text-purple-text flex items-center justify-center bg-white my-2">
           <span className="absolute left-11 lg:left-14 font-semibold text-xl">|</span>{" "}
           <input
@@ -68,12 +68,11 @@ const Screen = () => {
         </section>
       </form>
 
-      <div className="h-[25%]">
+      <div className="h-[25%] flex flex-col items-center">
         
-          <button onClick={handleSubmit} className="text-purple-text-light font-bold text-lg py-1 px-8 bg-yellow-dark md:mt-3 sm:w-[112px] md:w-[114px] lg:w-[118px] lg:h-10" ref={buttonRef}>
+          <button onClick={handleSubmit} className="text-purple-text-light font-bold text-lg py-1 px-8 bg-yellow-dark md:mt-2 sm:w-[112px] md:w-[114px] lg:w-[118px] lg:h-10" ref={buttonRef}>
             enter
           </button>
-        
       </div>
     </Octagon>
   );
