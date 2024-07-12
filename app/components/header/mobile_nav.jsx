@@ -18,7 +18,7 @@ const MobileNav = ({
     <div className={`
       ${open ? "absolute right-0" : "hidden left-full"} top-[6%]
       lg:hidden flex flex-col items-center gap-6
-      bg-inherit min-w-[200px] w-1/4 p-6 h-full`}>
+      bg-inherit min-w-[200px] w-1/4 p-6 h-full z-10`}>
         <section className="space-y-3">
           <FilterBtn id={1} text="Gardens" angle={0} />
           <FilterBtn id={2} text="Adversities" angle={0} />
