@@ -7,7 +7,7 @@ import useClipBuilder from "@/app/hooks/clip_path_calculations";
 const Banner = ({ className="", shape="rect", angle=0, children="" }) => {
   const elementRef = useRef();
 
-  const { hexagonClip, rectClip, arrowClip } = useClipBuilder();
+  const { hexagonClip, rectClip, pseduoRectClip, arrowClip } = useClipBuilder();
 
   useEffect(() => {
     switch(shape) {
@@ -15,7 +15,7 @@ const Banner = ({ className="", shape="rect", angle=0, children="" }) => {
         hexagonClip(elementRef, angle);
         break;
       case "rect":
-        rectClip(elementRef, angle, angle);
+        pseduoRectClip(elementRef, angle, angle);
         break;
       case "arrow":
         arrowClip(elementRef, angle);
@@ -25,11 +25,12 @@ const Banner = ({ className="", shape="rect", angle=0, children="" }) => {
         break;
     }
     
-  }, [shape, hexagonClip, rectClip, arrowClip, angle]);
+  }, [shape, hexagonClip, pseduoRectClip, arrowClip, angle]);
 
   return (
     <div ref={elementRef} className={`relative
-      bg-no-repeat bg-[url(/banner/banner.png)] bg-cover bg-center
+      before:content-[""] before:bg-no-repeat before:bg-[url(/banner/banner.png)] before:bg-cover before:bg-center
+      before:absolute before:top-0 before:left-0 before:w-full before:h-full pseduo-clip-path
       ${className}`}>
       {children}
     </div>
