@@ -82,8 +82,6 @@ const useClipBuilder = () => {
       }else {
         shapeRef.current.style.clipPath = path; 
       }
-
-      return {leftEdge1, leftEdge2, rightEdge1, rightEdge2, rightEdge3, rightEdge4, leftEdge3, leftEdge4};
     }
   }
 
