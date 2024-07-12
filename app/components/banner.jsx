@@ -30,7 +30,7 @@ const Banner = ({ className="", shape="rect", angle=0, children="" }) => {
   return (
     <div ref={elementRef} className={`relative
       before:content-[""] before:bg-no-repeat before:bg-[url(/banner/banner.png)] before:bg-cover before:bg-center
-      before:absolute before:top-0 before:left-0 before:w-full before:h-full pseduo-clip-path
+      before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-z-10 pseduo-clip-path
       ${className}`}>
       {children}
     </div>
