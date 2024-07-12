@@ -16,7 +16,7 @@ const FilterBtn = ({ id=0, text="", className="", angle=15 }) => {
   }
 
   useEffect(() => {
-    hexagonClip(angle, elementRef);
+    hexagonClip(elementRef, angle);
   }, [hexagonClip, angle]);
 
   return (

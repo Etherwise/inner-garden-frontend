@@ -3,32 +3,37 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { usePathname } from 'next/navigation';
 import { useState } from "react";
 
 import HeaderLogo from "@/public/header/header_logo.svg";
 import HeaderAvatar from "@/public/header/header_avatar.svg";
 import HeaderExtra from "@/public/header/header_extras.svg";
 import HeaderWellgorithm from "@/public/header/header_wellgorithm.svg";
+import HeaderWellgorithmActive from "@/public/header/header_wellgorithm_active.svg";
 import HeaderSearch from "@/public/header/header_search.svg";
 import HeaderMenu from "@/public/header/header_menu.svg";
 
-import FilterBtn from "./filter_btn";
+import NavLink from "./nav_link";
 import MobileNav from "./mobile_nav";
 import LinkComp from "../link_component";
+import TextInBrackets from "@/app/components/texts/text_in_brackets";
 
 const Header = ({
 }) => {
   const [openMobileNav, setOpenMobileNav] = useState(false);
 
+  const pathname = usePathname();
+
   const handleMenuClick = () => {
     setOpenMobileNav(!openMobileNav);
   }
-
+  
   return (
     <header className="
-    flex items-center justify-between gap-3
-    min-h-max w-full text-white py-2 px-6
-    bg-black">
+    flex items-center justify-between gap-5
+    min-h-max w-full text-white py-2
+    bg-black responsive-container">
       <section>
         <Link href={"/"}>
           <Image
@@ -47,13 +52,13 @@ const Header = ({
         />
       </section>
 
-      <section className="hidden gap-1 lg:flex">
-        <FilterBtn id={1} text="Gardens" />
-        <FilterBtn id={2} text="Adversities" />
-        <FilterBtn id={3} text="Activities" />
+      <section className="hidden gap-3 lg:flex">
+        <NavLink id={1} text="Gardens" href="/gardens" active={pathname == "/gardens"} />
+        <NavLink id={2} text="Adversities" href="/adversities" active={pathname == "/adversities"} />
+        <NavLink id={3} text="Activities" href="/activities" active={pathname == "/activities"} />
       </section>
 
-      <section className="hidden lg:flex items-center w-[6%] lg:w-[3%]">
+      <section className="hidden lg:flex items-center justify-center w-[6%] lg:w-[3%]">
         <Image
           src={HeaderExtra}
           alt="extra"
@@ -65,34 +70,32 @@ const Header = ({
         <Image
           src={HeaderExtra}
           alt="extra"
-          className="fill-red-600 stroke-black"
-          style={{fill: "black", stroke: "black"}}
         />
       </section>
 
-      <section className="hidden lg:inline w-max">
+      <section className="hidden lg:inline w-[30%] lg:w-[15%]">
         <Link href="/wellgorithms">
           <Image
-            src={HeaderWellgorithm}
+            src={pathname == "/wellgorithms" ? HeaderWellgorithmActive : HeaderWellgorithm}
             alt="Avatar"
-            className="w-[60%] lg:w-[70%]"
+            className="w-full"
           />
         </Link>
       </section>
 
       <section className="flex items-center justify-between gap-6">
-        <button>
+        <button className="lg:w-full">
           <Image
             src={HeaderSearch}
-            alt="Avatar"
-            className="w-[80%] lg:w-full"
+            alt="Search"
+            className="w-full"
           />
         </button>
-        <button onClick={handleMenuClick}>
+        <button onClick={handleMenuClick} className="w-[25%] lg:hidden">
           <Image
             src={HeaderMenu}
-            alt="Avatar"
-            className="w-[70%] lg:hidden"
+            alt="Menu"
+            className="w-full"
           />
         </button>
       </section>
@@ -101,7 +104,12 @@ const Header = ({
       lg:flex items-center gap-3
       w-[24%] lg:w-[21%] xl:w-[18%]
       ">
-        <LinkComp text="login" href="/login" className="text-purple-mid text-sm xl:text-base" />
+        <LinkComp href="/login" className="flex items-center justify-center gap-0.5 text-purple-mid text-sm xl:text-base">
+          <>
+            log
+            <TextInBrackets text="in" className="md:w-1/3 lg:w-1/4 font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
+          </>
+        </LinkComp>
         <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />
       </section>
 

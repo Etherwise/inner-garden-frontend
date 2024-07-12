@@ -27,7 +27,7 @@ const Screen = () => {
   const {hexagonClip} = useClipBuilder();
 
   useEffect(() => {
-    hexagonClip(12, buttonRef);
+    hexagonClip(buttonRef, 12);
   }, [hexagonClip]);
 
   const handleSubmit = ()=>{
