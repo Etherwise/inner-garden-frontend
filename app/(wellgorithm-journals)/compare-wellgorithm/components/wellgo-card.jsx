@@ -2,7 +2,7 @@
 import useClipBuilder from '@/app/hooks/clip_path_calculations'
 import React, { useEffect, useRef } from 'react'
 
-const WelgoCard = ({tags}) => {
+const WelgoCard = ({text,tags}) => {
 
     const wellgoRef = useRef(null)
     const octaRef = useRef(null)
@@ -28,10 +28,9 @@ const WelgoCard = ({tags}) => {
     
   return (
     <section
-    className="relative h-fit w-fit mb-10">
+    className="relative h-fit w-fit mb-10 min-h-[232px]">
     <p className="h-full font-extrabold text-purple-text w-[450px] bg-white pl-28 pr-20 py-20" ref={wellgoRef}>
-      Welcome the crackling anxieties, knowing theyll soon wither in the
-      wind.
+      {text}
     </p>
     <span
       className="test-octa bg-orange-dark absolute h-12 w-12 flex items-center justify-center text-white"
@@ -40,9 +39,9 @@ const WelgoCard = ({tags}) => {
      20
     </span>
     <section className='absolute flex gap-0 left-[50%] translate-x-[-50%]' ref={textRef}>
-     <span ref={textRef1} className='bg-orange-mid py-2 px-5 -mx-1 text-xs font-bold text-white'>{tags ? tags[0] : "love"}</span>
-     <span ref={textRef2} className='bg-purple-inner-octagon py-2 px-5 -mx-1 text-xs font-bold text-white'>{tags ? tags[1] : "peace"}</span>
-     <span ref={textRef3} className='bg-orange-mid py-2 px-5 -mx-1 text-xs font-bold text-white'>{tags ? tags[2] : "kindness"}</span>
+     <span ref={textRef1} className='bg-orange-mid py-2 px-5 -mx-1 text-xs font-bold text-white'>{tags ? tags.tag1 : "love"}</span>
+     <span ref={textRef2} className='bg-purple-inner-octagon py-2 px-5 -mx-1 text-xs font-bold text-white'>{tags ? tags.tag2 : "peace"}</span>
+     <span ref={textRef3} className='bg-orange-mid py-2 px-5 -mx-1 text-xs font-bold text-white'>{tags ? tags.tag3 : "kindness"}</span>
     </section>
   </section>
   )

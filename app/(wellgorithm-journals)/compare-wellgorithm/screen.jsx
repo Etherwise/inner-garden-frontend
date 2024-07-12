@@ -7,18 +7,20 @@ import ButterflyWoman from "@/public/images/banner/butterfly-woman.svg";
 import TextWithBrackets from "@/app/components/texts/text_with_brackets";
 import WelgoCard from "./components/wellgo-card";
 import Banner from "@/app/components/banner";
+import ExpressionFilter from "@/app/components/expressions_filter";
+import TextInBrackets from "@/app/components/texts/text_in_brackets";
 
 const Screen = () => {
-  const bannerRef = useRef(null);
+  const welgoRef = useRef(null);
   const arrowClipRef = useRef(null);
 
   const { arrowClip } = useClipBuilder();
   
   useEffect(() => {
    
-      arrowClip(80, bannerRef);
-      arrowClip(30, arrowClipRef);
+      arrowClip(arrowClipRef,30);
       arrowClipRef.current.style.bottom = `${-(arrowClipRef.current.clientHeight / 2)}px`;
+      // welgoRef.current.style.top = `${-(welgoRef.current.clientHeight / 2)}px`;
    
   }, []);
 
@@ -37,22 +39,30 @@ const Screen = () => {
     },
   };
 
-  return (
-    <section className=" flex min-h-screen flex-col items-center px-[3%] py-[1%] gap-14">
+  const wellgorithmData = [{text : " Welcome the crackling anxieties, knowing theyll soon wither in the wind" , tags : {tag1 : "love" , tag2 : "peace" , tag3 :"kindness"}},
+                           {text : " Welcome the crackling anxieties, knowing theyll soon wither in the wind" , tags : {tag1 : "love" , tag2 : "peace" , tag3 :"kindness"}},
+                           {text : " Welcome the crackling anxieties, knowing theyll soon wither in the wind" , tags : {tag1 : "love" , tag2 : "peace" , tag3 :"kindness"}}
+  ]
 
-      <Banner className="bg-[url(/images/banner/butterfly-woman.svg)] min-h-[400px]" shape="arrow">
+  return (<div>
+<ExpressionFilter/>
+    <section className=" flex min-h-screen flex-col items-center px-[3%] py-[1%] gap-14 mt-16">
 
-        <Image
+      <Banner className="before:bg-[url(/images/banner/butterfly-woman.svg)] h-[400px] w-full" shape="arrow" angle={90}>
+
+      <Image
           src={WellgorithmLogo}
           alt="WellgorithmLogo"
-          className="absolute left-1/2 translate-x-[-50%] top-[-29%] z-99"
+          className="absolute left-1/2 translate-x-[-50%] top-[-21.5%]"
+          ref={welgoRef}
           />
+
         <TextWithBrackets
           bracketsData={bracketsData}
-          className={`bg-purple-inner-octagon w-fit p-6 px-24 absolute  left-1/2 translate-x-[-50%]`}
+          className={`bg-purple-inner-octagon w-fit p-6 px-24 absolute  left-1/2 translate-x-[-50%] fill-yellow-dark`}
           ref={arrowClipRef}
           />
-          
+
           </Banner>
 
       <section className="compare-section w-full flex justify-center gap-4">
@@ -60,21 +70,22 @@ const Screen = () => {
         {/* Left Section */}
         <section className="left-section w-[40%] px-2 flex flex-col items-end">
           <span className="w-full relative left-[60%] p-5 text-xl text-purple-dark font-extrabold">original</span>
-         <WelgoCard/>
+         <WelgoCard text={wellgorithmData[1].text} tags={wellgorithmData.tags}/>
         </section>
         {/* Left Section */}
 
         {/* Right Section */}
         <section className="right-section  w-[40%] flex flex-col">
         <span className="w-full relative left-[15%] p-5 text-xl text-purple-dark font-extrabold">personalized</span>
-        <WelgoCard/>
-        <WelgoCard/>
-        <WelgoCard/>
+        {wellgorithmData.map((wellgorithmData,i)=>(
+         <WelgoCard key={i} text={wellgorithmData.text} tags={wellgorithmData.tags}/>
+        ))}
         </section>
         {/* Right Section */}
 
       </section>
     </section>
+    </div>
   );
 };
 
