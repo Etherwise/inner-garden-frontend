@@ -8,7 +8,7 @@ import useClipBuilder from "@/app/hooks/clip_path_calculations";
 const Banner = ({className="", shape="octagon", angle=0, children=""}) => {
   const elementRef = useRef();
 
-  const { hexagonClip, rectClip } = useClipBuilder();
+  const { hexagonClip, rectClip, arrowClip } = useClipBuilder();
 
   useEffect(() => {
     switch(shape) {
@@ -18,11 +18,14 @@ const Banner = ({className="", shape="octagon", angle=0, children=""}) => {
       case "octagon":
         rectClip(elementRef, angle, angle);
         break;
+      case "arrow":
+        arrowClip(elementRef, angle);
+        break;
       default:
         break;
     }
     
-  }, [shape, hexagonClip, rectClip, angle]);
+  }, [shape, hexagonClip, rectClip, arrowClip, angle]);
 
   return (
     <div ref={elementRef} className={`
