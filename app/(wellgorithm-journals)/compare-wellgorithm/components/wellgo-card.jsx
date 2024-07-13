@@ -24,7 +24,7 @@ const WelgoCard = ({text,tags}) => {
         arrowClip(textRef3 , 10 , "left");
         octagonClip(octaRef);
 
-    }, [])
+    }, [arrowClip,octagonClip])
     
   return (
     <section

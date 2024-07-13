@@ -22,7 +22,7 @@ const Screen = () => {
       arrowClipRef.current.style.bottom = `${-(arrowClipRef.current.clientHeight / 2)}px`;
       // welgoRef.current.style.top = `${-(welgoRef.current.clientHeight / 2)}px`;
    
-  }, []);
+  }, [arrowClip]);
 
 
   const bracketsData = {
