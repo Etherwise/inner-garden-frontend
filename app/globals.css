@@ -50,7 +50,7 @@ body {
 }
 
 .responsive-container {
-  @apply px-6;
+  @apply px-6 md:px-12;
 }
 
 .pseduo-clip-path::before {

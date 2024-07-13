@@ -55,7 +55,7 @@ const ExpressionFilter = ({
           <Image
             src={LeftHandle}
             alt="left"
-            className="w-[60%] lg:w-[70%]"
+            className="w-[90%] lg:w-[100%]"
           />
         </button>
       </section>
@@ -73,7 +73,7 @@ const ExpressionFilter = ({
           <Image
             src={RightHandle}
             alt="right"
-            className="w-[60%] lg:w-[70%]"
+            className="w-[90%] lg:w-[100%]"
           />
         </button>
       </section>
