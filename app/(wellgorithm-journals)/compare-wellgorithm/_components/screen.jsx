@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from "react";
 import WellgorithmLogo from "@/public/images/wellgo-logos/wellgorithm-arrow-logo.svg";
 import ButterflyWoman from "@/public/images/banner/butterfly-woman.svg";
 import TextWithBrackets from "@/app/components/texts/text_with_brackets";
-import WelgoCard from "./components/wellgo-card";
+import WelgoCard from "./wellgo-card";
 import Banner from "@/app/components/banner";
 import ExpressionFilter from "@/app/components/expressions_filter";
 import TextInBrackets from "@/app/components/texts/text_in_brackets";
@@ -27,12 +27,12 @@ const Screen = () => {
 
   const bracketsData = {
     rightText: {
-      text: "sunflower",
-      properties: "font-black text-xl md:text-3xl lg:text-4xl text-white",
+      text: "sunflowers",
+      properties: "font-black text-2xl md:text-4xl lg:text-5xl text-white",
     },
     middleText: {
       text: "title",
-      properties: "font-black text-xl md:text-3xl lg:text-4xl text-yellow-dark",
+      properties: "font-black text-2xl md:text-4xl lg:text-5xl text-yellow-dark",
     },
     brackets: {
       properties: "h-[80%]",
@@ -48,7 +48,7 @@ const Screen = () => {
 <ExpressionFilter/>
     <section className=" flex min-h-screen flex-col items-center px-[3%] py-[1%] gap-14 mt-16">
 
-      <Banner className="before:bg-[url(/images/banner/butterfly-woman.svg)] h-[400px] w-full" shape="arrow" angle={90}>
+      <Banner className="before:bg-[url(/images/banner/butterfly-woman.svg)] h-[400px] w-full mb-10" shape="arrow" angle={90}>
 
       <Image
           src={WellgorithmLogo}
@@ -59,7 +59,7 @@ const Screen = () => {
 
         <TextWithBrackets
           bracketsData={bracketsData}
-          className={`bg-purple-inner-octagon w-fit p-6 px-24 absolute  left-1/2 translate-x-[-50%] fill-yellow-dark`}
+          className={`bg-purple-inner-octagon w-fit p-6 px-24 absolute  left-1/2 translate-x-[-50%] fill-white`}
           ref={arrowClipRef}
           />
 

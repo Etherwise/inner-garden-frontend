@@ -5,7 +5,8 @@ import React, { useEffect, useRef } from 'react'
 const WelgoCard = ({text,tags}) => {
 
     const wellgoRef = useRef(null)
-    const octaRef = useRef(null)
+    const octaRefOuter = useRef(null)
+    const octaRefInner = useRef(null)
     const textRef = useRef(null)
     const textRef1 = useRef(null)
     const textRef2 = useRef(null)
@@ -14,15 +15,18 @@ const WelgoCard = ({text,tags}) => {
 
     useEffect(() => {
       
-        octaRef.current.style.top = `${(wellgoRef.current.clientHeight - octaRef.current.clientHeight) / 2}px`;
-        octaRef.current.style.right = `${-(octaRef.current.clientWidth / 2)}px`;
+        octaRefOuter.current.style.top = `${(wellgoRef.current.clientHeight - octaRefOuter.current.clientHeight) / 2}px`;
+        octaRefOuter.current.style.right = `${-(octaRefOuter.current.clientWidth / 2)}px`;
+        octaRefOuter.current.style.width = `${octaRefInner.current.clientWidth + 4}px`;
+        octaRefOuter.current.style.height = `${octaRefInner.current.clientHeight + 4}px`;
         textRef.current.style.bottom = `${-(textRef.current.clientHeight / 2)}px`
-
+      
         arrowClip(wellgoRef , 50 , "left");
         arrowClip(textRef1 , 10 , "left");
         arrowClip(textRef2 , 10 , "left");
         arrowClip(textRef3 , 10 , "left");
-        octagonClip(octaRef);
+        octagonClip(octaRefOuter);
+        octagonClip(octaRefInner);
 
     }, [arrowClip,octagonClip])
     
@@ -33,10 +37,10 @@ const WelgoCard = ({text,tags}) => {
       {text}
     </p>
     <span
-      className="test-octa bg-orange-dark absolute h-12 w-12 flex items-center justify-center text-white"
-      ref={octaRef}
+      className="bg-white absolute flex items-center justify-center"
+      ref={octaRefOuter}
     >
-     20
+     <span className='bg-orange-dark h-12 w-12 flex items-center justify-center text-white' ref={octaRefInner}>20</span>
     </span>
     <section className='absolute flex gap-0 left-[50%] translate-x-[-50%]' ref={textRef}>
      <span ref={textRef1} className='bg-orange-mid py-2 px-5 -mx-1 text-xs font-bold text-white'>{tags ? tags.tag1 : "love"}</span>
