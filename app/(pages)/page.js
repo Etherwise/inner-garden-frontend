@@ -5,7 +5,7 @@ import Banner from "@/app/_components/banner";
 import TextInBrackets from "@/app/_components/texts/text_in_brackets";
 import ScrollContainer from "@/app/_components/container/scroll";
 import WellgorithmCard from "@/app/_components/cards/wellgorithm_card";
-
+import SquareCard from "@/app/_components/cards/square_card";
 
 function Home() {
   const heading = (
@@ -18,10 +18,13 @@ function Home() {
     <>
       <ExpressionFilter />
       <div className="flex min-h-screen flex-col items-center justify-between mt-6">
-        <div className="w-1/4">
-          <WellgorithmCard className="h-[300px] text-center">
+        <div className="md:w-1/2 lg:w-1/3">
+          <SquareCard className="text-center">
+            <p className="text-purple-text text-xl font-extrabold pt-[69%]">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
+          </SquareCard>
+          {/* <WellgorithmCard className="h-[300px] text-center">
             <p className="text-purple-text text-xl font-extrabold mt-6">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
-          </WellgorithmCard>
+          </WellgorithmCard> */}
         </div>
         {/* <Banner className="h-[400px] w-full" angle={60} shape="hexagon">
           {heading}

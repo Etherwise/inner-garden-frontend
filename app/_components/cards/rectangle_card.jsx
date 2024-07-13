@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
-import womanImage from '/public/banner/banner.png'
+import womanImage from '@/public/assets/banner/banner.png'
 import useClipBuilder from '@/app/_hooks/clip_path_calculations';
 
 const RectangleCard = ({cardImage , children,upperAngle=5,lowerAngle=7,className = {main : "" , image : "" , text : ""}}) => {
