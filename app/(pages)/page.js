@@ -6,6 +6,7 @@ import TextInBrackets from "@/app/_components/texts/text_in_brackets";
 import ScrollContainer from "@/app/_components/container/scroll";
 import WellgorithmCard from "@/app/_components/cards/wellgorithm_card";
 import SquareCard from "@/app/_components/cards/square_card";
+import RectangleCard from "../_components/cards/rectangle_card";
 
 function Home() {
   const heading = (
@@ -22,9 +23,12 @@ function Home() {
           
         </div> */}
 
-        <SquareCard className="text-center w-[300px] aspect-square">
+          <RectangleCard className={{main : ""}}>
+          </RectangleCard>
+
+        {/* <SquareCard className="text-center w-[300px] aspect-square">
             <p className="text-purple-text text-xl font-extrabold pt-[46%]">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
-          </SquareCard>
+          </SquareCard> */}
         {/* <Banner className="h-[400px] w-full" angle={60} shape="hexagon">
           {heading}
         </Banner> */}
