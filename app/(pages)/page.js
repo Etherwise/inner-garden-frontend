@@ -18,9 +18,9 @@ function Home() {
     <>
       <ExpressionFilter />
       <div className="flex min-h-screen flex-col items-center justify-between mt-6">
-        <div className="w-1/3">
+        <div className="w-1/4">
           <WellgorithmCard className="h-[300px] text-center">
-            <p className="text-purple-text text-xl font-extrabold mt-9">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
+            <p className="text-purple-text text-xl font-extrabold mt-6">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
           </WellgorithmCard>
         </div>
         {/* <Banner className="h-[400px] w-full" angle={60} shape="hexagon">
