@@ -70,16 +70,16 @@ const useClipBuilder = () => {
       const width = shapeRef.current.clientWidth;
       const height = shapeRef.current.clientHeight;  
       
-      const leftEdge1 = upperAnglePercent;
+      const leftEdge1 = upperAnglePercent+ (upperAnglePercent/2)
       const leftEdge2 = upperAnglePercent + (upperAnglePercent)
 
-      const rightEdge1 = 100 - upperAnglePercent;
+      const rightEdge1 = 100 - upperAnglePercent - (upperAnglePercent/2)
       const rightEdge2 = upperAnglePercent + (upperAnglePercent)
  
-      const rightEdge4 = 100 - lowerAnglePercent;
+      const rightEdge4 = 100 - lowerAnglePercent - (lowerAnglePercent / 2)
       const rightEdge3 = (100- lowerAnglePercent) - (lowerAnglePercent)
       
-      const leftEdge4 = lowerAnglePercent; 
+      const leftEdge4 = lowerAnglePercent + (lowerAnglePercent/2); 
       const leftEdge3 = (100-lowerAnglePercent) - (lowerAnglePercent)
 
       const path = `polygon(${leftEdge1}% 0% , ${rightEdge1}% 0% , 100% ${rightEdge2}% , 100% ${rightEdge3}% , ${rightEdge4}% 100% , ${leftEdge4}% 100% , 0% ${leftEdge3}% , 0% ${leftEdge2}% )`;
