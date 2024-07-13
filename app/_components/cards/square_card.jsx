@@ -17,7 +17,7 @@ const SquareCard = ({cardImage , children , upperAngle=5,lowerAngle=7, className
   return (
     <div className={`relative w-[350px] h-[350px] ${className.main}`}>
       <section className={`image-text w-full h-full`} ref={imageTextRef}>
-      <Image src={cardImage ? cardImage : womanImage} alt='womanImage' className={`min-h-[40%] w-[100%] ${className.image}`}/>
+        <Image src={cardImage ? cardImage : womanImage} alt='womanImage' className={`min-h-[40%] w-[100%] ${className.image}`}/>
         <p className={`bg-white w-full min-h-[60%] px-8 py-6 font-bold text-lg text-left ${className.text}`}>motions, like our bodies, are a part of nature, and that we can cultivate them like a garden. motions, like our</p>
       </section>
           {children}
