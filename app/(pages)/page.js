@@ -18,14 +18,13 @@ function Home() {
     <>
       <ExpressionFilter />
       <div className="flex min-h-screen flex-col items-center justify-between mt-6">
-        <div className="md:w-1/2 lg:w-1/3">
-          <SquareCard className="text-center">
-            <p className="text-purple-text text-xl font-extrabold pt-[69%]">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
+        {/* <div className="md:w-1/2 lg:w-1/3">
+          
+        </div> */}
+
+        <SquareCard className="text-center w-[300px] aspect-square">
+            <p className="text-purple-text text-xl font-extrabold pt-[46%]">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
           </SquareCard>
-          {/* <WellgorithmCard className="h-[300px] text-center">
-            <p className="text-purple-text text-xl font-extrabold mt-6">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
-          </WellgorithmCard> */}
-        </div>
         {/* <Banner className="h-[400px] w-full" angle={60} shape="hexagon">
           {heading}
         </Banner> */}

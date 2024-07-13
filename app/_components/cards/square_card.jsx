@@ -16,8 +16,8 @@ const SquareCard = ({cardImage , children , upperAngle=5,lowerAngle=7, className
   
   return (
     <div ref={elementRef} className={`
-    relative aspect-square px-9
-    before:content-[""] before:absolute before:left-0 before:w-full before:h-full before:-z-10 before:bg-white
+    relative grid place-items-center px-9
+    before:content-[""] before:absolute before:w-full before:h-full before:-z-10 before:bg-white
     before:bg-[url(/assets/banner/banner.png)] before:bg-no-repeat before:bg-[length:100%_40%] before:bg-top
     pseduo-clip-path
     ${className}`}>
