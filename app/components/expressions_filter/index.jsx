@@ -4,8 +4,8 @@ import Image from "next/image";
 
 import { useRef } from "react";
 
-import LeftHandle from "@/public/expressions_filter/left_handle.svg";
-import RightHandle from "@/public/expressions_filter/right_handle.svg";
+import LeftHandle from "@/public/assets/expressions_filter/left_handle.svg";
+import RightHandle from "@/public/assets/expressions_filter/right_handle.svg";
 
 import FilterBtn from "./filter_btn";
 

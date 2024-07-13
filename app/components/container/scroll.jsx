@@ -16,9 +16,10 @@ const ScrollContainer = ({
   const { hexagonClip, rectClip } = useClipBuilder();
 
   useEffect(() => {
-    hexagonClip(headElementRef, headAngle);
+    const { leftEdge2 } = hexagonClip(headElementRef, headAngle);
     rectClip(bodyElementRef, 0, bodyAngle);
-  }, []);
+    bodyElementRef.current.style.width = `${100-leftEdge2*2}%`;
+  }, [hexagonClip, rectClip]);
 
   return (
     <div className={`relative w-full flex flex-col items-center ${containerClassName}`}>

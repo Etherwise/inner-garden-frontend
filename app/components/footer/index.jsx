@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import FooterLogo from "@/public/footer/footer_logo.svg";
+import FooterLogo from "@/public/assets/footer/footer_logo.svg";
 
 import LinkComp from "../link_component";
 import MailSubscribeComp from "./mail_subscribe";
@@ -16,7 +16,7 @@ const Footer = ({
     <footer className="
     flex flex-col items-center justify-center gap-y-[5vh] md:gap-y-[6vh]
     min-h-screen w-full text-white md:pt-[12vh]
-    bg-no-repeat bg-[url(/footer/footer_bg.png)] bg-cover bg-center responsive-container">
+    bg-no-repeat bg-[url(/assets/footer/footer_bg.png)] bg-cover bg-center responsive-container">
       <section className="
       flex flex-col items-center
       text-center

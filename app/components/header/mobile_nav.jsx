@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { usePathname } from 'next/navigation';
 
-import HeaderWellgorithm from "@/public/header/header_wellgorithm.svg";
-import HeaderWellgorithmActive from "@/public/header/header_wellgorithm_active.svg";
+import HeaderWellgorithm from "@/public/assets/header/header_wellgorithm.svg";
+import HeaderWellgorithmActive from "@/public/assets/header/header_wellgorithm_active.svg";
 
 import NavLink from "./nav_link";
 import LinkComp from "../link_component";
