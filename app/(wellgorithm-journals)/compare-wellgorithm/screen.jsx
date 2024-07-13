@@ -2,8 +2,8 @@
 import useClipBuilder from "@/app/hooks/clip_path_calculations";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import WellgorithmLogo from "@/public/images/wellgo-logos/wellgorithm-arrow-logo.svg";
-import ButterflyWoman from "@/public/images/banner/butterfly-woman.svg";
+import WellgorithmLogo from "@/public/assets/images/wellgo-logos/wellgorithm-arrow-logo.svg";
+import ButterflyWoman from "@/public/assets/images/banner/butterfly-woman.svg";
 import TextWithBrackets from "@/app/components/texts/text_with_brackets";
 import WelgoCard from "./components/wellgo-card";
 import Banner from "@/app/components/banner";

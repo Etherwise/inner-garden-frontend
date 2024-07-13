@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import FooterLogo from "@/public/footer/footer_logo.svg";
+import FooterLogo from "@/public/assets/footer/footer_logo.svg";
 
 import LinkComp from "../link_component";
 import MailSubscribeComp from "./mail_subscribe";
