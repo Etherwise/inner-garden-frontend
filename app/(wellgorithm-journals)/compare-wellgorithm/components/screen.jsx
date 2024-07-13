@@ -46,7 +46,7 @@ const Screen = () => {
 <ExpressionFilter/>
     <section className=" flex min-h-screen flex-col items-center px-[3%] py-[1%] gap-14 mt-16">
 
-      <Banner className="bg-contain h-[400px] w-full mb-10" shape="arrow" angle={90}>
+      <Banner className="before:bg-[url(/assets/images/banner/butterfly-woman.svg)] bg-contain h-[400px] w-full mb-10" shape="arrow" angle={90}>
 
       <Image
           src={WellgorithmLogo}
