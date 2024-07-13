@@ -10,7 +10,7 @@ const Octagon = ({ children , className}) => {
     
     octagonClip(octaRef);
     
-  }, [])
+  }, [octagonClip])
   
 
   return (

@@ -39,7 +39,7 @@ const Screen = () => {
   return (
     <Octagon>
       <div className="flex items-center h-[25%] lg:pt-[10%] pt-[11%]">
-        <TextWithBrackets bracketsData={bracketsData} className={"h-full"} />
+        <TextWithBrackets bracketsData={bracketsData} className={"h-full fill-yellow-dark"} />
       </div>
       
       <form className=" w-[90%] h-[50%] flex flex-col items-center justify-center relative">
