@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-import ExpressionFilter from "@/app/components/expressions_filter";
-import Banner from "@/app/components/banner";
-import TextInBrackets from "@/app/components/texts/text_in_brackets";
-import ScrollContainer from "@/app/components/container/scroll";
-import WellgorithmCard from "@/app/components/cards/wellgorithm_card";
-
+import ExpressionFilter from "@/app/_components/expressions_filter";
+import Banner from "@/app/_components/banner";
+import TextInBrackets from "@/app/_components/texts/text_in_brackets";
+import ScrollContainer from "@/app/_components/container/scroll";
+import WellgorithmCard from "@/app/_components/cards/wellgorithm_card";
+import SquareCard from "@/app/_components/cards/square_card";
 
 function Home() {
   const heading = (
@@ -18,11 +18,13 @@ function Home() {
     <>
       <ExpressionFilter />
       <div className="flex min-h-screen flex-col items-center justify-between mt-6">
-        <div className="w-1/4">
-          <WellgorithmCard className="h-[300px] text-center">
-            <p className="text-purple-text text-xl font-extrabold mt-6">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
-          </WellgorithmCard>
-        </div>
+        {/* <div className="md:w-1/2 lg:w-1/3">
+          
+        </div> */}
+
+        <SquareCard className="text-center w-[300px] aspect-square">
+            <p className="text-purple-text text-xl font-extrabold pt-[46%]">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
+          </SquareCard>
         {/* <Banner className="h-[400px] w-full" angle={60} shape="hexagon">
           {heading}
         </Banner> */}

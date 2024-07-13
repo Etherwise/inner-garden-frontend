@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-import useClipBuilder from "@/app/hooks/clip_path_calculations";
+import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 
 const Banner = ({ className="", shape="rect", angle=0, children="" }) => {
   const elementRef = useRef();

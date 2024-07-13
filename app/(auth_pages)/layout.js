@@ -1,5 +1,5 @@
-import Footer from "../components/footer";
-import Header from "../components/header";
+import Footer from "@/app/_components/footer";
+import Header from "@/app/_components/header";
 
 export default function PageRootLayout({ children }) {
     return (
