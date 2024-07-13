@@ -88,6 +88,29 @@ const useClipBuilder = () => {
       return { leftEdge1, rightEdge1, rightEdge2, leftEdge2 };
     }
   }
+
+  const rectClipBanner = (shapeRef, outerAngle=2, innerAngle = 12, pseudo = false) => {
+    if (shapeRef.current) {
+      const leftEdge1 = outerAngle
+      const leftEdge2 = innerAngle
+      const leftEdge3 = 100-innerAngle
+      const leftEdge4 = outerAngle
+
+      const rightEdge1 = 100 - outerAngle
+      const rightEdge2 = innerAngle
+      const rightEdge3 = 100 - innerAngle
+      const rightEdge4 = 100 - outerAngle
+      
+      const path = `polygon(${leftEdge1}% 0% , ${rightEdge1}% 0% , 100% ${rightEdge2}% , 100% ${rightEdge3}% , ${rightEdge4}% 100% , ${leftEdge4}% 100% , 0% ${leftEdge3}% , 0% ${leftEdge2}% )`;
+      if (pseudo) {
+        shapeRef.current.style.setProperty('--path', path);
+      }else {
+        shapeRef.current.style.clipPath = path; 
+      }
+      
+      return { leftEdge1, rightEdge1, rightEdge2, leftEdge2 };
+    }
+  }
   
   const octagonClip = (shapeRef) => { 
     if (shapeRef.current) {
@@ -100,7 +123,7 @@ const useClipBuilder = () => {
 
   
 
-  return { hexagonClip , squareClip , arrowClip , rectClip , octagonClip };
+  return { hexagonClip , squareClip , arrowClip , rectClip , rectClipBanner , octagonClip };
 };
 
 export default useClipBuilder;
