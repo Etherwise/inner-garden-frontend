@@ -66,10 +66,6 @@ const useClipBuilder = () => {
 
   const rectClip = (shapeRef, upperAnglePercent=20, lowerAnglePercent = 20, pseudo = false) => {
     if (shapeRef.current) {
-
-      const width = shapeRef.current.clientWidth;
-      const height = shapeRef.current.clientHeight;  
-      
       const leftEdge1 = upperAnglePercent+ (upperAnglePercent/2)
       const leftEdge2 = upperAnglePercent + (upperAnglePercent)
 

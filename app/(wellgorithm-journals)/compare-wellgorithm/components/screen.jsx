@@ -1,12 +1,12 @@
 "use client";
-import useClipBuilder from "@/app/hooks/clip_path_calculations";
+import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import WellgorithmLogo from "@/public/assets/images/wellgo-logos/wellgorithm-arrow-logo.svg";
-import TextWithBrackets from "@/app/components/texts/text_with_brackets";
+import TextWithBrackets from "@/app/_components/texts/text_with_brackets";
 import WelgoCard from "./wellgo-card";
-import Banner from "@/app/components/banner";
-import ExpressionFilter from "@/app/components/expressions_filter";
+import Banner from "@/app/_components/banner";
+import ExpressionFilter from "@/app/_components/expressions_filter";
 
 const Screen = () => {
   const welgoRef = useRef(null);

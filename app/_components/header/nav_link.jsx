@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useEffect, useRef } from "react";
 
-import useClipBuilder from "@/app/hooks/clip_path_calculations";
+import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 
 const NavLink = ({ id=0, text="", href="", className="", active=false, angle=15 }) => {
   const elementRef = useRef();
