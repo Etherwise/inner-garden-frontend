@@ -6,13 +6,13 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { useState } from "react";
 
-import HeaderLogo from "@/public/header/header_logo.svg";
-import HeaderAvatar from "@/public/header/header_avatar.svg";
-import HeaderExtra from "@/public/header/header_extras.svg";
-import HeaderWellgorithm from "@/public/header/header_wellgorithm.svg";
-import HeaderWellgorithmActive from "@/public/header/header_wellgorithm_active.svg";
-import HeaderSearch from "@/public/header/header_search.svg";
-import HeaderMenu from "@/public/header/header_menu.svg";
+import HeaderLogo from "@/public/assets/header/header_logo.svg";
+import HeaderAvatar from "@/public/assets/header/header_avatar.svg";
+import HeaderExtra from "@/public/assets/header/header_extras.svg";
+import HeaderWellgorithm from "@/public/assets/header/header_wellgorithm.svg";
+import HeaderWellgorithmActive from "@/public/assets/header/header_wellgorithm_active.svg";
+import HeaderSearch from "@/public/assets/header/header_search.svg";
+import HeaderMenu from "@/public/assets/header/header_menu.svg";
 
 import NavLink from "./nav_link";
 import MobileNav from "./mobile_nav";
