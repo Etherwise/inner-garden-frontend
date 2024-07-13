@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-import ExpressionFilter from "@/app/components/expressions_filter";
-import Banner from "@/app/components/banner";
-import TextInBrackets from "@/app/components/texts/text_in_brackets";
-import ScrollContainer from "@/app/components/container/scroll";
-import WellgorithmCard from "@/app/components/cards/wellgorithm_card";
+import ExpressionFilter from "@/app/_components/expressions_filter";
+import Banner from "@/app/_components/banner";
+import TextInBrackets from "@/app/_components/texts/text_in_brackets";
+import ScrollContainer from "@/app/_components/container/scroll";
+import WellgorithmCard from "@/app/_components/cards/wellgorithm_card";
 
 
 function Home() {

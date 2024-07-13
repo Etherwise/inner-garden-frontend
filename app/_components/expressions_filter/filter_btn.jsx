@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-import useClipBuilder from "@/app/hooks/clip_path_calculations";
-import useExpressionsFilter from "@/app/state_hooks/expressions_filter";
+import useClipBuilder from "@/app/_hooks/clip_path_calculations";
+import useExpressionsFilter from "@/app/_state_hooks/expressions_filter";
 
 const FilterBtn = ({ id=0, text="", className="", angle=15 }) => {
   const elementRef = useRef();

@@ -1,5 +1,5 @@
 'use client'
-import useClipBuilder from '@/app/hooks/clip_path_calculations'
+import useClipBuilder from '@/app/_hooks/clip_path_calculations'
 import React, { useEffect, useRef } from 'react'
 
 const WelgoCard = ({text,tags}) => {

@@ -17,7 +17,7 @@ import HeaderMenu from "@/public/assets/header/header_menu.svg";
 import NavLink from "./nav_link";
 import MobileNav from "./mobile_nav";
 import LinkComp from "../link_component";
-import TextInBrackets from "@/app/components/texts/text_in_brackets";
+import TextInBrackets from "@/app/_components/texts/text_in_brackets";
 
 const Header = () => {
   const [openMobileNav, setOpenMobileNav] = useState(false);
