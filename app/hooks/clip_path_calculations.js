@@ -14,6 +14,8 @@ const useClipBuilder = () => {
       }else {
         shapeRef.current.style.clipPath = path;
       }
+
+      return { leftEdge1, rightEdge1, rightEdge2, leftEdge2 };
     }
   }
 
@@ -37,6 +39,8 @@ const useClipBuilder = () => {
       }else {
         shapeRef.current.style.clipPath = path;
       }
+
+      return { leftEdge1, rightEdge1, rightEdge2, leftEdge2 };
     }
   }
 
@@ -55,6 +59,8 @@ const useClipBuilder = () => {
       }else {
         shapeRef.current.style.clipPath = path;
       }
+
+      return { leftEdge1, rightEdge1, rightEdge2, leftEdge2 };
     }
   }
 
@@ -82,6 +88,8 @@ const useClipBuilder = () => {
       }else {
         shapeRef.current.style.clipPath = path; 
       }
+      
+      return { leftEdge1, rightEdge1, rightEdge2, leftEdge2 };
     }
   }
   
@@ -89,6 +97,8 @@ const useClipBuilder = () => {
     if (shapeRef.current) {
       console.log(shapeRef.current)
       shapeRef.current.style.clipPath = 'polygon(50% 0, 85% 15%, 100% 50%, 85% 85%, 50% 100%, 15% 85%, 0 50%, 15% 15%)'; 
+
+      return null;
     }
   }
 
