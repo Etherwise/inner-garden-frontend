@@ -6,7 +6,7 @@ export default function Index() {
   return (
     <>
       <ExpressionFilter />
-      <div className="h-[60vh]">
+      <div className="">
         <Screen1 />
       </div>
       <div className="grid grid-flow-row min-h-screen">

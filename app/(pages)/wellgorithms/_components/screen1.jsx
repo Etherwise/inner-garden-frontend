@@ -9,7 +9,10 @@ import LabelComponent from "@/app/_components/label";
 export default function Screen1() {
   const [angle, setAngle] = useState(0);
 
+
   useEffect(() => {
+    document.querySelector("body").style.background = "#DBB7FC";
+
     setAngle(Math.floor(window.innerHeight)/(150-(window.innerHeight/window.innerWidth)));
   }, []);
   
