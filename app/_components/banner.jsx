@@ -4,10 +4,10 @@ import { useEffect, useRef } from "react";
 
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 
-const Banner = ({ className="", shape="rect", angle=0, children="" }) => {
+const Banner = ({ className="", shape="rect", angle=0, innerangle=0, children="" }) => {
   const elementRef = useRef();
 
-  const { hexagonClip, rectClip, arrowClip, squareClip } = useClipBuilder();
+  const { hexagonClip, rectClip, arrowClip, squareClip, rectClipBanner } = useClipBuilder();
 
   useEffect(() => {
     switch(shape) {
@@ -15,7 +15,7 @@ const Banner = ({ className="", shape="rect", angle=0, children="" }) => {
         hexagonClip(elementRef, angle, true);
         break;
       case "rect":
-        rectClip(elementRef, angle, angle, true);
+        rectClipBanner(elementRef, angle, innerangle, true);
         break;
       case "square":
         squareClip(elementRef, angle, angle, true);
@@ -28,7 +28,7 @@ const Banner = ({ className="", shape="rect", angle=0, children="" }) => {
         break;
     }
     
-  }, [shape, hexagonClip, rectClip, arrowClip, angle]);
+  }, [shape, angle]);
 
   return (
     <div ref={elementRef} className={`relative

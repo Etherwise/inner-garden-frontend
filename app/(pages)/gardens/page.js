@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <ExpressionFilter />
       <Screen1 />
-      <div className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="grid grid-flow-row min-h-screen border-2 border-black">
         hello world
       </div>
     </>
