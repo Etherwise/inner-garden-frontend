@@ -10,6 +10,9 @@ module.exports = {
       backgroundPosition: {
         'wellgoirthm-card-custom-position': 'top, bottom',
       },
+      backgroundSize : {
+        'wellgoirthm-card-custom-size': 'cover, cover',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

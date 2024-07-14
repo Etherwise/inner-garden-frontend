@@ -17,7 +17,7 @@ const LabelComponent = ({ text=["", ""], className="", angle=24, align={do: fals
     hexagonClip(elementRef, angle);
 
     if (align.do) {
-      elementRef.current.style.top = `${calculate(elementRef, 50, align.value)}%`;
+      elementRef.current.style.top = `${-(elementRef.current.clientHeight / 2)}px`;
     }
   }, []);
 
