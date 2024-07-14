@@ -16,7 +16,6 @@ const TextCard = ({
 
   useEffect(() => {
     const { leftEdge2 } = rectClipBanner(elementRef, angle, innerangle, true);
-    console.log(leftEdge2)
 
     if (alignup) {
       elementRef.current.style.top = `${calculate(elementRef, leftEdge2, 100)}%`;

@@ -1,14 +1,14 @@
 import ExpressionFilter from "@/app/_components/expressions_filter";
 
-import Screen1 from "../_components/screen1";
+import Screen1 from "./_components/screen1";
 
 export default function Home() {
   return (
     <>
       <ExpressionFilter />
-      {/* <div className="h-[60vh]">
+      <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh]">
         <Screen1 />
-      </div> */}
+      </div>
       <div className="grid grid-flow-row min-h-screen">
         hello world
       </div>
