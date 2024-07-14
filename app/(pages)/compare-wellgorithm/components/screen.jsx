@@ -7,6 +7,7 @@ import TextWithBrackets from "@/app/_components/texts/text_with_brackets";
 import WelgoCard from "./wellgo-card";
 import Banner from "@/app/_components/banner";
 import ExpressionFilter from "@/app/_components/expressions_filter";
+import calculate from "@/app/_libs/align_calculation";
 
 const Screen = () => {
   const welgoRef = useRef(null);
@@ -17,9 +18,9 @@ const Screen = () => {
   useEffect(() => {
    
       arrowClip(arrowClipRef,30);
-      arrowClipRef.current.style.bottom = `${-(arrowClipRef.current.clientHeight / 2)}px`;
-      welgoRef.current.style.top = `${-(welgoRef.current.clientHeight / 2)}px`;
-   
+      calculate(arrowClipRef,"bottom");
+      calculate(welgoRef,"top")
+     
   }, [arrowClip]);
 
 
@@ -46,12 +47,12 @@ const Screen = () => {
 <ExpressionFilter/>
     
 
-      <Banner className="before:bg-[url(/assets/images/banner/butterfly-woman.svg)] mt-10 aspect-[2.3/1] md:aspect-[4.5/1] w-full" shape="arrow" angle={90}>
+      <Banner className="before:bg-[url(/assets/images/banner/butterfly-woman.svg)] mt-20 aspect-[2.3/1] md:aspect-[4.5/1] w-full" shape="hexagon" angle={90}>
 
       <Image
           src={WellgorithmLogo}
           alt="WellgorithmLogo"
-          className="absolute left-1/2 translate-x-[-50%] top-[-21.5%]"
+          className="absolute left-1/2 translate-x-[-50%]"
           ref={welgoRef}
           />
 

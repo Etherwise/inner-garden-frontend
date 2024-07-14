@@ -5,8 +5,8 @@ import { useEffect, useRef } from "react";
 import TextInBrackets from "@/app/_components/texts/text_in_brackets";
 
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
+import calculate from "../_libs/align_calculation";
 
-import calculate from "@/app/_libs/position_calculation";
 
 const LabelComponent = ({ text=["", ""], className="", angle=24, align={do: false, value: 0} }) => {
   const elementRef = useRef();
@@ -17,8 +17,9 @@ const LabelComponent = ({ text=["", ""], className="", angle=24, align={do: fals
     hexagonClip(elementRef, angle);
 
     if (align.do) {
-      elementRef.current.style.top = `${-(elementRef.current.clientHeight / 2)}px`;
-    }
+      calculate(elementRef,(align.value === 0 ? "top" : "" | align.value === 100 ? "bottom" : ""))
+
+    }   
   }, []);
 
   return (

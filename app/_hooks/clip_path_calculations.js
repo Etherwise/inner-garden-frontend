@@ -19,6 +19,26 @@ const useClipBuilder = () => {
     }
   }
 
+  const halfHexagonClip = (shapeRef, lowerAnglePixel=50, upperAnglePercent = 25 ,pseudo = false) => {
+    if (shapeRef.current) {
+      const width = shapeRef.current.clientWidth;
+      const lowerLeftEdge = (lowerAnglePixel / width) * 100;
+      const lowerRightEdge = 100 - lowerLeftEdge;
+      const upperLeftEdge = (upperAnglePercent / width) * 100;
+      const upperRightEdge = 100 - lowerLeftEdge;
+      
+
+      const path = `polygon(0 0, 100% 0, ${lowerRightEdge}% 100% ,${lowerLeftEdge}% 100%)`;
+      if (pseudo) {
+        shapeRef.current.style.setProperty('--path', path);
+      }else {
+        shapeRef.current.style.clipPath = path;
+      }
+
+      return { lowerLeftEdge, lowerRightEdge};
+    }
+  }
+
   const squareClip = (shapeRef, upperAnglePercent = 20 , lowerAnglePercent = 12, pseudo = false) => {
     if (shapeRef.current) {
       const width = shapeRef.current.clientWidth;
@@ -123,7 +143,7 @@ const useClipBuilder = () => {
 
   
 
-  return { hexagonClip , squareClip , arrowClip , rectClip , rectClipBanner , octagonClip };
+  return { hexagonClip , squareClip , arrowClip , rectClip , rectClipBanner , octagonClip , halfHexagonClip};
 };
 
 export default useClipBuilder;
