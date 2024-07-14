@@ -19,12 +19,20 @@ function Home() {
     <>
       <ExpressionFilter />
       <div className="flex min-h-screen flex-col items-center justify-between mt-6">
+
+      <Banner className="before:bg-[url(/assets/images/banner/butterfly-woman.svg)] bg-contain h-[400px] w-full mb-10" shape="rectBanner" angle={[2,12]}>
+      
+      
+
+      </Banner>
+
+
         {/* <div className="md:w-1/2 lg:w-1/3">
           
         </div> */}
 
-          <RectangleCard className={{main : ""}}>
-          </RectangleCard>
+          {/* <RectangleCard className={{main : ""}}>
+          </RectangleCard> */}
 
         {/* <SquareCard className="text-center w-[300px] aspect-square">
             <p className="text-purple-text text-xl font-extrabold pt-[46%]">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>

@@ -4,24 +4,28 @@ import { useEffect, useRef } from "react";
 
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 
-const Banner = ({ className="", shape="rect", angle=0, children="" }) => {
+const Banner = ({ className="", shape="rect", angle=[0,0], children="" }) => {
   const elementRef = useRef();
 
-  const { hexagonClip, rectClip, arrowClip } = useClipBuilder();
+  const { hexagonClip, rectClip, arrowClip , rectClipBanner } = useClipBuilder();
 
   useEffect(() => {
     switch(shape) {
       case "hexagon":
-        hexagonClip(elementRef, angle, true);
+        hexagonClip(elementRef, angle[0], true);
         break;
       case "rect":
-        rectClip(elementRef, angle, angle, true);
+        rectClip(elementRef, angle[0], angle[1], true);
+        break;
+      case "rectBanner":
+        rectClipBanner(elementRef, angle[0], angle[1], true);
         break;
       case "arrow":
-        arrowClip(elementRef, angle, "left", true);
+        arrowClip(elementRef, angle[0], "left", true);
         break;
+      
       default:
-        hexagonClip(elementRef, angle, true);
+        hexagonClip(elementRef, angle[0], true);
         break;
     }
     
