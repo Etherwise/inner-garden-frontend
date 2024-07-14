@@ -10,7 +10,7 @@ import HeaderLogo from "@/public/assets/header/header_logo.svg";
 import HeaderAvatar from "@/public/assets/header/header_avatar.svg";
 import HeaderExtra from "@/public/assets/header/header_extras.svg";
 import HeaderWellgorithm from "@/public/assets/header/header_wellgorithm.svg";
-import HeaderWellgorithmActive from "@/public/assets/header/header_wellgorithm_active.svg";
+import HeaderWellgorithmActive from "@/public/assets/header/header_wellgorithm_orange.svg";
 import HeaderSearch from "@/public/assets/header/header_search.svg";
 import HeaderMenu from "@/public/assets/header/header_menu.svg";
 

@@ -1,9 +1,17 @@
-import Image from "next/image";
+import ExpressionFilter from "@/app/_components/expressions_filter";
 
-export default function Home() {
+import Screen1 from "./_components/screen1";
+
+export default function Index() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      hello world
-    </div>
+    <>
+      <ExpressionFilter />
+      <div className="h-[60vh]">
+        <Screen1 />
+      </div>
+      <div className="grid grid-flow-row min-h-screen">
+        hello world
+      </div>
+    </>
   );
 }

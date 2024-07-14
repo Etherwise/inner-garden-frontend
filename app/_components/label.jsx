@@ -1,12 +1,14 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import TextInBrackets from "@/app/_components/texts/text_in_brackets";
 
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 
-const LabelComponent = ({ text=["", ""], className="", angle=24, alignup=true, setPositions=()=>{}, positions={} }) => {
+import calculate from "@/app/_libs/position_calculation";
+
+const LabelComponent = ({ text=["", ""], className="", angle=24, alignup=true }) => {
   const elementRef = useRef();
 
   const { hexagonClip } = useClipBuilder();
@@ -15,12 +17,7 @@ const LabelComponent = ({ text=["", ""], className="", angle=24, alignup=true, s
     hexagonClip(elementRef, angle);
 
     if (alignup) {
-      const height = parseInt(getComputedStyle(elementRef.current).height);
-      const ratio = height/parseInt(getComputedStyle(elementRef.current.parentNode).height);
-      const extrapositions = Object.values(positions).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-      const top = parseFloat(100-ratio*50-extrapositions).toFixed(2);
-      elementRef.current.style.top = `${top}%`;
-      setPositions({labelTop: top});
+      elementRef.current.style.top = `${calculate(elementRef, 50, 0)}%`;
     }
   }, []);
 
