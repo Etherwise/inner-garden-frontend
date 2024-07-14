@@ -8,7 +8,7 @@ import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 
 import calculate from "@/app/_libs/position_calculation";
 
-const LabelComponent = ({ text=["", ""], className="", angle=24, alignup=true }) => {
+const LabelComponent = ({ text=["", ""], className="", angle=24, align={do: false, value: 0} }) => {
   const elementRef = useRef();
 
   const { hexagonClip } = useClipBuilder();
@@ -16,8 +16,8 @@ const LabelComponent = ({ text=["", ""], className="", angle=24, alignup=true })
   useEffect(() => {
     hexagonClip(elementRef, angle);
 
-    if (alignup) {
-      elementRef.current.style.top = `${calculate(elementRef, 50, 0)}%`;
+    if (align.do) {
+      elementRef.current.style.top = `${calculate(elementRef, 50, align.value)}%`;
     }
   }, []);
 
