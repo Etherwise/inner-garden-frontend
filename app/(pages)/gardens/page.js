@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <>
       <ExpressionFilter />
-      <Screen1 />
+      <div className="h-[60vh]">
+        <Screen1 />
+      </div>
       <div className="grid grid-flow-row min-h-screen border-2 border-black">
         hello world
       </div>

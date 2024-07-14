@@ -7,7 +7,7 @@ import ScrollContainer from "@/app/_components/container/scroll";
 import WellgorithmCard from "@/app/_components/cards/wellgorithm_card";
 import SquareCard from "@/app/_components/cards/square_card";
 
-function Home() {
+function Index() {
   const heading = (
     <section className="flex items-center gap-1 w-min font-extrabold">
       <TextInBrackets text="title" className="fill-white text-yellow-dark font-extrabold w-[54%] gap-1.5" thin={{apply: true, color: "#8757B5", width: 3}} />
@@ -34,4 +34,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Index;
