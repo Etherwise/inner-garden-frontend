@@ -89,13 +89,13 @@ const wellgoFilters = [
       <section className=" grid grid-cols-1 place-items-center w-[100%] h-full gap-14 lg:gap-28">
         
 {/* Card */}
-        <RectWellgorithmCard className = {{main : "!lg:w-[50%]" , text : "text-white bg-purple-mid" }} >
+        <RectWellgorithmCard className = {{main : "w-[50%]" , text : "text-white bg-purple-mid" }} >
         <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
         <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
         </RectWellgorithmCard>
 {/* Card */}
 
-<RectWellgorithmCard className = {{main : "!lg:w-[50%]" , text : "text-white bg-purple-mid" }} >
+<RectWellgorithmCard className = {{main : "w-[50%]" , text : "text-white bg-purple-mid" }} >
         <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
         <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
         </RectWellgorithmCard>

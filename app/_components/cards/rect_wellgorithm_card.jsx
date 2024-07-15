@@ -35,7 +35,7 @@ const RectWellgorithmCard = ({cardImage , children , text , upperAngle = 8 , low
   }, []);
 
   return (
-    <div className={`relative h-full w-full ${className.main}`} >
+    <div className={`relative h-full max-lg:w-full ${className.main}`} >
     <section className={`image-text h-full bg-white `} ref={imageTextRef}>
 
       <Image src={cardImage ? cardImage : womanImage} alt='womanImage' className={`h-2/5 w-[100%] object-cover ${className.image}`}/>
