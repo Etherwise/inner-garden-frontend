@@ -5,21 +5,17 @@ import { useEffect, useRef } from "react";
 import TextInBrackets from "@/app/_components/texts/text_in_brackets";
 
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
-import calculate from "../_libs/align_calculation";
+import calculate from "@/app/_libs/align_calculation";
 
 
-const LabelComponent = ({ text=["", ""], className="", angle=24, align={do: false, value: 0} }) => {
+const LabelComponent = ({ text=["", ""], className="", angle=24, align='' }) => {
   const elementRef = useRef();
 
   const { hexagonClip } = useClipBuilder();
 
   useEffect(() => {
     hexagonClip(elementRef, angle);
-
-    if (align.do) {
-      calculate(elementRef,(align.value === 0 ? "top" : "" | align.value === 100 ? "bottom" : ""))
-
-    }   
+    calculate(elementRef, align);
   }, []);
 
   return (

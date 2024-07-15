@@ -9,7 +9,7 @@ export default function Index() {
       <div className="">
         <Screen1 />
       </div>
-      <div className="grid grid-flow-row min-h-screen">
+      <div className="grid grid-flow-row min-h-screen border-2 border-black">
         hello world
       </div>
     </>

@@ -9,7 +9,7 @@ export default function Home() {
       <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh]">
         <Screen1 />
       </div>
-      <div className="grid grid-flow-row min-h-screen">
+      <div className="grid grid-flow-row min-h-screen border-2 border-black">
         hello world
       </div>
     </>
