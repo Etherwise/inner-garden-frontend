@@ -6,7 +6,7 @@
   const TextWithBrackets = forwardRef(({ bracketsData, className , text="", thin={apply: false, width: 0, color: "transparent"}}, ref) => {
     return (
       <p className={`flex justify-center items-center lg:h-fit ${className}`} ref={ref}>
-        {bracketsData.leftText ? (
+        {bracketsData?.leftText ? (
           <span className={`${bracketsData.leftText.properties} md:mx-1 mx-[2px] `}>
             {bracketsData.leftText.text}
           </span>
@@ -17,7 +17,7 @@
         <path d="M0.707688 22.848L8.96369 0.383998H18.9957L11.2677 22.848L18.9957 45.312H8.96369L0.707688 22.848Z" fill="inherit"/>
       </svg>
         <span className={`${bracketsData?.middleText?.properties} md:mx-1 mx-[2px] `}>
-          {bracketsData.middleText.text}
+          {bracketsData?.middleText.text}
         </span>
         <svg width="19" height="46" viewBox="0 0 19 46" fill="inherit" xmlns="http://www.w3.org/2000/svg"
         strokeWidth={thin.apply ? thin.width : 0} stroke={thin.apply ? thin.color : "transparent"}>
@@ -25,7 +25,7 @@
       </svg>
 
         
-        {bracketsData.rightText ? (
+        {bracketsData?.rightText ? (
           <span className={`${bracketsData.rightText.properties} md:mx-1 mx-[2px] `}>
             {bracketsData.rightText.text}
           </span>
