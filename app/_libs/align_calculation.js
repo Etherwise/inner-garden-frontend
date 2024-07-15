@@ -13,9 +13,9 @@ export default function calculate(elementRef = null, position = "center") {
             break;
 
         default:
-            element.style.left = "50%";
-            element.style.top = "50%";
-            element.style.transform = "translate(-50%, -50%)"; // Combine both translations
+            // element.style.left = "50%";
+            // element.style.top = "50%";
+            // element.style.transform = "translate(-50%, -50%)"; // Combine both translations
             break;
     }
 }

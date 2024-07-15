@@ -18,9 +18,9 @@ const WellgorithmCard = ({
 
   return (
     <div ref={elementRef} className={`
-   relative w-full grid place-items-center px-9 bg-white
-    before:content-[""] before:absolute before:w-full before:h-[40%] before:-z-10 
-    after:content-[""] after:absolute after:w-full after:h-[20%] after:-z-10
+    relative w-full grid place-items-center px-9 bg-white
+    before:content-[""] before:absolute before:w-full before:h-[40%] before:-z-10 before:bg-white
+    after:content-[""] after:absolute after:w-full after:h-[20%] after:-z-10 after:bg-white
     before:bg-[url(/assets/cards/butterfly.png)] before:bg-no-repeat before:bg-cover before:bg-center
     after:bg-[url(/assets/wellgorithm_card/wellgorithm_card_bottom.png)] after:bg-no-repeat after:bg-cover after:bg-center
     pseduo-clip-path after:top-[80%] before:top-0
