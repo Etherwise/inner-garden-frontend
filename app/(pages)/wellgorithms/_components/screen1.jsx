@@ -11,9 +11,13 @@ export default function Screen1() {
 
 
   useEffect(() => {
-    document.querySelector("body").style.background = "#DBB7FC";
+    document.querySelector("body").style.background = "#3F225B";
 
     setAngle(Math.floor(window.innerHeight)/(150-(window.innerHeight/window.innerWidth)));
+
+    return () => {
+      document.querySelector("body").style.background = "#C4CAF0";
+    }
   }, []);
   
   return (

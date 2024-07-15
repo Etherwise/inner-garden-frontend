@@ -10,8 +10,6 @@ export default function Screen1() {
   const [angle, setAngle] = useState(0);
 
   useEffect(() => {
-    document.querySelector("body").style.background = "#3F225B";
-
     setAngle(Math.floor(window.innerHeight)/(150-(window.innerHeight/window.innerWidth)));
   }, []);
   
