@@ -41,7 +41,7 @@ const Screen = () => {
         className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
         </RectWellgorithmCard>
 
-      <section className='w-fit h-fit bg-[#AA9DD0] pt-28 lg:pt-36 px-16 py-10 lg:py-28  flex md:flex-row flex-col items-center justify-center gap-20 lg:gap-10 relative z-[-1] mt-[-12%] lg:mt-[-3%]' ref={sectionRef}>
+      <section className='lg:w-fit h-fit bg-[#AA9DD0] pt-28 lg:pt-36 px-16 py-10 lg:py-28  flex md:flex-row flex-col :items-center lg:justify-center gap-20 lg:gap-10 relative z-[-1] mt-[-12%] lg:mt-[-3%]' ref={sectionRef}>
         
         <Card />
         <Card />
