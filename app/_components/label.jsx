@@ -8,30 +8,25 @@ import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 import calculate from "@/app/_libs/align_calculation";
 
 
-const LabelComponent = ({ text=["", ""], textClasses ,className="", angle=24, align=false, shape = "arrow" , thin = {apply: true, color: "#AF5CAA", width: 3}}) => {
-
-
-
+const LabelComponent = ({ text=["", ""], textClasses ,
+  className="", bracketClassName="", angle=24, align=false, shape = "arrow" , thin = {apply: true, color: "#AF5CAA", width: 3}}) => {
   const elementRef = useRef();
 
   const { hexagonClip , arrowClip } = useClipBuilder();
 
   useEffect(() => {
-   
-      switch (shape) {
-        case "hexagon":
-          hexagonClip(elementRef, angle);
-          align && calculate(elementRef, align);
-          break;
-        case "arrow":
-          arrowClip(elementRef, angle);
-          align && calculate(elementRef, align);
-          break;
-        default:
-          hexagonClip(elementRef, angle);
-          align && calculate(elementRef, align);
-          break;
-      }
+    switch (shape) {
+      case "hexagon":
+        hexagonClip(elementRef, angle);
+        break;
+      case "arrow":
+        arrowClip(elementRef, angle);
+        break;
+      default:
+        hexagonClip(elementRef, angle);
+        break;
+    }
+    align && calculate(elementRef, align);
 
   }, []);
 
@@ -40,7 +35,7 @@ const LabelComponent = ({ text=["", ""], textClasses ,className="", angle=24, al
       flex items-center justify-center gap-1 absolute
       text-center bg-purple-mid px-6 py-3 text-lg md:text-xl lg:text-2xl xl:text-3xl ${className}`}>
       <span className={`text-yellow-dark font-bold ${textClasses}`}>{text[2]}</span>
-      <TextInBrackets text={text[0]} className="w-full font-bold text-white fill-yellow-dark" thin={thin} />
+      <TextInBrackets text={text[0]} className={`w-full font-bold text-white fill-yellow-dark ${bracketClassName}`} thin={thin} />
       <span className={`text-yellow-dark font-bold ${textClasses}`}>{text[1]}</span>
     </section>
   );
