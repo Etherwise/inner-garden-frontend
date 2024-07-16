@@ -2,11 +2,12 @@
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import WellgorithmLogo from "@/public/assets/images/wellgo-logos/wellgorithm-arrow-logo.svg";
+import WellgorithmLogo from "@/public/assets/header/header_wellgorithm_active.svg";
 import TextWithBrackets from "@/app/_components/texts/text_with_brackets";
 import WelgoCard from "./wellgo-card";
 import Banner from "@/app/_components/banner";
 import ExpressionFilter from "@/app/_components/expressions_filter";
+import calculate from "@/app/_libs/align_calculation";
 
 const Screen = () => {
   const welgoRef = useRef(null);
@@ -17,9 +18,9 @@ const Screen = () => {
   useEffect(() => {
    
       arrowClip(arrowClipRef,30);
-      arrowClipRef.current.style.bottom = `${-(arrowClipRef.current.clientHeight / 2)}px`;
-      // welgoRef.current.style.top = `${-(welgoRef.current.clientHeight / 2)}px`;
-   
+      calculate(arrowClipRef,"bottom");
+      calculate(welgoRef,"top")
+     
   }, [arrowClip]);
 
 
@@ -44,14 +45,14 @@ const Screen = () => {
 
   return (<div>
 <ExpressionFilter/>
-    <section className=" flex min-h-screen flex-col items-center px-[3%] py-[1%] gap-14 mt-16">
+    
 
-      <Banner className="before:bg-[url(/assets/images/banner/butterfly-woman.svg)] bg-contain h-[400px] w-full mb-10" shape="arrow" angle={90}>
+      <Banner className="before:bg-[url(/assets/images/banner/butterfly-woman.svg)] mt-20 aspect-[2.3/1] md:aspect-[4.5/1] w-full" shape="hexagon" angle={90}>
 
       <Image
           src={WellgorithmLogo}
           alt="WellgorithmLogo"
-          className="absolute left-1/2 translate-x-[-50%] top-[-21.5%]"
+          className="absolute left-1/2 translate-x-[-50%]"
           ref={welgoRef}
           />
 
@@ -63,11 +64,11 @@ const Screen = () => {
 
           </Banner>
 
-      <section className="compare-section w-full flex justify-center gap-4">
+      <section className="compare-section w-full flex justify-center gap-4 mt-20">
 
         {/* Left Section */}
         <section className="left-section w-[40%] px-2 flex flex-col items-end">
-          <span className="w-full relative left-[60%] p-5 text-xl text-purple-dark font-extrabold">original</span>
+          <span className="w-full relative left-[50%] p-5 text-xl text-purple-dark font-extrabold">original</span>
          <WelgoCard text={wellgorithmData[1].text} tags={wellgorithmData.tags}/>
         </section>
         {/* Left Section */}
@@ -82,7 +83,6 @@ const Screen = () => {
         {/* Right Section */}
 
       </section>
-    </section>
     </div>
   );
 };

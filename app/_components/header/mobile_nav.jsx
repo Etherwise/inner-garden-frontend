@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation';
 
 import HeaderWellgorithm from "@/public/assets/header/header_wellgorithm.svg";
-import HeaderWellgorithmActive from "@/public/assets/header/header_wellgorithm_active.svg";
+import HeaderWellgorithmActive from "@/public/assets/header/header_wellgorithm_orange.svg";
 
 import NavLink from "./nav_link";
 import LinkComp from "../link_component";
@@ -16,7 +16,7 @@ const MobileNav = ({ open = false }) => {
     <div className={`
       ${open ? "absolute right-0" : "hidden left-full"} top-[6%]
       lg:hidden flex flex-col items-center gap-6
-      bg-inherit min-w-[200px] w-1/4 p-6 h-full z-10`}>
+      bg-inherit min-w-[200px] w-1/4 p-6 h-full z-50`}>
         <section className="flex flex-col gap-y-3">
           <NavLink id={1} text="Gardens" href="/gardens" active={pathname == "/gardens"} />
           <NavLink id={2} text="Adversities" href="/adversities" active={pathname == "/adversities"} />

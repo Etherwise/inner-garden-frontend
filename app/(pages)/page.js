@@ -1,51 +1,22 @@
-import Image from "next/image";
+import CardImage from "@/public/assets/cards/butterfly.png";
 
 import ExpressionFilter from "@/app/_components/expressions_filter";
-import Banner from "@/app/_components/banner";
-import TextInBrackets from "@/app/_components/texts/text_in_brackets";
-import ScrollContainer from "@/app/_components/container/scroll";
-import WellgorithmCard from "@/app/_components/cards/wellgorithm_card";
-import SquareCard from "@/app/_components/cards/square_card";
-import RectangleCard from "../_components/cards/rectangle_card";
 
-function Home() {
-  const heading = (
-    <section className="flex items-center gap-1 w-min font-extrabold">
-      <TextInBrackets text="title" className="fill-white text-yellow-dark font-extrabold w-[54%] gap-1.5" thin={{apply: true, color: "#8757B5", width: 3}} />
-      Path
-    </section>
-  );
+import Screen1 from "./_components/screen1";
+
+export default function Index() {
   return (
     <>
       <ExpressionFilter />
-      <div className="flex min-h-screen flex-col items-center justify-between mt-6">
-
-      <Banner className="before:bg-[url(/assets/images/banner/butterfly-woman.svg)] bg-contain h-[400px] w-full mb-10" shape="rectBanner" angle={[2,12]}>
-      
-      
-
-      </Banner>
-
-
-        {/* <div className="md:w-1/2 lg:w-1/3">
-          
-        </div> */}
-
-          {/* <RectangleCard className={{main : ""}}>
-          </RectangleCard> */}
-
-        {/* <SquareCard className="text-center w-[300px] aspect-square">
-            <p className="text-purple-text text-xl font-extrabold pt-[46%]">Welcome the crackling anxieties, knowing they’ll soon wither in the wind.</p>
-          </SquareCard> */}
-        {/* <Banner className="h-[400px] w-full" angle={60} shape="hexagon">
-          {heading}
-        </Banner> */}
-        {/* <ScrollContainer heading={heading}>
-          asfd
-        </ScrollContainer> */}
+      <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh]">
+        <Screen1 />
+      </div>
+      <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh]">
+        <Screen1 />
+      </div>
+      <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh]">
+        <Screen1 />
       </div>
     </>
   );
 }
-
-export default Home;

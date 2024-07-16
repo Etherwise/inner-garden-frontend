@@ -27,10 +27,12 @@
   background: var(--dark-purple-3);
 }
 
-* {
+*, *::after, *::before {
   font-family: "Montserrat Alternates", cursive;
   font-weight: 400;
-  font-style: normal;  
+  font-style: normal;
+
+  /* transition: .3s ease; */
 }
 
 @layer utilities {
@@ -46,11 +48,11 @@
 }
 
 body {
-  @apply bg-purple-bg-light;
+  @apply bg-purple-bg-light
 }
 
 .responsive-container {
-  @apply px-6;
+  @apply px-6 md:px-12;
 }
 
 .pseduo-clip-path::before {

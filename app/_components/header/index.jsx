@@ -10,7 +10,7 @@ import HeaderLogo from "@/public/assets/header/header_logo.svg";
 import HeaderAvatar from "@/public/assets/header/header_avatar.svg";
 import HeaderExtra from "@/public/assets/header/header_extras.svg";
 import HeaderWellgorithm from "@/public/assets/header/header_wellgorithm.svg";
-import HeaderWellgorithmActive from "@/public/assets/header/header_wellgorithm_active.svg";
+import HeaderWellgorithmActive from "@/public/assets/header/header_wellgorithm_orange.svg";
 import HeaderSearch from "@/public/assets/header/header_search.svg";
 import HeaderMenu from "@/public/assets/header/header_menu.svg";
 
@@ -51,7 +51,7 @@ const Header = () => {
         />
       </section>
 
-      <section className="hidden gap-3 lg:flex">
+      <section className="hidden gap-5 lg:flex">
         <NavLink id={1} text="Gardens" href="/gardens" active={pathname == "/gardens"} />
         <NavLink id={2} text="Adversities" href="/adversities" active={pathname == "/adversities"} />
         <NavLink id={3} text="Activities" href="/activities" active={pathname == "/activities"} />
@@ -106,7 +106,7 @@ const Header = () => {
         <LinkComp href="/login" className="flex items-center justify-center gap-0.5 text-purple-mid text-sm xl:text-base">
           <>
             log
-            <TextInBrackets text="in" className="w-1/3 lg:w-1/4 font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
+            <TextInBrackets text="in" className="w-[27%] xl:w-[27%] font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
           </>
         </LinkComp>
         <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />
