@@ -1,6 +1,5 @@
 "use client";
 import Banner from "@/app/_components/banner";
-import WellgorithmCard from "@/app/_components/cards/wellgorithm_card";
 import React, { useEffect, useRef, useState } from "react";
 import WellgoLogo from "@/public/assets/header/header_wellgorithm_active.svg"
 import Image from "next/image";
@@ -49,7 +48,7 @@ const wellgoFilters = [
     <>
     <ExpressionFilter />
       <Banner
-        className="mt-10 lg:mt-20 aspect-[2.3/1] md:aspect-[4.5/1] w-full !before:bg-[url(/assets/cards/banner-web.svg)]"
+        className="mt-10 lg:mt-20 aspect-[2.3/1] md:aspect-[4.5/1] w-full !before:bg-[url(/assets/banner/banner-web.svg)]"
         shape="hexagon"
         angle={50}>
 
