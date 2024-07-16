@@ -49,7 +49,7 @@ const wellgoFilters = [
     <>
     <ExpressionFilter />
       <Banner
-        className="mt-10 lg:mt-20 aspect-[2.3/1] md:aspect-[4.5/1] w-full before:bg-[url(/assets/banner/banner-web.svg)]"
+        className="mt-10 lg:mt-20 aspect-[2.3/1] md:aspect-[4.5/1] w-full !before:bg-[url(/assets/cards/banner-web.svg)]"
         shape="hexagon"
         angle={50}>
 

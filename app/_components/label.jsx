@@ -9,29 +9,23 @@ import calculate from "@/app/_libs/align_calculation";
 
 
 const LabelComponent = ({ text=["", ""], textClasses ,className="", angle=24, align=false, shape = "arrow" , thin = {apply: true, color: "#AF5CAA", width: 3}}) => {
-
-
-
   const elementRef = useRef();
 
   const { hexagonClip , arrowClip } = useClipBuilder();
 
   useEffect(() => {
-   
-      switch (shape) {
-        case "hexagon":
-          hexagonClip(elementRef, angle);
-          align && calculate(elementRef, align);
-          break;
-        case "arrow":
-          arrowClip(elementRef, angle);
-          align && calculate(elementRef, align);
-          break;
-        default:
-          hexagonClip(elementRef, angle);
-          align && calculate(elementRef, align);
-          break;
-      }
+    switch (shape) {
+      case "hexagon":
+        hexagonClip(elementRef, angle);
+        break;
+      case "arrow":
+        arrowClip(elementRef, angle);
+        break;
+      default:
+        hexagonClip(elementRef, angle);
+        break;
+    }
+    align && calculate(elementRef, align);
 
   }, []);
 

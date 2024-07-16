@@ -48,7 +48,7 @@ const ExpressionFilter = ({
   return (
     <div className="
     flex items-center justify-between gap-3
-    min-h-max w-full py-2 mt-3">
+    min-h-max w-full py-2 mt-3 mb-6 ">
 
       <section className="grid place-items-center">
         <button onClick={handleRightClick}>

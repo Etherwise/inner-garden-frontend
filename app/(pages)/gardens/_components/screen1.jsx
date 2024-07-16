@@ -21,12 +21,12 @@ export default function Screen1() {
   
   return (
     <>
-      <Banner className="mt-6 aspect-[2.3/1] md:aspect-[2.9/1] w-full" shape="rect" angle={angle} innerangle={15}>
+      <Banner className="aspect-[2.3/1] md:aspect-[2.9/1] w-full" shape="rect" angle={angle} innerangle={15}>
         <TextCard angle={angle} innerangle={15} align={{do: true, value: 100}}
         className="absolute left-[calc(50%-40%)] md:left-[calc(50%-35%)] lg:left-[calc(50%-30%)]
         w-[80%] md:w-[70%] lg:w-[60%] text-xl md:text-2xl lg:text-3xl text-center
         xl:px-12 lg:px-10 md:px-8 px-6">
-          <LabelComponent className="absolute left-1/2 translate-x-[-50%] w-max z-10" text={["aware", "nest"]} align={"top"} />
+          <LabelComponent className="absolute left-1/2 translate-x-[-50%] w-max z-10" text={["aware", "nest"]} align={"top"} shape="hexagon" />
           
           Around the world, a new awareness is blooming — that our emotions, like our bodies, are a part of nature, and that we can cultivate them like a garden.
         </TextCard>
