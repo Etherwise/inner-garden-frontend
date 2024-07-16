@@ -97,7 +97,7 @@ const wellgoFilters = [
         </RectWellgorithmCard>
 {/* Card */}
 
-<RectWellgorithmCard className = {{main : "w-[50%]" , text : "text-white bg-purple-mid" }} >
+        <RectWellgorithmCard className = {{main : "w-[50%]" , text : "text-white bg-purple-mid" }} >
         <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"}
         className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]" bracketClassName="!w-[70%]" />
         <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"}
