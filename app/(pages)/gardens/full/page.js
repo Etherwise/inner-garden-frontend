@@ -11,10 +11,10 @@ export default function Index() {
       <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh] mb-9">
         <Screen1 />
       </div>
-      <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh]">
+      <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh] mb-9">
         <Screen1 />
       </div>
-      <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh]">
+      <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh] mb-9">
         <Screen1 />
       </div>
     </>

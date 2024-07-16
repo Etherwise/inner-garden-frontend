@@ -17,13 +17,15 @@ export const Info = () => {
     const { hexagonClip, octagonClip } = useClipBuilder();
 
     useEffect(() => {
+        octagonClip(avatarElementRef, 30);
+        
         hexagonClip(hexElementRef, 15);
         octagonClip(octaElementRef, 30);
-        octagonClip(avatarElementRef, 30);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
+      <>
         <div className="absolute top-full translate-y-[-50%] flex items-center justify-between w-full px-[10%]">
             <section>
                 <span ref={avatarElementRef} className="bg-[#4F81E5] p-3 lg:p-6 font-bold text-white">20</span>
@@ -33,6 +35,7 @@ export const Info = () => {
                 <span ref={octaElementRef} className="bg-[#4F81E5] p-3 lg:p-6 font-bold text-white">20</span>
             </section>
         </div>
+      </>
     );
 }
 
