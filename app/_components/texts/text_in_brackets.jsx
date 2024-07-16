@@ -1,7 +1,8 @@
 import React from "react";
 
 
-const TextInBrackets = ({ text="", className="", thin={apply: false, width: 0, color: "transparent"} }) => {
+const TextInBrackets = ({ text="", className="", thin={apply: false , color: "transparent" , width: 0} }) => {
+
   return (
     <span className={`flex justify-center items-center gap-[1%] ${className}`}>
       

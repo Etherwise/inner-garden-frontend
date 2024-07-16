@@ -19,23 +19,27 @@ const useClipBuilder = () => {
     }
   }
 
-  const halfHexagonClip = (shapeRef, lowerAnglePixel=50, upperAnglePercent = 25 ,pseudo = false) => {
+  const halfHexagonClip = (shapeRef, lowerAnglePixel=50 , upperAnglePercent = 25,pseudo = false) => {
     if (shapeRef.current) {
       const width = shapeRef.current.clientWidth;
+      const upperAnglePercent = 50 - (Math.round((shapeRef.current.clientHeight / shapeRef.current.parentElement.offsetHeight)*100))
+
       const lowerLeftEdge = (lowerAnglePixel / width) * 100;
       const lowerRightEdge = 100 - lowerLeftEdge;
-      const upperLeftEdge = (upperAnglePercent / width) * 100;
-      const upperRightEdge = 100 - lowerLeftEdge;
-      
 
-      const path = `polygon(0 0, 100% 0, ${lowerRightEdge}% 100% ,${lowerLeftEdge}% 100%)`;
+      
+      const upperLeftEdge = (upperAnglePercent / width) * 100;
+      const upperRightEdge = 100 - upperLeftEdge;
+
+
+      const path = `polygon(${upperLeftEdge}% 0, ${upperRightEdge}% 0, ${lowerRightEdge}% 100% ,${lowerLeftEdge}% 100%)`;
       if (pseudo) {
         shapeRef.current.style.setProperty('--path', path);
       }else {
         shapeRef.current.style.clipPath = path;
       }
 
-      return { lowerLeftEdge, lowerRightEdge};
+      return { lowerLeftEdge, lowerRightEdge , upperLeftEdge , upperRightEdge};
     }
   }
 

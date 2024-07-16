@@ -10,6 +10,8 @@ import HexagonWithDots from "@/public/assets/icons/hexagon_with_dots.svg";
 import './style.css';
 import WellgorithmFilterBtn from "./wellgo_filter_button";
 import useWellgorithmFilter from "@/app/_state_hooks/wellgorithm_filters";
+import ExpressionFilter from "@/app/_components/expressions_filter";
+import SearchIcon from "@/public/assets/icons/search-purple.svg"
 import LabelComponent from "@/app/_components/label";
 
 const Screen = () => {
@@ -17,6 +19,8 @@ const Screen = () => {
 const WellgoLogoRef = useRef(null);
 const filterHeadingRef = useRef(null);
 const filtersRef = useRef(null);
+const inputRef = useRef(null);
+const searchRef = useRef(null);
 
 const {hexagonClip , halfHexagonClip} = useClipBuilder()
 
@@ -26,17 +30,8 @@ useEffect(() => {
   calculate(WellgoLogoRef,"top")
   hexagonClip(filterHeadingRef , 14);
   halfHexagonClip(filtersRef , 50 );
-
-  document.querySelector("body").style.background = "#3F225B";
-
-  return () => {
-    document.querySelector("body").style.background = "#C4CAF0";
-  }
-
-
+  hexagonClip(inputRef,12)
 }, [])
-
-console.log(expressionFilter)
 
 const wellgoFilters = [
   { id: 1, name: "nest" },
@@ -51,85 +46,81 @@ const wellgoFilters = [
 
   return (
     <>
+    <ExpressionFilter />
       <Banner
         className="mt-10 lg:mt-20 aspect-[2.3/1] md:aspect-[4.5/1] w-full before:bg-[url(/assets/banner/banner-web.svg)]"
         shape="hexagon"
-        angle={50}
-      >
+        angle={50}>
 
+{/* Top wellgorithm logo */}
         <Image src={WellgoLogo} alt="WellgoLogo" className="absolute left-1/2 translate-x-[-50%] w-[50%] lg:w-[30%]" ref={WellgoLogoRef}/>
+{/* Top wellgorithm logo */}
 
-        <section className="absolute w-full top-[26%] lg:top-[28%] left-1/2 translate-x-[-50%] flex flex-col items-center justify-center gap-1 lg:gap-3 h-fit text-white">
-          <span ref={filterHeadingRef} className=" lg:h-[55px] w-fit px-[5%] max-lg:py-[2%] md:px-[13%] lg:px-[3%] bg-orange-dark grid place-items-center text-sm md:text-lg  lg:text-3xl font-bold">{expressionFilter?.activeFilter.name}</span>
-          <p className=" text-xs lg:text-lg w-[60%] font-semibold tracking-wide text-center">a unique blend of refreshment and revelation</p>
+{/* Middle section of banner */}
+        <section className="absolute w-full top-[33%] lg:top-[33%] left-1/2 translate-x-[-50%] grid place-items-center gap-1 lg:gap-3 h-fit text-white">
+        <div className="relative flex w-[50%] lg:w-[30%] h-full">
+          <Image src={SearchIcon} alt="SearchIcon" className="absolute z-20 w-14 lg:w-24 right-[-43px] top-[-18px] lg:right-[-75px] lg:top-[-30px]" ref={searchRef}/>
+    {/* <span className="text-black absolute left-16 font-semibold z-20 w-fit">|</span> */}
+        <input type="text" className="w-full mx-auto text-sm lg:text-lg font-semibold text-purple-inner-octagon placeholder:text-purple-inner-octagon outline-none decoration-transparent py-1 px-6 lg:py-4 lg:px-10" placeholder="| search" ref={inputRef}/>
+        </div>
         </section>
+{/* Middle section of banner */}
 
+{/* Wellgorithm filters in banner. */}
         <section className="absolute bottom-0 w-full lg:h-[26%] bg-[#FFF500] py-[2px]" ref={filtersRef}>
-
         <section className="w-[100%] text-xs lg:w-full lg:h-[100%] bg-[#AF5CAA] flex max-lg:gap-8 items-center justify-center px-[45%] lg:px-[20%]">
-
-        
         {wellgoFilters.map((filter,i)=>
           <WellgorithmFilterBtn key={i} id={filter.id} text={filter.name} className="text-white"/>
         )}    
-
         </section>
         </section>
+{/* Wellgorithm filters in banner. */}
 
       </Banner>
 
-       <div className="w-full mt-[4%] mb-[8%] lg:mt-[2%] lg:mb-[3%] flex justify-center">
-       <Image src={HexagonWithDots} className="w-[12%] lg:w-auto"/>
+{/* Dots icon between banner and cards */}
+       <div className="w-full mt-[4%] mb-[8%] md:mt-[2%] md:mb-[3%] flex justify-center">
+       <Image src={HexagonWithDots} alt="HexagonWithDots" className="w-[12%] lg:w-auto"/>
        </div>
+{/* Dots icon between banner and cards */}
 
+{/* Wellgorithm cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-3 gap-y-24 gap-x-10">
         
-        <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-white !bg-purple-mid" }} shadow={true} >
+{/* Card */}
+        <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-purple-inner-octagon !bg-white" }} shadow={false} >
         <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
         <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
         </WellgorithmCard>
+{/* Card */}
 
-        <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-white !bg-purple-mid" }} shadow={true} >
-        <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
-        <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
-        </WellgorithmCard>
-
-        <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-white !bg-purple-mid" }} shadow={true} >
-        <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
-        <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
-        </WellgorithmCard>
-
-        <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-white !bg-purple-mid" }} shadow={true} >
-        <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
-        <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
-        </WellgorithmCard>
-
-        <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-white !bg-purple-mid" }} shadow={true} >
-        <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
-        <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
-        </WellgorithmCard>
-
-        <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-white !bg-purple-mid" }} shadow={true} >
+         <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-purple-inner-octagon !bg-white" }} shadow={false} >
         <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
         <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
         </WellgorithmCard>
         
-        <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-white !bg-purple-mid" }} shadow={true} >
-        <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
-        <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
-        </WellgorithmCard>
-        
-        <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-white !bg-purple-mid" }} shadow={true} >
+         <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-purple-inner-octagon !bg-white" }} shadow={false} >
         <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
         <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
         </WellgorithmCard>
 
-        <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-white !bg-purple-mid" }} shadow={true} >
+         <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-purple-inner-octagon !bg-white" }} shadow={false} >
+        <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
+        <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
+        </WellgorithmCard>
+
+         <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-purple-inner-octagon !bg-white" }} shadow={false} >
+        <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
+        <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
+        </WellgorithmCard>
+
+         <WellgorithmCard className = {{main : "aspect-square w-full drop-shadow-2xl" , text : "text-purple-inner-octagon !bg-white" }} shadow={false} >
         <LabelComponent shape={"arrow"} text={["compassion","title"]} angle={15} align={"top"} className="!text-lg !px-[6%] h-[10%] left-[50%] translate-x-[-50%]"/>
         <LabelComponent thin={{apply: true, color: "#FAA81A", width: 3}} shape={"arrow"} textClasses={"!text-white"} text={["compassion","title","30"]} angle={15} align={"bottom"} className="!text-lg text-white !px-[6%] h-[10%] left-[50%] translate-x-[-50%] !bg-orange-dark" />
         </WellgorithmCard>
 
       </section>
+{/* Wellgorithm cards */}
 </>
   );
 };
