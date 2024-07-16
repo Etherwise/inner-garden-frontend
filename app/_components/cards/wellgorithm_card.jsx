@@ -38,7 +38,7 @@ const WellgorithmCard = ({cardImage , children , text , upperAngle = 8 , lowerAn
   return (
     <div className={`relative aspect-square h-full w-full ${className.main}`} >
     <div className={`absolute aspect-square h-full w-full bg-yellow-dark grid place-items-center`} ref={outerWellgoritmCardRef}>
-    <section className={`image-text h-${shadow === true ? "[99.7%]" : "[100%]"} w-${shadow === true ? "[99.7%]" : "[100%]"} bg-white `} ref={imageTextRef}>
+    <section className={`image-text ${shadow === true ? "h-[99.7%]" : "h-[100%]"} ${shadow === true ? "w-[99.7%]" : "w-[100%]"} bg-white `} ref={imageTextRef}>
       <Image src={cardImage ? cardImage : womanImage} alt='womanImage' className={`h-2/5 w-[100%] object-cover ${className.image}`}/>
       <p className={`grid place-items-center w-full h-2/5 my-auto px-12 py-8 font-semibold text-lg md:text-2xl text-center text-purple-inner-octagon ${className.text}`}>
 { text ? text : "Welcome the crackling anxieties, knowing they’ll soon wither in the wind."}</p>
