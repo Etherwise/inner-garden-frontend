@@ -3,12 +3,6 @@
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
-import Banner from "@/app/_components/banner";
-import TextCard from "@/app/_components/cards/text_card";
-import LabelComponent from "@/app/_components/label";
-
-import useClipBuilder from "@/app/_hooks/clip_path_calculations";
-
 import Caterpillar from "@/public/assets/awarenest/caterpillar.svg";
 import Hive from "@/public/assets/awarenest/hive.svg";
 import Butterfly from "@/public/assets/awarenest/butterfly.svg";

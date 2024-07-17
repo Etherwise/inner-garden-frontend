@@ -40,7 +40,7 @@ const Screen1 = () => {
   return (
     <>
       <ScrollContainer heading={<Heading />} headClassName="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl pb-12" bodyClassName="flex flex-col pt-12">
-        <section id="test" className="absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-50%] drop-shadow-clip-outline-purple  w-max">
+        <section id="test" className="absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-50%] drop-shadow-clip-outline-purple w-max">
           <p ref={headingRef} className={`font-extrabold text-sm md:text-lg xl:text-xl
           p-3 px-6 bg-white text-purple-dark`}>
             Martin Butterfly
@@ -67,6 +67,7 @@ const Screen1 = () => {
             className="absolute !py-1 left-1/2 top-0 translate-y-[-50%] !text-sm md:!text-lg xl:!text-xl
             translate-x-[-50%] w-max z-10 !bg-[#4F81E5]" text={["compassion", "title"]} />
           </RectangleCard>
+
           <RectangleCard cardImage={CardImage} className={{
               main: "",
               image: "!h-[30%]",
