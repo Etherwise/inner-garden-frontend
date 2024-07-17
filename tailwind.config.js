@@ -43,7 +43,7 @@ module.exports = {
       },
       dropShadow : {
        'purple': [
-            '0 6px 6px rgba(127, 17, 224, 0.4)'
+            '0 6px 6px rgba(127, 17, 224, 1)'
         ],
         'white': [
             '3px 3px 0 rgba(255, 255, 255, 1)'

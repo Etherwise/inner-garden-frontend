@@ -7,13 +7,13 @@ import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 const ScrollContainer = ({
   heading="", children="",
   containerClassName="", headClassName="", bodyClassName="",
-  headAngle=27, bodyAngle=4
+  headAngle=27, bodyAngle=3
 }) => {
 
   const headElementRef = useRef();
   const bodyElementRef = useRef();
 
-  const { hexagonClip, rectClip } = useClipBuilder();
+  const { hexagonClip, rectClip, rectClipBanner } = useClipBuilder();
 
   useEffect(() => {
     const { leftEdge2 } = hexagonClip(headElementRef, headAngle);

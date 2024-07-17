@@ -3,7 +3,7 @@ import Screen from './_components/screen'
 
 const page = () => {
   return (
-    <Screen />
+    <Screen/>
   )
 }
 

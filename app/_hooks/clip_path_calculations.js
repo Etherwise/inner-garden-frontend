@@ -8,7 +8,7 @@ const useClipBuilder = () => {
       const rightEdge2 = 100 - leftEdge1;
       const leftEdge2 = (anglePixel / width) * 100;
 
-      const path = `polygon(${leftEdge1}% 0%, ${rightEdge1}% 0%, 100% 50%, ${rightEdge2}% 100%, ${leftEdge2}% 100%, 0% 50%)`;
+      const path = `polygon(${leftEdge1.toFixed(2)}% 0%, ${rightEdge1.toFixed(2)}% 0%, 100% 50%, ${rightEdge2.toFixed(2)}% 100%, ${leftEdge2.toFixed(2)}% 100%, 0% 50%)`;
       if (pseudo) {
         shapeRef.current.style.setProperty('--path', path);
       }else {
@@ -19,23 +19,27 @@ const useClipBuilder = () => {
     }
   }
 
-  const halfHexagonClip = (shapeRef, lowerAnglePixel=50, upperAnglePercent = 25 ,pseudo = false) => {
+  const halfHexagonClip = (shapeRef, lowerAnglePixel=50 , upperAnglePercent = 25, pseudo = false) => {
     if (shapeRef.current) {
       const width = shapeRef.current.clientWidth;
+      const upperAnglePercent = 50 - (Math.round((shapeRef.current.clientHeight / shapeRef.current.parentElement.offsetHeight)*100))
+
       const lowerLeftEdge = (lowerAnglePixel / width) * 100;
       const lowerRightEdge = 100 - lowerLeftEdge;
-      const upperLeftEdge = (upperAnglePercent / width) * 100;
-      const upperRightEdge = 100 - lowerLeftEdge;
-      
 
-      const path = `polygon(0 0, 100% 0, ${lowerRightEdge}% 100% ,${lowerLeftEdge}% 100%)`;
+      
+      const upperLeftEdge = (upperAnglePercent / width) * 100;
+      const upperRightEdge = 100 - upperLeftEdge;
+
+
+      const path = `polygon(${upperLeftEdge}% 0, ${upperRightEdge}% 0, ${lowerRightEdge}% 100% ,${lowerLeftEdge}% 100%)`;
       if (pseudo) {
         shapeRef.current.style.setProperty('--path', path);
       }else {
         shapeRef.current.style.clipPath = path;
       }
 
-      return { lowerLeftEdge, lowerRightEdge};
+      return { lowerLeftEdge, lowerRightEdge , upperLeftEdge , upperRightEdge};
     }
   }
 
@@ -134,7 +138,7 @@ const useClipBuilder = () => {
   
   const octagonClip = (shapeRef) => { 
     if (shapeRef.current) {
-      console.log(shapeRef.current)
+      //console.log(shapeRef.current)
       shapeRef.current.style.clipPath = 'polygon(50% 0, 85% 15%, 100% 50%, 85% 85%, 50% 100%, 15% 85%, 0 50%, 15% 15%)'; 
 
       return null;
