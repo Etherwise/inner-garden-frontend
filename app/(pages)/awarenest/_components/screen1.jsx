@@ -48,7 +48,7 @@ const Screen1 = () => {
         className="absolute left-[calc(50%-40%)] md:left-[calc(50%-35%)] lg:left-[calc(50%-30%)]
         w-[80%] md:w-[70%] lg:w-[60%] text-xl md:text-2xl lg:text-3xl text-center
         xl:px-12 lg:px-10 md:px-8 px-6">
-          <LabelComponent bracketClassName="w-[5.3rem] md:w-[56%] xl:w-[60%]" align={"top"} shape="hexagon"
+          <LabelComponent bracketClassName="w-[5rem] sm:w-[5.3rem] md:w-[56%] xl:w-[60%]" align={"top"} shape="hexagon"
           className="absolute !py-1 md:!py-2 left-1/2 !text-lg md:!text-xl xl:!text-2xl
             translate-x-[-50%] w-max z-10" text={["aware", "nest"]} />
           

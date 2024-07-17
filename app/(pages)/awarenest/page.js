@@ -16,7 +16,7 @@ export default function Index() {
       <div className="flex justify-center">
         <Controls />
       </div>
-      <div className="bg-purple-inner-octagon mt-12 p-6">
+      <div className="bg-purple-inner-octagon mt-12 p-6 h-full">
         <Screen2 />
       </div>
     </>
