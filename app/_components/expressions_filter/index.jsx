@@ -60,10 +60,10 @@ const ExpressionFilter = ({
         </button>
       </section>
 
-      <section className="flex gap-6 md:gap-9 w-full overflow-auto no-scrollbar" ref={sectionRef}>
+      <section className="snap-x flex gap-6 md:gap-9 w-full overflow-auto no-scrollbar" ref={sectionRef}>
         {
           expressions.map((z, i) => 
-            <FilterBtn key={z.id} id={z.id} text={z.name} />
+            <FilterBtn key={z.id} id={z.id} text={z.name} className="snap-center" />
           )
         }
       </section>

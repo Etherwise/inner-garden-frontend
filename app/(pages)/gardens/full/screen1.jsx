@@ -1,6 +1,9 @@
 "use client"
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+
+import Avatar from '@/public/assets/avatar/avatar.svg';
 
 import Banner from "@/app/_components/banner";
 import TextCard from "@/app/_components/cards/text_card";
@@ -10,33 +13,37 @@ import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 
 
 export const Info = () => {
-    const avatarElementRef = useRef(null);
-    const hexElementRef = useRef(null);
-    const octaElementRef = useRef(null);
+  const userNameCardInnerRef = useRef(null);
 
-    const { hexagonClip, octagonClip } = useClipBuilder();
+  const hexElementRef = useRef(null);
+  const octaElementRef = useRef(null);
 
-    useEffect(() => {
-        octagonClip(avatarElementRef, 30);
-        
-        hexagonClip(hexElementRef, 15);
-        octagonClip(octaElementRef, 30);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+  const { hexagonClip, octagonClip } = useClipBuilder();
 
-    return (
-      <>
-        <div className="absolute top-full translate-y-[-50%] flex items-center justify-between w-full px-[10%]">
-            <section>
-                <span ref={avatarElementRef} className="bg-[#4F81E5] p-3 lg:p-6 font-bold text-white">20</span>
-            </section>
-            <section className="h-full">
-                <span ref={hexElementRef} className="bg-orange-dark py-1  px-3 lg:px-6 font-bold text-white mr-3">peace</span>
-                <span ref={octaElementRef} className="bg-[#4F81E5] p-3 lg:p-6 font-bold text-white">20</span>
-            </section>
-        </div>
-      </>
-    );
+  useEffect(() => {
+      hexagonClip(userNameCardInnerRef,8)
+      
+      hexagonClip(hexElementRef, 15);
+      octagonClip(octaElementRef, 30);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <>
+      <div className="absolute top-full translate-y-[-50%] flex items-center justify-between w-full px-[10%]">
+        <section className='flex items-center justify-center w-fit'>
+          <Image src={Avatar} alt='avatar' className='z-[2]'/>
+          <span className='drop-shadow-clip-outline-purple ml-[-12%]' >
+            <p className='flex items-center justify-center py-1 pl-7 pr-4 bg-white text-purple-inner-octagon text-sm font-bold text-nowrap' ref={userNameCardInnerRef}>jackie milter</p>
+          </span>
+        </section>
+        <section className="flex items-center h-full">
+          <p ref={hexElementRef} className="bg-orange-dark py-1 px-3 md:px-6 font-bold text-white mr-3">peace</p>
+          <p ref={octaElementRef} className="bg-[#4F81E5] p-3 md:p-6 font-bold text-white">20</p>
+        </section>
+      </div>
+    </>
+  );
 }
 
 const Screen1 = () => {

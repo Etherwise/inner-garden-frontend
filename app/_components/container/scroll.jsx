@@ -31,7 +31,7 @@ const ScrollContainer = ({
       </section>
       <div ref={bodyElementRef} className={`
         relative p-9 min-h-[300px] w-[95.6%] bg-purple-soft-light
-        before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-z-10 pseduo-clip-path
+        before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-z-10 pseudo-clip-path
         ${bodyClassName}`}>
         {children}
       </div>
