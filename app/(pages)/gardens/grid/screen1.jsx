@@ -28,9 +28,9 @@ export const Info = () => {
             <section>
                 <span ref={avatarElementRef} className="bg-[#4F81E5] p-3 md:p-6 font-bold text-white">20</span>
             </section>
-            <section className="h-full">
-                <span ref={hexElementRef} className="bg-orange-dark py-1  px-3 md:px-6 font-bold text-white mr-3">peace</span>
-                <span ref={octaElementRef} className="bg-[#4F81E5] p-3 md:p-6 font-bold text-white">20</span>
+            <section className="flex items-center h-full">
+                <p ref={hexElementRef} className="bg-orange-dark py-1 px-3 md:px-6 font-bold text-white mr-3">peace</p>
+                <p ref={octaElementRef} className="bg-[#4F81E5] p-3 md:p-6 font-bold text-white">20</p>
             </section>
         </div>
     );
