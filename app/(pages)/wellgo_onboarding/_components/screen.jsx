@@ -6,10 +6,7 @@ import WellgoLogo from "@/public/assets/header/header_wellgorithm_active.svg"
 import calculate from "@/app/_libs/align_calculation";
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 import useWellgorithmFilter from "@/app/_state_hooks/wellgorithm_filters";
-import SquareCard from '@/app/_components/cards/square_card';
-import LabelComponent from '@/app/_components/label';
-import Avatar from '@/public/assets/avatar/avatar.svg'
-import Card from './cards';
+import Screen2 from './screen2';
 
 const Screen = () => {
 
@@ -55,15 +52,9 @@ useEffect(() => {
 
       </Banner>
 
-      <section className='bg-purple-outer-octagon  md:w-[82%] lg:w-[85%] xl:w-[90%] 2xl:w-[93%] mx-auto pt-[5%] flex flex-col items-center gap-20'>
+      <section className='bg-purple-outer-octagon mt-12 p-6 h-full'>
 
-        <span className=' text-4xl font-bold'>AI writers on Wellgorithms</span>
-
-      <section className='w-full  flex flex-col justify-center xl:flex-row px-[2%] max-xl:gap-32 xl:gap-10 2x:gap-20 mb-[6%]'>
-        <Card />
-        <Card />
-        <Card />
-      </section>
+        <Screen2 />
 
       </section>
 
