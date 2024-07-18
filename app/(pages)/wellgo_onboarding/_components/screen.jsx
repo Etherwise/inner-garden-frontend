@@ -38,17 +38,17 @@ useEffect(() => {
 
         <Image src={WellgoLogo} alt="WellgoLogo" className="absolute left-1/2 translate-x-[-50%] w-[50%] lg:w-[30%]" ref={WellgoLogoRef}/>
 
-        <section className="w-full flex flex-col items-center justify-center gap-1 lg:gap-3 h-fit text-white">
+        <section className="w-[80%] md:w-full flex flex-col md:max-lg:mt-[6%] items-center text-center justify-center gap-1 lg:gap-3 h-fit text-white">
         
-         <p className='text-2xl md:text-3xl lg:text-4xl text-yellow-dark font-bold'>Wellgorithms are ...</p>
-         <p className='text-lg md:text-xl lg:text-2xl font-semibold mb-[-0.3%] text-yellow-dark'>gamified prompts to nourish your (inner)Garden</p>
-         <p className='text-lg md:text-xl lg:text-2xl font-semibold mt-[-0.3%] '>combining 2D journaling with immersive 3D virtual experience</p>
+         <p className='text-lg md:text-xl lg:text-2xl xl:text-4xl 2xl:text-5xl text-yellow-dark font-bold'>Wellgorithms are ...</p>
+         <p className='text-xs md:text-sm lg:text-lg xl:text-2xl 2xl:text-3xl font-semibold mb-[-0.3%] text-yellow-dark'>gamified prompts to nourish your (inner)Garden</p>
+         <p className='text-xs md:text-sm lg:text-lg xl:text-2xl 2xl:text-3xl font-semibold mt-[-0.3%] '>combining 2D journaling with immersive 3D virtual experience</p>
 
         </section>
 
-        {/* <section>
-          <Image src={Arrow} alt=''/>
-        </section> */}
+        <section>
+          
+        </section>
 
       </Banner>
 

@@ -4,14 +4,12 @@ import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
 //import CardImage from "@/public/assets/wellgorithm_card/wellgorithm_card_head.png";
-import HeaderAvatar from "@/public/assets/header/header_avatar.svg";
 import CardImage from "@/public/assets/cards/butterfly.png";
 import LabelComponent from "@/app/_components/label";
 
 import LeftHandle from "@/public/assets/awarenest/left.svg";
 import RightHandle from "@/public/assets/awarenest/right.svg";
 
-import OctagonCounter from "@/app/_components/octagon_counter";
 
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 
