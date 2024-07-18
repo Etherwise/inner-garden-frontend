@@ -83,14 +83,14 @@ const Screen2 = () => {
           <OctagonCounter className="w-full !p-2 text-xl" count={7} />
 
           <section className="flex items-center gap-3 w-full">
-            <button onClick={handleLeftClick}>
+            <button onClick={handleRightClick}>
               <Image
                 src={LeftHandle}
                 alt="left"
                 className="w-full"
               />
             </button>
-            <button onClick={handleRightClick}>
+            <button onClick={handleLeftClick}>
               <Image
                 src={RightHandle}
                 alt="right"
@@ -102,6 +102,36 @@ const Screen2 = () => {
       </div>
 
       <div ref={scrollElementRef} className="flex gap-6 md:gap-9 w-full py-6 overflow-x-auto no-scrollbar h-full mt-6 snap-x">
+        <Card cardImage={CardImage} imageClassName="!h-[30%]" className="snap-center shrink-0 w-full max-w-[450px]" text={<Text className="p-6 text-lg font-semibold h-[70%]" />}>
+          
+          <LabelComponent bracketClassName="!w-[4rem] md:!w-[55%]" align={"top"} shape="hexagon" angle={15}
+          className="absolute !py-0.5 left-1/2 !text-sm md:!text-lg !px-2
+            translate-x-[-50%] w-max z-10" text={["aware", "Nest"]} />
+
+        </Card>
+
+        <Card cardImage={CardImage} imageClassName="!h-[30%]" className="snap-center shrink-0 w-full max-w-[450px]" text={<Text className="p-6 text-lg font-semibold h-[70%]" />}>
+          
+          <LabelComponent bracketClassName="!w-[4rem] md:!w-[55%]" align={"top"} shape="hexagon" angle={15}
+          className="absolute !py-0.5 left-1/2 !text-sm md:!text-lg !px-2
+            translate-x-[-50%] w-max z-10" text={["aware", "Nest"]} />
+
+        </Card>
+        <Card cardImage={CardImage} imageClassName="!h-[30%]" className="snap-center shrink-0 w-full max-w-[450px]" text={<Text className="p-6 text-lg font-semibold h-[70%]" />}>
+          
+          <LabelComponent bracketClassName="!w-[4rem] md:!w-[55%]" align={"top"} shape="hexagon" angle={15}
+          className="absolute !py-0.5 left-1/2 !text-sm md:!text-lg !px-2
+            translate-x-[-50%] w-max z-10" text={["aware", "Nest"]} />
+
+        </Card>
+        <Card cardImage={CardImage} imageClassName="!h-[30%]" className="snap-center shrink-0 w-full max-w-[450px]" text={<Text className="p-6 text-lg font-semibold h-[70%]" />}>
+          
+          <LabelComponent bracketClassName="!w-[4rem] md:!w-[55%]" align={"top"} shape="hexagon" angle={15}
+          className="absolute !py-0.5 left-1/2 !text-sm md:!text-lg !px-2
+            translate-x-[-50%] w-max z-10" text={["aware", "Nest"]} />
+
+        </Card>
+
         <Card cardImage={CardImage} imageClassName="!h-[30%]" className="snap-center shrink-0 w-full max-w-[450px]" text={<Text className="p-6 text-lg font-semibold h-[70%]" />}>
           
           <LabelComponent bracketClassName="!w-[4rem] md:!w-[55%]" align={"top"} shape="hexagon" angle={15}
