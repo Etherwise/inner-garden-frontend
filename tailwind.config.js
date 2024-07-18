@@ -47,6 +47,9 @@ module.exports = {
         ],
         'white': [
             '3px 3px 0 rgba(255, 255, 255, 1)'
+        ],
+        'clip-outline-purple': [
+          '3px 0px #8757B5', '-.5px 2px #8757B5', '-.5px -1px #8757B5', '-.5px 0px #8757B5'
         ]
       }
     },

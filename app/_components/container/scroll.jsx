@@ -17,7 +17,7 @@ const ScrollContainer = ({
 
   useEffect(() => {
     const { leftEdge2 } = hexagonClip(headElementRef, headAngle);
-    rectClip(bodyElementRef, 0, bodyAngle);
+    rectClip(bodyElementRef, 0, bodyAngle, 1);
     bodyElementRef.current.style.width = `${100-leftEdge2*2}%`;
   }, [hexagonClip, rectClip]);
 
@@ -29,7 +29,10 @@ const ScrollContainer = ({
         bg-purple-inner-octagon w-full p-9 ${headClassName}`}>
         {heading}
       </section>
-      <div ref={bodyElementRef} className={`relative p-9 min-h-[300px] w-[95.6%] bg-purple-soft-light ${bodyClassName}`}>
+      <div ref={bodyElementRef} className={`
+        relative p-9 min-h-[300px] w-[95.6%] bg-purple-soft-light
+        before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-z-10 pseudo-clip-path
+        ${bodyClassName}`}>
         {children}
       </div>
     </div>

@@ -10,6 +10,8 @@ export default function Index() {
       <ExpressionFilter />
       <div className="">
         <Screen1 />
+        <Screen1 />
+        <Screen1 />
       </div>
     </>
   );

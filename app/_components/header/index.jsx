@@ -51,7 +51,7 @@ const Header = () => {
         />
       </section>
 
-      <section className="hidden gap-5 lg:flex">
+      <section className="hidden gap-3 lg:flex">
         <NavLink id={1} text="Gardens" href="/gardens" active={pathname == "/gardens"} />
         <NavLink id={2} text="Adversities" href="/adversities" active={pathname == "/adversities"} />
         <NavLink id={3} text="Activities" href="/activities" active={pathname == "/activities"} />
