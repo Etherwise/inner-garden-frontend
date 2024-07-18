@@ -27,7 +27,7 @@ const Card = () => {
     
 
   return (
-    <SquareCard className = {{main : "lg:!w-[24%] max-md:!w-[100%]" , image : "" , text : "text-[18px] leading-5 !text-black"}} cardText={"motions, like our bodies, are a part of nature, and that we can cultivate them like a garden. motions, like our bodies, are a part"}>
+    <SquareCard className = {{main : " max-xl:w-[70%] 2xl:!w-[24%] max-md:!w-[100%]" , image : "" , text : "text-[18px] leading-5 !text-black"}} cardText={"motions, like our bodies, are a part of nature, and that we can cultivate them like a garden. motions, like our bodies, are a part"}>
             <LabelComponent angle={14} text={["compassion","title"]} align={"top"} shape='hexagon' className='lg:w-[68%] h-[15%] left-[50%] translate-x-[-50%]' textClasses={"text-xl"} bracketClassName=' text-xl !w-[80%]'/>
                 <section className='h-fit absolute left-[50%] translate-x-[-50%] w-[90%] flex bottom-[5%] items-center justify-between'>
                   <section className='flex items-center justify-center w-fit gap-3'>

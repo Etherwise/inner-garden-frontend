@@ -6,7 +6,6 @@ import WellgoLogo from "@/public/assets/header/header_wellgorithm_active.svg"
 import calculate from "@/app/_libs/align_calculation";
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 import useWellgorithmFilter from "@/app/_state_hooks/wellgorithm_filters";
-import Arrow from "@/public/assets/icons/right_arrow_thick.svg"
 import SquareCard from '@/app/_components/cards/square_card';
 import LabelComponent from '@/app/_components/label';
 import Avatar from '@/public/assets/avatar/avatar.svg'
@@ -42,7 +41,7 @@ useEffect(() => {
 
         <Image src={WellgoLogo} alt="WellgoLogo" className="absolute left-1/2 translate-x-[-50%] w-[50%] lg:w-[30%]" ref={WellgoLogoRef}/>
 
-        <section className=" w-full flex flex-col items-center justify-center gap-1 lg:gap-3 h-fit text-white">
+        <section className="w-full flex flex-col items-center justify-center gap-1 lg:gap-3 h-fit text-white">
         
          <p className='text-2xl md:text-3xl lg:text-4xl text-yellow-dark font-bold'>Wellgorithms are ...</p>
          <p className='text-lg md:text-xl lg:text-2xl font-semibold mb-[-0.3%] text-yellow-dark'>gamified prompts to nourish your (inner)Garden</p>
@@ -50,17 +49,17 @@ useEffect(() => {
 
         </section>
 
-        <section>
+        {/* <section>
           <Image src={Arrow} alt=''/>
-        </section>
+        </section> */}
 
       </Banner>
 
-      <section className='bg-purple-outer-octagon w-[93%] mx-auto pt-[5%] flex flex-col items-center gap-20'>
+      <section className='bg-purple-outer-octagon  md:w-[82%] lg:w-[85%] xl:w-[90%] 2xl:w-[93%] mx-auto pt-[5%] flex flex-col items-center gap-20'>
 
         <span className=' text-4xl font-bold'>AI writers on Wellgorithms</span>
 
-      <section className='flex flex-col justify-center lg:flex-row gap-20 mb-[6%]'>
+      <section className='w-full  flex flex-col justify-center xl:flex-row px-[2%] max-xl:gap-32 xl:gap-10 2x:gap-20 mb-[6%]'>
         <Card />
         <Card />
         <Card />
