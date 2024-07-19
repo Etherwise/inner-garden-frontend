@@ -27,9 +27,9 @@ const Card = () => {
     
 
   return (
-    <SquareCard className = {{main : "!w-[24%] max-md:!w-[100%]" , image : "" , text : "text-[18px] leading-5 !text-black"}}>
+    <SquareCard className = {{main : "max-md:!w-[100%] xl:!w-[28%] 2xl:!w-[24%]" , image : "" , text : "text-[18px] leading-5 !text-black"}}>
             <LabelComponent angle={14} text={["compassion","title"]} align={"top"} shape='hexagon' className='lg:w-[63%] h-[14%] left-[50%] translate-x-[-50%]' textClasses={"text-lg"} bracketClassName=' text-lg !w-[70%]'/>
-                <section ref={cardBottomSectionRef} className='h-fit absolute left-[50%] translate-x-[-50%] w-[90%] flex   items-center justify-between'>
+                <section ref={cardBottomSectionRef} className='h-fit absolute left-[50%] translate-x-[-50%] md:max-lg:w-[85%] w-[90%] flex items-center justify-between'>
                   <section className='flex items-center justify-center w-fit'>
                     <Image src={Avatar} alt='avatar' className='z-[2]'/>
                     <span className='bg-purple-inner-octagon flex items-center justify-center h-fit p-[1px] ml-[-12%] z-[1]' ref={userNameCardOuterRef}><p className='flex items-center justify-center py-1 pl-7 pr-4 bg-white text-purple-inner-octagon text-sm font-bold text-nowrap' ref={userNameCardInnerRef}>jackie milter</p></span>
