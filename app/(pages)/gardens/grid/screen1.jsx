@@ -45,7 +45,7 @@ export const Info = () => {
 export default function Screen1() {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-3 gap-x-12 gap-y-24 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 grid-rows-3 gap-x-12 gap-y-24 mt-12">
         <RectangleCard lowerAngle={5} cardImage={CardImage} className={{
             main: "",
             image: "!h-[15vh]",

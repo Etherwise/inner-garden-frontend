@@ -1,20 +1,27 @@
 "use client"
 
 import { useEffect, useState } from "react";
+import { useRouter, usePathname } from 'next/navigation';
+
 
 const LoadingScreen = () => {
-    const [show, setShow] = useState(true);
+    const router = useRouter();
+    const pathname = usePathname();
+
+    const [loading, setLoading] = useState(1);
 
     useEffect(() => {
+        setLoading(loading+1);
+
         setTimeout(() => {
-            setShow(false);
-        }, 500)
-    }, []);
+            setLoading(false)
+        }, 100);
+    }, [pathname])
 
     return (
         <>
             {
-                show &&
+                loading &&
                 <div className="fixed top-0 left-0 w-full h-full bg-purple-outer-octagon z-50">
                     Loading...
                 </div>

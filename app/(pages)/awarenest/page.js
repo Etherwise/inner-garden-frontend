@@ -11,7 +11,6 @@ mt-12 p-3 border-2
 export default function Index() {
   return (
     <>
-      <LoadingScreen />
       <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh] mt-12">
         <Screen1 />
       </div>
