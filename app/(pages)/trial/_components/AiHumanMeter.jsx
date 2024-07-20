@@ -43,11 +43,13 @@ const AiHumanMeter = () => {
 
     return (
         <>
-        <div className="meter" ref={sliderRef}>
+       <div className='meterContainer'>
+       <div className="meter" ref={sliderRef}>
             <div className="top" style={{ height: `${100 - value}%` }}></div>
             <div className="divider" style={{ bottom: `${value}%` }} onMouseDown={handleMouseDown}></div>
             <div className="bottom" style={{ height: `${value}%` }}></div>
         </div>
+       </div>
 
 
             <button className=' p-4 mt-5 bg-gray-500 text-white rounded-lg' onClick={()=>{

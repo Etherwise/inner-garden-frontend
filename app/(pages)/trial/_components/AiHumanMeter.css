@@ -1,12 +1,13 @@
+
 .meter {
     position: relative;
     width: 100px;
     height: 300px;
     background-color: #ddd;
-    border: 2px solid yellow;
     border-radius: 10px;
     overflow: hidden;
     user-select: none;
+    clip-path: polygon(20% 0 , 80% 0, 100% 10% , 100% 20% , 80% 30% , 80% 70% , 100% 80% , 100% 90% , 80% 100% , 20% 100% , 0 90% , 0 80%, 20% 70% , 20% 30% , 0 20% , 0 10%)
 }
 
 .top, .bottom {
@@ -26,7 +27,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    height: 5px;
+    height: 2px;
     background-color: yellow;
     cursor: pointer;
     z-index: 1;
