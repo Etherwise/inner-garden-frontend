@@ -1,0 +1,33 @@
+.meter {
+    position: relative;
+    width: 100px;
+    height: 300px;
+    background-color: #ddd;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.top, .bottom {
+    width: 100%;
+    transition: height ease;
+}
+
+.top {
+    background-color: #41AD49;
+}
+
+.bottom {
+    background-color: #855AA5;
+}
+
+.divider {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: yellow;
+    cursor: pointer;
+    z-index: 1;
+}
