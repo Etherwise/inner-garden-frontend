@@ -12,14 +12,12 @@ const AiHumanMeter = () => {
     const handleMouseMove = (event) => {
         if (sliderRef.current) {
             const rect = sliderRef.current.getBoundingClientRect();
+            console.log(sliderRef.current.getBoundingClientRect())
             const newHeight = ((event.clientY - rect.top) / rect.height) * 100;
             if (newHeight >= 0 && newHeight <= 100) {
                 setValue(100 - Math.round(newHeight));
                 setTopValue(100 - (100 - Math.round(newHeight)));
                 setBottomValue(100 - Math.round(newHeight));
-                // console.log('value -',value)
-                // console.log('topValue -',topValue)
-                // console.log('bottomValue -',bottomValue)
             }
         }
     };
@@ -40,6 +38,15 @@ const AiHumanMeter = () => {
             window.removeEventListener('mouseup', handleMouseUp);
         };
     }, []);
+
+    useEffect(() => {
+    
+        if(value>=100){
+            
+        }
+    
+    }, [value])
+    
 
     return (
         <>

@@ -1,13 +1,22 @@
+.meterContainer{
+    width: 100px;
+    height: 350px;
+    clip-path: polygon(20% 0 , 80% 0, 100% 10% , 100% 20% , 80% 30% , 80% 70% , 100% 80% , 100% 90% , 80% 100% , 20% 100% , 0 90% , 0 80%, 20% 70% , 20% 30% , 0 20% , 0 10%);
+    background-color: beige;
+    background: conic-gradient(#41AD49 0deg 90deg , #855AA5 90deg 270deg , #41AD49 270deg 360deg);
+    display: flex;
+    align-items: center;
+    
+}
 
 .meter {
     position: relative;
     width: 100px;
-    height: 300px;
+    height: 40%;
     background-color: #ddd;
     border-radius: 10px;
     overflow: hidden;
     user-select: none;
-    clip-path: polygon(20% 0 , 80% 0, 100% 10% , 100% 20% , 80% 30% , 80% 70% , 100% 80% , 100% 90% , 80% 100% , 20% 100% , 0 90% , 0 80%, 20% 70% , 20% 30% , 0 20% , 0 10%)
 }
 
 .top, .bottom {
