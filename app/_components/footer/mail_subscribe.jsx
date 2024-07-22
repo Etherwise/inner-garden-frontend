@@ -4,11 +4,19 @@ import { useEffect, useRef } from "react";
 
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 
+import subscribeUser from "@/app/_services/mail_subscribe";
+
 const MailSubscribeComp = ({}) => {
+  const inputRef = useRef();
   const mailSubscribeSecRef = useRef();
   const subscribeBtnRef = useRef();
 
   const { hexagonClip } = useClipBuilder();
+
+  const handleClick = async () => {
+    const response = await subscribeUser(inputRef.current.value);
+    console.log(response)
+  }
 
   useEffect(() => {
     hexagonClip(mailSubscribeSecRef, 24);
@@ -20,8 +28,11 @@ const MailSubscribeComp = ({}) => {
     flex gap-3 justify-between
     w-full sm:w-[60%] lg:w-[45%] py-1.5 px-2 bg-white 
     text-black">
-      <input type='mail' placeholder="Email" className="py-2 lg:py-3 ml-6 outline-2 w-full" />
-      <button ref={subscribeBtnRef} className="bg-[#AF5CAA] text-white py-2 lg:py-3 px-6 sm:px-3 w-[90%] sm:w-1/3 font-bold">subscribe</button>
+      <input ref={inputRef} type='mail' placeholder="Email" className="py-2 lg:py-3 ml-6 outline-2 w-full" />
+      <button ref={subscribeBtnRef} onClick={handleClick}
+      className="bg-[#AF5CAA] text-white py-2 lg:py-3 px-6 sm:px-3 w-[90%] sm:w-1/3 font-bold">
+        subscribe
+      </button>
     </section>
   );
 }
