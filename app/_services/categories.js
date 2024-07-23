@@ -3,8 +3,8 @@
  * 
  * @returns {Promise<Object>} - A promise that resolves to the JSON response from the API or the error response.
  */
-async function getCategories() {
-    const endpoint = `${process.env.NEXT_PUBLIC_APP_BASEURL}/categoryget`;
+async function getCategories(categoryName="garden") {
+    const endpoint = `${process.env.NEXT_PUBLIC_APP_BASEURL}/categoryget?category=${categoryName}`;
 
     try {
         const response = await fetch(endpoint, {
@@ -28,6 +28,8 @@ async function getCategories() {
         return { error: error };
     }
 }
+
+export { getCategories };
 
 // Example usage:
 // getCategories()

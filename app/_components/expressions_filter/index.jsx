@@ -15,15 +15,10 @@ const expressions = [
   {id: 3, name: "kindness"},
   {id: 4, name: "gratitude"},
   {id: 5, name: "hope"},
-  {id: 6, name: "humility"},
-  {id: 7, name: "peace"},
-  {id: 8, name: "love"},
-  {id: 9, name: "kindness"},
-  {id: 10, name: "gratitude"},
-  {id: 11, name: "hope"},
-  {id: 12, name: "humility"},
+  {id: 6, name: "humility"}
 ]
 const ExpressionFilter = ({
+  data=[]
 }) => {
   const sectionRef = useRef(null);
 
@@ -62,7 +57,7 @@ const ExpressionFilter = ({
 
       <section className="snap-x flex gap-6 md:gap-9 w-full overflow-auto no-scrollbar" ref={sectionRef}>
         {
-          expressions.map((z, i) => 
+          ( data.length ? data : expressions ).map((z, i) => 
             <FilterBtn key={z.id} id={z.id} text={z.name} className="snap-center" />
           )
         }

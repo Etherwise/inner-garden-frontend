@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 
-const Banner = ({ className="", shape="rect", angle=0, innerangle=0, children="" }) => {
+const Banner = ({ className="", shape="rect", angle=0, innerangle=0, imageurl="", children="" }) => {
   const elementRef = useRef();
 
   const { hexagonClip, rectClip, arrowClip, squareClip, rectClipBanner } = useClipBuilder();
@@ -29,6 +29,10 @@ const Banner = ({ className="", shape="rect", angle=0, innerangle=0, children=""
     }
     
   }, [shape, angle]);
+
+  // useEffect(() => {
+  //   elementRef.current.style
+  // }, []);
 
   return (
     <div ref={elementRef} className={`relative
