@@ -52,7 +52,7 @@ module.exports = {
           '3px 0px #8757B5', '-.5px 2px #8757B5', '-.5px -1px #8757B5', '-.5px 0px #8757B5'
         ],
         'clip-outline-yellow': [
-          '3px 0px #FFF200', '-.5px 4px #fff200', '-2px -4px #fff200', '-.5px 0px #fff200'
+          '2px 0px #FFF200', '-1px 1px #FFF200', '-.5px -1px #FFF200', '-.5px 0px #FFF200'
         ]
       }
     },
