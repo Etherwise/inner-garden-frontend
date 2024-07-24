@@ -58,18 +58,20 @@ const Header = () => {
       </section>
 
       <section className="hidden lg:flex items-center justify-center w-[6%] lg:w-[3%]">
-        <Image
-          src={HeaderExtra}
-          alt="extra"
-        />
-        <Image
-          src={HeaderExtra}
-          alt="extra"
-        />
-        <Image
-          src={HeaderExtra}
-          alt="extra"
-        />
+        <button className="lg:flex items-center justify-center">
+          <Image
+            src={HeaderExtra}
+            alt="extra"
+          />
+          <Image
+            src={HeaderExtra}
+            alt="extra"
+          />
+          <Image
+            src={HeaderExtra}
+            alt="extra"
+          />
+        </button>
       </section>
 
       <section className="hidden lg:inline w-[30%] lg:w-[15%]">
