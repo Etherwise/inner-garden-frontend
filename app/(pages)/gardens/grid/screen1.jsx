@@ -34,8 +34,8 @@ export const Info = () => {
           <p className='flex items-center justify-center py-1 pl-7 pr-4 bg-white text-purple-inner-octagon text-sm font-bold text-nowrap' ref={userNameCardInnerRef}>jackie milter</p>
         </span>
       </section>
-      <section className="flex items-center w-max h-full">
-        <p ref={hexElementRef} className="bg-orange-dark py-1 px-3 md:px-6 font-bold text-white mr-3">peace</p>
+      <section className="flex items-center gap-0 md:gap-3 w-max h-full">
+        <p ref={hexElementRef} className="bg-orange-dark py-1 px-3 md:px-6 font-bold text-white">peace</p>
         <OctagonCounter className="w-full !p-3" count={20} />
       </section>
     </div>
@@ -45,7 +45,7 @@ export const Info = () => {
 export default function Screen1() {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-3 gap-x-12 gap-y-24 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 grid-rows-3 gap-x-12 gap-y-24 mt-12">
         <RectangleCard lowerAngle={5} cardImage={CardImage} className={{
             main: "",
             image: "!h-[15vh]",

@@ -1,4 +1,3 @@
-import CardImage from "@/public/assets/cards/butterfly.png";
 
 import ExpressionFilter from "@/app/_components/expressions_filter";
 

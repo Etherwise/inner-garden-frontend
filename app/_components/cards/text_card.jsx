@@ -8,7 +8,7 @@ import calculate from "@/app/_libs/position_calculation";
 
 
 const TextCard = ({
-  children="", angle=12, innerangle=15, className="", align={do: false, value: 100}
+  children="", angle=12, innerangle=15, className="", align={apply: false, value: 100}
 }) => {
   const elementRef = useRef();
 
@@ -17,7 +17,7 @@ const TextCard = ({
   useEffect(() => {
     const { leftEdge2 } = rectClipBanner(elementRef, angle, innerangle, true);
 
-    if (align.do) {
+    if (align.apply) {
       elementRef.current.style.top = `${calculate(elementRef, leftEdge2, align.value)}%`;
     }
   }, [angle]);
