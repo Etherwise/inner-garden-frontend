@@ -53,7 +53,13 @@ const Header = () => {
 
       <section className="hidden gap-3 lg:flex">
         <NavLink id={1} text="Gardens" href="/gardens" active={pathname == "/gardens"} />
+      </section>
+
+      <section className="hidden gap-3 lg:flex">
         <NavLink id={2} text="Adversities" href="/adversities" active={pathname == "/adversities"} />
+      </section>
+
+      <section className="hidden gap-3 lg:flex">
         <NavLink id={3} text="Activities" href="/activities" active={pathname == "/activities"} />
       </section>
 
@@ -74,7 +80,7 @@ const Header = () => {
         </button>
       </section>
 
-      <section className="hidden lg:inline w-[30%] lg:w-[15%]">
+      <section className="hidden lg:inline w-[30%] lg:w-[15%] xl:w-[12%]">
         <Link href="/wellgorithms">
           <Image
             src={pathname == "/wellgorithms" ? HeaderWellgorithmActive : HeaderWellgorithm}
@@ -103,15 +109,19 @@ const Header = () => {
 
       <section className="hidden
       lg:flex items-center gap-3
-      w-[24%] lg:w-[21%] xl:w-[18%]
       ">
         <LinkComp href="/login" className="flex items-center justify-center gap-0.5 text-purple-mid text-sm xl:text-base">
           <>
             log
-            <TextInBrackets text="in" className="w-[27%] xl:w-[27%] font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
+            <TextInBrackets text="in" className="w-[41%] font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
           </>
         </LinkComp>
-        <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />
+      </section>
+
+      <section className="hidden lg:flex
+        w-max
+      ">
+        <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 px-6 text-sm xl:text-base" angle={18} />
       </section>
 
       <MobileNav open={openMobileNav} />
