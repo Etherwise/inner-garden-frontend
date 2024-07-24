@@ -1,14 +1,28 @@
+"use client"
+
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
 import ExpressionFilter from "@/app/_components/expressions_filter";
 
-import Screen1 from "../../_components/categories/screen1";
-import Screen2 from "../../_components/categories/screen2";
+import Screen1 from "../../../_components/categories/screen1";
+import Screen2 from "../../../_components/categories/screen2";
 
 import { getCategories } from "@/app/_services/categories";
 
-const Index = async () => {
-  const data = (await getCategories("Garden"));
+const MainPage = () => {
+  const [data, setData] = useState(null);
+  const params = useParams();
 
-  if (data.error) {
+  useEffect(() => {
+    console.log(params)
+    const getData = async () => {
+      setData(await getCategories(params.category));
+    }
+    getData();
+  }, []);
+
+  if (!data || data.error || !data.result.length) {
     return (<>Not Found</>);
   }
 
@@ -25,4 +39,4 @@ const Index = async () => {
     </>
   );
 }
-export default Index;
+export default MainPage;

@@ -1,4 +1,3 @@
-import CardImage from "@/public/assets/cards/butterfly.png";
 
 import ExpressionFilter from "@/app/_components/expressions_filter";
 
@@ -17,7 +16,6 @@ export default function Index() {
       <div className="h-[60vh] md:h-[60vw] xl:h-screen 3xl:h-[80vh]">
         <Screen1 />
       </div> */}
-      home page
     </>
   );
 }
