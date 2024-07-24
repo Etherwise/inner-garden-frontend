@@ -8,7 +8,7 @@ import useClipBuilder from "@/app/_hooks/clip_path_calculations";
 import calculate from "@/app/_libs/align_calculation";
 
 
-const LabelComponent = ({ text=["", ""], textClasses ,
+const LabelComponent = ({ text=["", "", ""], textClasses ,
   className="", bracketClassName="", angle=24, align=false, shape = "arrow" , thin = {apply: true, color: "#AF5CAA", width: 3}}) => {
   const elementRef = useRef();
 

@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 
 import ExpressionFilter from "@/app/_components/expressions_filter";
 
-import Screen1 from "../../../_components/categories/screen1";
-import Screen2 from "../../../_components/categories/screen2";
+import Screen1 from "@/app/_components/categories/screen1";
+import Screen2 from "@/app/_components/categories/screen2";
 
 import { getCategories } from "@/app/_services/categories";
 
@@ -17,7 +17,7 @@ const MainPage = () => {
   useEffect(() => {
     console.log(params)
     const getData = async () => {
-      setData(await getCategories(params.category));
+      setData(await getCategories("Garden"));
     }
     getData();
   }, []);

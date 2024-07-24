@@ -121,7 +121,7 @@ const Header = () => {
       <section className="hidden lg:flex
         w-max
       ">
-        <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 px-6 text-sm xl:text-base" angle={18} />
+        <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 px-6 text-sm xl:text-base text-nowrap" angle={18} />
       </section>
 
       <MobileNav open={openMobileNav} />
