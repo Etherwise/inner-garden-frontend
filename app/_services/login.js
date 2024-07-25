@@ -11,7 +11,7 @@ const iv = crypto.randomBytes(16);
  * @returns {string} The encrypted text.
  */
 function encrypt(text) {
-  const cipher = crypto.createCipheriv(algorithm, Buffer.from(process.env.NEXT_PUBLIC_ENCRYPTION_KEY, 'hex'), iv);
+  const cipher = crypto.createCipheriv(algorithm, Buffer.from("0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef", 'hex'), iv);
   let encrypted = cipher.update(text);
   encrypted = Buffer.concat([encrypted, cipher.final()]);
   return iv.toString('hex') + ':' + encrypted.toString('hex');
@@ -59,7 +59,7 @@ async function loginUser(email, password, router) {
       router.push(destination);
     } else {
       // If response is not ok, throw an error with the response JSON
-      throw new Error(JSON.stringify(jsonResponse));
+      console.log(response)
     }
 
     return jsonResponse;
