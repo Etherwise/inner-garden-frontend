@@ -13,7 +13,7 @@ const DrawerCard = ({ text=["", ""], content="", className="", bracketClassName=
     return (
         <div className={`p-6 px-12 w-full
         grid grid-cols-[.6fr,_auto] gap-x-6 text-lg md:text-xl lg:text-2xl xl:text-3xl ${className}`}>
-            <section className="row-span-2 w-full">
+            <section className="row-span-2 w-[90%]">
                 <Image src={Avatar} alt="avatar" />
             </section>
             <section className="flex items-end gap-1">
