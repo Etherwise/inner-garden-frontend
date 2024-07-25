@@ -16,7 +16,6 @@ const AiHumanMeter = () => {
     const upperBlockRef = useRef(null);
     const aiValueRef = useRef(null);
     const humanValueRef = useRef(null);
-    const dividerRef = useRef(null);
 
     const handleMouseMove = (event) => {
         if (sliderRef.current) {

@@ -4,6 +4,8 @@ import "./style.css";
 import TextWithBrackets from "@/app/_components/texts/text_with_brackets";
 import Octagon from "../components/octogon";
 import useClipBuilder from "@/app/_hooks/clip_path_calculations";
+import loginUser from "@/app/_services/login";
+import { useRouter } from "next/navigation";
 
 const Screen = () => {
   const bracketsData = {
@@ -30,9 +32,14 @@ const Screen = () => {
     hexagonClip(buttonRef, 12);
   }, [hexagonClip]);
 
-  const handleSubmit = ()=>{
+
+  const router = useRouter();
+
+  const handleSubmit = async ()=>{
 
     // TODO: API - /api/userlogin
+    const loginResult =await loginUser(email,password,router);
+    console.log(loginResult);
 
   }
 
