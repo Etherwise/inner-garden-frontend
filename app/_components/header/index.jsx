@@ -23,7 +23,7 @@ import TextInBrackets from "@/app/_components/texts/text_in_brackets";
 
 
 const Header = () => {
-  const [openCategoryDrawer, setOpenCategoryDrawer] = useState(true);
+  const [openCategoryDrawer, setOpenCategoryDrawer] = useState(false);
   const [openMobileNav, setOpenMobileNav] = useState(false);
 
   const pathname = usePathname();
@@ -37,7 +37,7 @@ const Header = () => {
   }
   
   return (
-    <header className="relative
+    <header className="
     flex items-center justify-between gap-5
     min-h-max w-full text-white py-2
     bg-black responsive-container">
