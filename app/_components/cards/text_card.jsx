@@ -25,7 +25,7 @@ const TextCard = ({
   return (
     <div ref={elementRef} className={`grid place-items-center
     before:content-[""] before:absolute before:w-full before:h-full before:-z-10 pseudo-clip-path before:bg-white
-    p-12 font-semibold 
+    p-12 
     ${className}`}>
       {children}
     </div>
