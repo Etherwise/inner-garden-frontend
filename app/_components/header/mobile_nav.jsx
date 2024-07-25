@@ -14,7 +14,7 @@ const MobileNav = ({ open = false }) => {
 
   return (
     <div className={`
-      ${open ? "absolute right-0" : "hidden left-full"} top-[6%]
+      absolute ${open ? "right-0" : "left-full"} top-[6%]
       lg:hidden flex flex-col items-center gap-6
       bg-inherit min-w-[200px] w-1/4 p-6 h-full z-50`}>
         <section className="flex flex-col gap-y-3">

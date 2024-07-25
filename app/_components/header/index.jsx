@@ -16,10 +16,14 @@ import HeaderMenu from "@/public/assets/header/header_menu.svg";
 
 import NavLink from "./nav_link";
 import MobileNav from "./mobile_nav";
-import LinkComp from "../link_component";
+import CategoriesDrawer from "./categories_drawer";
+
+import LinkComp from "@/app/_components/link_component";
 import TextInBrackets from "@/app/_components/texts/text_in_brackets";
 
+
 const Header = () => {
+  const [openCategoryDrawer, setOpenCategoryDrawer] = useState(true);
   const [openMobileNav, setOpenMobileNav] = useState(false);
 
   const pathname = usePathname();
@@ -27,9 +31,13 @@ const Header = () => {
   const handleMenuClick = () => {
     setOpenMobileNav(!openMobileNav);
   }
+
+  const handleMoreCategoryClick = () => {
+    setOpenCategoryDrawer(!openCategoryDrawer);
+  }
   
   return (
-    <header className="
+    <header className="relative
     flex items-center justify-between gap-5
     min-h-max w-full text-white py-2
     bg-black responsive-container">
@@ -63,8 +71,8 @@ const Header = () => {
         <NavLink id={3} text="Activities" href="/activities" active={pathname == "/activities"} />
       </section>
 
-      <section className="hidden lg:flex items-center justify-center w-[6%] lg:w-[3%]">
-        <button className="lg:flex items-center justify-center">
+      <section className="hidden lg:flex items-center justify-center">
+        <button className="lg:flex items-center justify-center" onClick={handleMoreCategoryClick}>
           <Image
             src={HeaderExtra}
             alt="extra"
@@ -125,6 +133,10 @@ const Header = () => {
       </section>
 
       <MobileNav open={openMobileNav} />
+
+      {
+        openCategoryDrawer && <CategoriesDrawer handleMoreCategoryClick={handleMoreCategoryClick} />
+      }
       
     </header>
   );
