@@ -25,6 +25,9 @@ const AiHumanMeter = () => {
                 setValue(100 - Math.round(newHeight));
                 setaiValue(100 - (100 - Math.round(newHeight)));
                 sethumanValue(100 - Math.round(newHeight));
+                console.log(value)
+                console.log(aiValue)
+                console.log(humanValue)
             }
         }
     };
@@ -62,14 +65,14 @@ const AiHumanMeter = () => {
             upperBlockRef.current.style.background = '#D5D1ED'
             aiValueRef.current.style.color = '#8858B5'
             meterContainerRef.current.style.opacity = '100%';
-            sliderRef.current.style.height = '38%';
+        
         }
         else{
             meterContainerRef.current.style.background = "conic-gradient(#41AD49 0deg 90deg , #855AA5 90deg 270deg , #41AD49 270deg 360deg)";
             upperBlockRef.current.style.background = '#41AD49'
             aiValueRef.current.style.color = '#FFF200'
             meterContainerRef.current.style.opacity = '100%';
-            sliderRef.current.style.height = '38%';
+            
         }
     }, [value]);
 
@@ -77,18 +80,21 @@ const AiHumanMeter = () => {
         <>
            <div className='w-[100px] h-[300px] relative flex items-center justify-center p-[3px] drop-shadow-clip-outline-yellow transition-opacity ease-in-out'>
            <Image src={AiHumoMeter} alt='AiHumanMeter' className=' absolute h-full'/>
-           <div className="w-full h-full bg-conic-gradient-green-purple-green flex items-center relative z-0 clip-polygon-hexagon" ref={meterContainerRef}>
+           <div className="w-full h-full bg-conic-gradient-green-purple-green flex items-center justify-center relative z-0 clip-polygon-hexagon" ref={meterContainerRef}>
 
                     <div className='absolute z-50 left-[50%] translate-x-[-50%] top-[10%] text-[16px] leading-tight font-bold text-center' ref={aiValueRef}>AI<br />{aiValue}%</div>
                     <div className='absolute z-50 left-[50%] translate-x-[-50%] bottom-[8%] text-[16px] leading-tight font-bold text-center text-[#FFF200]' ref={humanValueRef}>Human<br />{humanValue}%</div>
 
-                <div className="relative w-[100px] h-[39%] bg-transparent overflow-hidden select-none z-0" ref={sliderRef}>  {/* Entire sliding block */}
+                <div className="relative w-[100px] h-[37%] bg-transparent select-none z-0" ref={sliderRef}>  {/* Entire sliding block */}
+
                     <div className="w-full bg-[#41AD49] transition-height ease" style={{ height: `${100 - value}%` }} ref={upperBlockRef}></div>{/* upper block */}
                     
-              {/* divider */}<div className="absolute left-0 right-0 h-[2px] bg-yellow-light cursor-grab z-10" style={{ bottom: `${value}%` }} 
-                        onMouseDown={(el)=>{handleMouseDown(el)}}>
+             <div className="absolute left-0 right-0 h-[2px] bg-yellow-light cursor-grab z-10" style={{ bottom: `${value}%` }}  
+                        onMouseDown={(el)=>{handleMouseDown(el)}}>{/* divider */}
+
             <span className="bg-yellow-light block w-[34%] h-[600%] absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] z-20" ref={dividerPullerRef}/></div>  
                     <div className="w-full bg-[#855AA5] transition-height ease" style={{ height: `${value}%` }} ref={lowerBlockRef}></div>{/* lower block */}
+
                 </div>
 
             </div>
