@@ -79,7 +79,7 @@ const AiHumanMeter = () => {
     return (
         <>
            <div className='w-[100px] h-[300px] relative flex items-center justify-center p-[3px] drop-shadow-clip-outline-yellow transition-opacity ease-in-out'>
-           <Image src={AiHumoMeter} alt='AiHumanMeter' className=' absolute h-full'/>
+           <Image src={AiHumoMeter} alt='AiHumanMeter' className=' absolute '/>
            <div className="w-full h-full bg-conic-gradient-green-purple-green flex items-center justify-center relative z-0 clip-polygon-hexagon" ref={meterContainerRef}>
 
                     <div className='absolute z-50 left-[50%] translate-x-[-50%] top-[10%] text-[16px] leading-tight font-bold text-center' ref={aiValueRef}>AI<br />{aiValue}%</div>
