@@ -22,9 +22,9 @@ const [selected, setSelected] = useState(0)
   
 
   return (
-    <div className='w-screen px-3 flex items-center justify-center gap-1'>
+    <div className='min-h-screen flex items-center justify-center gap-1'>
 
-    <section className='h-full w-1/4 flex flex-col items-center py-10 '>
+    <section className='h-full w-1/4 flex  flex-col items-center py-10 '>
 
         <ComponentContainer className=' w-full py-12 gap-6 mb-4 bg-[#C4B8DD]'>
         <Image src={'/assets/journal_creation/octa.svg'} alt='octa' width={160} height={160}/>
@@ -51,8 +51,8 @@ const [selected, setSelected] = useState(0)
 
       </section>
 
-    <section className='h-full w-3/4 bg-green-400'></section>
-    <section className='h-full w-1/4 bg-green-400'></section>
+    <section className='h-full w-3/4 '></section>
+    <section className='h-full w-1/4 '></section>
 
 
 
