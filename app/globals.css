@@ -62,3 +62,38 @@ body {
 /* footer {
   box-shadow: inset 0px 30px 60px var(--light-purple-1);
 } */
+
+.custom-checkbox-searchdrawer[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    
+    display: grid;
+    place-items: center;
+
+    border: 2px solid #C3ABDA;
+    background-color: #DFDCF1;
+
+    inline-size: 1rem;
+    aspect-ratio: 1;
+
+    transform: rotate(45deg);
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+.custom-checkbox-searchdrawer[type="checkbox"]::before {
+  content: "";
+
+  width: 100%;
+  height: 100%;
+  background-color: #C283BE;
+
+  transform: scale(0);
+  transition: 0.3s ease;
+}
+.custom-checkbox-searchdrawer[type="checkbox"]:checked {
+  border-color: white;
+}
+.custom-checkbox-searchdrawer[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
