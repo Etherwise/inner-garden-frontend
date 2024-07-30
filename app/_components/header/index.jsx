@@ -37,9 +37,9 @@ const Header = () => {
   }
   
   return (
-    <header className="
+    <header className="relative
     flex items-center justify-between gap-5
-    min-h-max w-full text-white py-2
+    h-full w-full text-white py-2
     bg-black responsive-container">
       <section>
         <Link href={"/"}>
