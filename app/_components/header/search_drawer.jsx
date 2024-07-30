@@ -158,7 +158,7 @@ const SearchDrawer = ({ handleSearchClick=()=>{} }) => {
         <>
             <div className="absolute top-full left-0 z-50 bg-purple-dark
             min-w-[300px] w-full py-3">
-                <div className="flex items-center justify-center gap-6 mb-12">
+                <div className="flex items-center justify-center gap-6 mb-12 text-xl">
                     <section className="flex items-center gap-3">
                         <input id="search-all" type="checkbox" className="custom-checkbox-searchdrawer peer" />
                         <label for="search-all" className="font-bold peer-checked:text-yellow-dark">all</label>
