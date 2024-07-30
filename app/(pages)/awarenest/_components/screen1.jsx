@@ -44,7 +44,7 @@ const Screen1 = () => {
           <button onClick={handleClick} className="p-1 lg:p-2 !px-6 !pr-9">My Nest</button>
         </section>
 
-        <TextCard angle={angle} innerangle={15} align={{do: true, value: 100}}
+        <TextCard angle={angle} innerangle={15} align={{apply: true, value: 100}}
         className="absolute left-[calc(50%-40%)] md:left-[calc(50%-35%)] lg:left-[calc(50%-30%)]
         w-[80%] md:w-[70%] lg:w-[60%] text-xl md:text-2xl lg:text-3xl text-center
         xl:px-12 lg:px-10 md:px-8 px-6">
