@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react';
 
-const ComponentContainer = ({children , className = ''}) => {
+const ComponentContainer = forwardRef(({ children, className = '' }, ref) => {
   return (
-    <div className={`relative w-fit h-fit flex flex-col justify-center items-center ${className}`}>
+    <div ref={ref} className={`relative w-fit h-fit flex flex-col justify-center items-center ${className}`}>
       {children}
     </div>
-  )
-}
+  );
+});
 
-export default ComponentContainer
+export default ComponentContainer;
