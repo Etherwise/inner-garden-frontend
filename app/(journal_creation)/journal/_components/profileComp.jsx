@@ -19,12 +19,13 @@ const ProfileComp = ({className}) => {
     const containerRef = useRef(null);
     useEffect(() => {
       if (containerRef.current) {
-        containerRef.current.style.clipPath = 'polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0 93%, 0 7%)' 
+        containerRef.current.style.clipPath = 'polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0 94%, 0 7%)' 
       }
     }, []);
   
     return (
-        <ComponentContainer className={`${className}`} ref={containerRef}>
+        <section className='h-fit w-full relative mt-28'>
+        <ComponentContainer className={` ${className}`} ref={containerRef}>
 
             <p className="text-white text-2xl pt-10 pb-4 font-bold">Winston Churchil</p>
             <p className="w-full bg-white flex justify-center py-8 text-xl leading-8 text-nowrap text-justify font-medium">
@@ -37,11 +38,13 @@ const ProfileComp = ({className}) => {
                 <TextInBrackets text="inner" className="text-yellow-dark font-extrabold w-[3.3rem] sm:w-[45%] md:w-[49%] lg:w-[50%] xl:w-fit text-3xl !gap-0" thin={{ apply: true, width: 1, color: "#8757B5" }} />
                 Hero
             </p>
-            <div ref={octaRef3} className="w-40 h-40 bg-white absolute p-[1%] top-[-21%] rotate-[23deg]">
+           
+        </ComponentContainer>
+        <div ref={octaRef3} className="w-40 h-40 bg-white absolute p-[1%] top-[-18.5%] left-[50%] translate-x-[-50%] rotate-[23deg]">
                 <div ref={octaRef4} className="w-full h-full bg-green-400 ">
                 </div>
             </div>
-        </ComponentContainer>
+        </section>
     )
 }
 

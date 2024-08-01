@@ -7,7 +7,7 @@ const Xbt = ({className}) => {
   const containerRef = useRef(null);
   useEffect(() => {
     if (containerRef.current) {
-      containerRef.current.style.clipPath = 'polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0 92%, 0 7%)' 
+      containerRef.current.style.clipPath = 'polygon(0 0, 85% 0, 100% 8%, 100% 94%, 88% 100%, 0 100%)' 
     }
   }, []);
 
