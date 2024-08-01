@@ -18,14 +18,14 @@ import TextInBrackets from "@/app/_components/texts/text_in_brackets";
 import CardImage from "@/public/assets/cards/butterfly.png";
 import LabelComponent from "@/app/_components/label";
 
-import LeftHandle from "@/public/assets/searchdrawer/left.svg";
+import WellgoLogo from "@/public/assets/searchdrawer/wellgorithm_white.svg";
 import RightHandle from "@/public/assets/searchdrawer/right.svg";
 
 import OctagonCounter from "@/app/_components/octagon_counter";
 import womanImage from '@/public/assets/banner/banner.png'
 
 const Card = ({ children="", text=null, cardImage=null, upperAngle = 5, lowerAngle = 7, avatar=true,
-  className="", sectionClassname="", imageClassName="" }) => {
+  className="", sectionClassname="", imageClassName="", shadowClassname="" }) => {
 
   const imageTextRef = useRef(null);
   const {rectClip} = useClipBuilder()
@@ -38,15 +38,17 @@ const Card = ({ children="", text=null, cardImage=null, upperAngle = 5, lowerAng
   return (
     <div className={`relative h-full
       ${className}`}>
-      <section className={`relative h-full bg-white ${sectionClassname}`} ref={imageTextRef}>
-        <Image src={cardImage ? cardImage : womanImage} alt='image' className={` w-full object-cover ${imageClassName}`}/>
-        {text}
-        {
-          avatar && 
-          <section className="flex gap-3 px-9 pb-6 w-full">
-            <Image src={HeaderAvatar} alt='avatar' className="w-[15%]" />
-          </section>
-        }
+      <section className={shadowClassname}>
+        <section className={`relative h-full bg-white ${sectionClassname}`} ref={imageTextRef}>
+          <Image src={cardImage ? cardImage : womanImage} alt='image' className={` w-full object-cover ${imageClassName}`}/>
+          {text}
+          {
+            avatar && 
+            <section className="flex gap-3 px-9 pb-6 w-full">
+              <Image src={HeaderAvatar} alt='avatar' className="w-[15%]" />
+            </section>
+          }
+        </section>
       </section>
       {children}
     </div>
@@ -62,7 +64,7 @@ const Text = ({ className="", text="" }) => {
 }
 
 
-const Screen2 = ({ heading="", cardClassName="", octagonCounterClassname="", textClassname="", avatar=true }) => {
+const Row1 = ({ heading="", cardClassName="", octagonCounterClassname="", textClassname="", avatar=true }) => {
   const scrollElementRef = useRef(null);
 
   const handleLeftClick = () => {
@@ -109,7 +111,7 @@ const Screen2 = ({ heading="", cardClassName="", octagonCounterClassname="", tex
       <div ref={scrollElementRef} className="flex gap-6 md:gap-9 w-full py-6 px-1 overflow-x-auto no-scrollbar h-full mt-6 snap-x">
         
         <Card cardImage={CardImage} imageClassName="!h-[30%]" sectionClassname={cardClassName}
-         className={`snap-center shrink-0 w-full max-w-[440px] drop-shadow-clip-outline-white`}
+         className={`snap-center shrink-0 w-full max-w-[440px]`} shadowClassname="drop-shadow-clip-outline-white"
          text={<Text className={"text-lg font-semibold h-[70%] "+textClassname} />} avatar={avatar}>
           
           <div className="absolute left-1/2 top-0 translate-y-[-50%] translate-x-[-50%] drop-shadow-clip-outline-white">
@@ -123,7 +125,7 @@ const Screen2 = ({ heading="", cardClassName="", octagonCounterClassname="", tex
         </Card>
 
         <Card cardImage={CardImage} imageClassName="!h-[30%]" sectionClassname={cardClassName}
-         className={`snap-center shrink-0 w-full max-w-[440px] drop-shadow-clip-outline-white`}
+         className={`snap-center shrink-0 w-full max-w-[440px]`} shadowClassname="drop-shadow-clip-outline-white"
          text={<Text className={"text-lg font-semibold h-[70%] "+textClassname} />} avatar={avatar}>
           
           <div className="absolute left-1/2 top-0 translate-y-[-50%] translate-x-[-50%] drop-shadow-clip-outline-white">
@@ -137,7 +139,7 @@ const Screen2 = ({ heading="", cardClassName="", octagonCounterClassname="", tex
         </Card>
 
         <Card cardImage={CardImage} imageClassName="!h-[30%]" sectionClassname={cardClassName}
-         className={`snap-center shrink-0 w-full max-w-[440px] drop-shadow-clip-outline-white`}
+         className={`snap-center shrink-0 w-full max-w-[440px]`} shadowClassname="drop-shadow-clip-outline-white"
          text={<Text className={"text-lg font-semibold h-[70%] "+textClassname} />} avatar={avatar}>
           
           <div className="absolute left-1/2 top-0 translate-y-[-50%] translate-x-[-50%] drop-shadow-clip-outline-white">
@@ -147,6 +149,108 @@ const Screen2 = ({ heading="", cardClassName="", octagonCounterClassname="", tex
             textClasses={"!text-white"} text={["aware", "Nest"]} thin={{apply: true, color:"#8858B5", width: 3}} />
           
           </div>
+        
+        </Card>
+        
+      </div>
+    </>
+  );
+}
+
+const Row2 = ({ heading="", cardClassName="", octagonCounterClassname="", textClassname="", avatar=true }) => {
+  const scrollElementRef = useRef(null);
+
+  const handleLeftClick = () => {
+    if (!scrollElementRef) return 0;
+
+    scrollElementRef.current.scrollBy({
+      left: 300, // Scroll 100 pixels to the right
+      behavior: 'smooth'
+    });
+  }
+
+  const handleRightClick = () => {
+    if (!scrollElementRef) return 0;
+
+    scrollElementRef.current.scrollBy({
+      left: -300, // Scroll 100 pixels to the right
+      behavior: 'smooth'
+    });
+  }
+  
+  return (
+    <>
+      <div className="flex w-full items-center justify-between">
+        <p className="text-yellow-dark font-bold text-3xl w-full">{heading}</p>
+
+        <section className="w-[180px] flex items-center gap-9">
+          <OctagonCounter className={"w-full !p-2 text-xl text-yellow-dark "+octagonCounterClassname} count={7} />
+
+          <section className="grow flex items-center gap-6 w-full">
+            <button onClick={handleRightClick}>
+              <svg width="22" height="44" viewBox="0 0 22 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.6501 5.5288L10.1341 0L0 21.8848L10.1341 44L21.6501 38.2408L14.2799 21.8848L21.6501 5.5288Z" fill="#FFF200"/>
+              </svg>
+            </button>
+            <button onClick={handleLeftClick}>
+              <svg width="23" height="44" viewBox="0 0 23 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.875 38.4712L12.391 44L22.5251 22.1152L12.391 2.92857e-06L0.875003 5.75916L8.24527 22.1152L0.875 38.4712Z" fill="#FFF200"/>
+              </svg>
+            </button>
+          </section>
+        </section>
+      </div>
+
+      <div ref={scrollElementRef} className="flex gap-6 md:gap-9 w-full py-6 pb-9 px-1 overflow-x-auto no-scrollbar h-full mt-6 snap-x">
+        
+        <Card cardImage={CardImage} imageClassName="aspect-1/2" sectionClassname={`${cardClassName} pb-6`}
+         className={`snap-center shrink-0 w-full max-w-[440px]`} shadowClassname="drop-shadow-clip-outline-white"
+         text={<Text className={"text-lg font-semibold "+textClassname} />} avatar={avatar}>
+          
+          <div className="absolute left-1/2 top-0 translate-y-[-50%] translate-x-[-50%] drop-shadow-clip-outline-white">
+            
+            <LabelComponent bracketClassName="!w-[4rem] md:!w-[55%] !fill-white text-yellow-dark" shape="hexagon" angle={15}
+            className="relative !py-0.5 !text-sm md:!text-lg !px-2 !bg-purple-text-light w-max z-10"
+            textClasses={"!text-white"} text={["aware", "Nest"]} thin={{apply: true, color:"#8858B5", width: 3}} />
+          
+          </div>
+
+          <Image src={WellgoLogo} alt="wellgo-image" className="absolute top-full translate-y-[-50%] left-1/2 translate-x-[-50%]
+          drop-shadow-none" />
+        
+        </Card>
+
+        <Card cardImage={CardImage} imageClassName="!h-[30%]" sectionClassname={`${cardClassName} pb-6`}
+         className={`snap-center shrink-0 w-full max-w-[440px]`} shadowClassname="drop-shadow-clip-outline-white"
+         text={<Text className={"text-lg font-semibold "+textClassname} />} avatar={avatar}>
+          
+          <div className="absolute left-1/2 top-0 translate-y-[-50%] translate-x-[-50%] drop-shadow-clip-outline-white">
+            
+            <LabelComponent bracketClassName="!w-[4rem] md:!w-[55%] !fill-white text-yellow-dark" shape="hexagon" angle={15}
+            className="relative !py-0.5 !text-sm md:!text-lg !px-2 !bg-purple-text-light w-max z-10"
+            textClasses={"!text-white"} text={["aware", "Nest"]} thin={{apply: true, color:"#8858B5", width: 3}} />
+          
+          </div>
+
+          <Image src={WellgoLogo} alt="wellgo-image" className="absolute top-full translate-y-[-50%] left-1/2 translate-x-[-50%]
+          drop-shadow-none" />
+        
+        </Card>
+
+        <Card cardImage={CardImage} imageClassName="!h-[30%]" sectionClassname={`${cardClassName} pb-6`}
+         className={`snap-center shrink-0 w-full max-w-[440px]`} shadowClassname="drop-shadow-clip-outline-white"
+         text={<Text className={"text-lg font-semibold "+textClassname} />} avatar={avatar}>
+          
+          <div className="absolute left-1/2 top-0 translate-y-[-50%] translate-x-[-50%] drop-shadow-clip-outline-white">
+            
+            <LabelComponent bracketClassName="!w-[4rem] md:!w-[55%] !fill-white text-yellow-dark" shape="hexagon" angle={15}
+            className="relative !py-0.5 !text-sm md:!text-lg !px-2 !bg-purple-text-light w-max z-10"
+            textClasses={"!text-white"} text={["aware", "Nest"]} thin={{apply: true, color:"#8858B5", width: 3}} />
+          
+          </div>
+
+          <Image src={WellgoLogo} alt="wellgo-image" className="absolute top-full translate-y-[-50%] left-1/2 translate-x-[-50%]
+          drop-shadow-none" />
         
         </Card>
         
@@ -215,11 +319,11 @@ const SearchDrawer = ({ handleSearchClick=()=>{} }) => {
         </div>
 
         <div className="bg-purple-text-light text-black py-9 responsive-container">
-            <Screen2 heading={"journals"} octagonCounterClassname="bg-purple-dark" />
+            <Row1 heading={"journals"} octagonCounterClassname="bg-purple-dark" />
         </div>
 
         <div className=" text-black py-9 responsive-container">
-            <Screen2 heading={"wellgorithms"} textClassname="text-yellow-dark text-center px-9"
+            <Row2 heading={"wellgorithms"} textClassname="text-yellow-dark text-center px-9"
             octagonCounterClassname="bg-purple-text-light" avatar={false}
             cardClassName="!bg-purple-text-light" />
         </div>
