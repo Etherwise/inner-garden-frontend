@@ -16,8 +16,7 @@ const LinkComp = ({ text=null, children=null, href="", className="", angle=0 }) 
 
   return (
     <Link ref={elementRef} href={href} className={`
-      w-full
-      text-center font-bold ${className}`}>
+      w-full text-center font-bold ${className}`}>
       {children || text}
     </Link>
   );

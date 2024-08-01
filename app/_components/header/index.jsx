@@ -16,22 +16,36 @@ import HeaderMenu from "@/public/assets/header/header_menu.svg";
 
 import NavLink from "./nav_link";
 import MobileNav from "./mobile_nav";
-import LinkComp from "../link_component";
+import CategoriesDrawer from "./categories_drawer";
+
+import LinkComp from "@/app/_components/link_component";
 import TextInBrackets from "@/app/_components/texts/text_in_brackets";
+import SearchDrawer from "./search_drawer";
+
 
 const Header = () => {
+  const [openCategoryDrawer, setOpenCategoryDrawer] = useState(false);
+  const [openSearchDrawer, setOpenSearchDrawer] = useState(false);
   const [openMobileNav, setOpenMobileNav] = useState(false);
 
   const pathname = usePathname();
 
+  const handleSearchClick = () => {
+    setOpenSearchDrawer(!openSearchDrawer);
+  }
+
   const handleMenuClick = () => {
     setOpenMobileNav(!openMobileNav);
   }
+
+  const handleMoreCategoryClick = () => {
+    setOpenCategoryDrawer(!openCategoryDrawer);
+  }
   
   return (
-    <header className="
+    <header className="relative
     flex items-center justify-between gap-5
-    min-h-max w-full text-white py-2
+    h-full w-full text-white py-2
     bg-black responsive-container">
       <section>
         <Link href={"/"}>
@@ -53,26 +67,34 @@ const Header = () => {
 
       <section className="hidden gap-3 lg:flex">
         <NavLink id={1} text="Gardens" href="/gardens" active={pathname == "/gardens"} />
+      </section>
+
+      <section className="hidden gap-3 lg:flex">
         <NavLink id={2} text="Adversities" href="/adversities" active={pathname == "/adversities"} />
+      </section>
+
+      <section className="hidden gap-3 lg:flex">
         <NavLink id={3} text="Activities" href="/activities" active={pathname == "/activities"} />
       </section>
 
-      <section className="hidden lg:flex items-center justify-center w-[6%] lg:w-[3%]">
-        <Image
-          src={HeaderExtra}
-          alt="extra"
-        />
-        <Image
-          src={HeaderExtra}
-          alt="extra"
-        />
-        <Image
-          src={HeaderExtra}
-          alt="extra"
-        />
+      <section className="hidden lg:flex items-center justify-center">
+        <button className="lg:flex items-center justify-center" onClick={handleMoreCategoryClick}>
+          <Image
+            src={HeaderExtra}
+            alt="extra"
+          />
+          <Image
+            src={HeaderExtra}
+            alt="extra"
+          />
+          <Image
+            src={HeaderExtra}
+            alt="extra"
+          />
+        </button>
       </section>
 
-      <section className="hidden lg:inline w-[30%] lg:w-[15%]">
+      <section className="hidden lg:inline w-[30%] lg:w-[15%] xl:w-[12%]">
         <Link href="/wellgorithms">
           <Image
             src={pathname == "/wellgorithms" ? HeaderWellgorithmActive : HeaderWellgorithm}
@@ -83,7 +105,7 @@ const Header = () => {
       </section>
 
       <section className="flex items-center justify-between gap-6">
-        <button className="lg:w-full ml-6">
+        <button className="lg:w-full ml-6" onClick={handleSearchClick}>
           <Image
             src={HeaderSearch}
             alt="Search"
@@ -101,18 +123,30 @@ const Header = () => {
 
       <section className="hidden
       lg:flex items-center gap-3
-      w-[24%] lg:w-[21%] xl:w-[18%]
       ">
         <LinkComp href="/login" className="flex items-center justify-center gap-0.5 text-purple-mid text-sm xl:text-base">
           <>
             log
-            <TextInBrackets text="in" className="w-[27%] xl:w-[27%] font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
+            <TextInBrackets text="in" className="w-[41%] font-bold text-white fill-purple-mid" thin={{apply: true, color: "#000", width: 3}} />
           </>
         </LinkComp>
-        <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 text-sm xl:text-base" angle={15} />
+      </section>
+
+      <section className="hidden lg:flex
+        w-max
+      ">
+        <LinkComp text="join us" href="/joinus" className="bg-purple-mid py-2 px-6 text-sm xl:text-base text-nowrap" angle={18} />
       </section>
 
       <MobileNav open={openMobileNav} />
+
+      {
+        openCategoryDrawer && <CategoriesDrawer handleMoreCategoryClick={handleMoreCategoryClick} />
+      }
+
+      {
+        openSearchDrawer && <SearchDrawer handleSearchClick={handleSearchClick} />
+      }
       
     </header>
   );

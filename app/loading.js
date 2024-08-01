@@ -1,4 +1,5 @@
-export default function Loading() {
+export default async function Loading() {
+    
     /*
         await new Promise((resolve) => {
             setTimeout(resolve, 1000);
