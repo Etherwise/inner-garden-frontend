@@ -61,7 +61,7 @@ const Screen = () => {
 
 
     <div className="w-full absolute h-full">
-    <ScrollContainer containerClassName="!w-[53%] left-[50%] translate-x-[-50%] top-[68%] !h-fit" headClassName="bg-[#9768D5]" heading={headingText} headAngle={34} bodyClassName="before:!h-screen h-fit p-0">
+    <ScrollContainer containerClassName="!w-[53%] left-[50%] translate-x-[-50%] top-[68%] !h-fit" headClassName="bg-[#9768D5]" heading={headingText} headAngle={34} bodyClassName="before:!h-screen h-fit !p-0">
 
     <p className="w-full text-center bg-[#D5D1ED] p-7 font-bold text-3xl text-[#774793]">
     The angels have come, revealing<br />themselves in everyday acts of<br />kindness.
