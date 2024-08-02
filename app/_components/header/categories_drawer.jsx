@@ -40,8 +40,8 @@ const CategoriesDrawer = ({ handleMoreCategoryClick=()=>{} }) => {
 
     return (
         <>
-            <div className="absolute top-full left-1/2 h-screen
-            min-w-[300px] w-[80%] xl:w-[60%] translate-x-[-50%] responsive-container z-10">
+            <div className="absolute top-full left-1/2 h-screen z-50
+            min-w-[300px] w-[80%] xl:w-[60%] translate-x-[-50%] responsive-container">
                 <div ref={elementRef} className={`relative h-[80%]
                 flex flex-col items-start
                 before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-z-10 pseudo-clip-path

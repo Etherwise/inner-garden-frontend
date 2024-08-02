@@ -20,13 +20,19 @@ import CategoriesDrawer from "./categories_drawer";
 
 import LinkComp from "@/app/_components/link_component";
 import TextInBrackets from "@/app/_components/texts/text_in_brackets";
+import SearchDrawer from "./search_drawer";
 
 
 const Header = () => {
   const [openCategoryDrawer, setOpenCategoryDrawer] = useState(false);
+  const [openSearchDrawer, setOpenSearchDrawer] = useState(false);
   const [openMobileNav, setOpenMobileNav] = useState(false);
 
   const pathname = usePathname();
+
+  const handleSearchClick = () => {
+    setOpenSearchDrawer(!openSearchDrawer);
+  }
 
   const handleMenuClick = () => {
     setOpenMobileNav(!openMobileNav);
@@ -37,9 +43,9 @@ const Header = () => {
   }
   
   return (
-    <header className="
+    <header className="relative
     flex items-center justify-between gap-5
-    min-h-max w-full text-white py-2
+    h-full w-full text-white py-2
     bg-black responsive-container">
       <section>
         <Link href={"/"}>
@@ -99,7 +105,7 @@ const Header = () => {
       </section>
 
       <section className="flex items-center justify-between gap-6">
-        <button className="lg:w-full ml-6">
+        <button className="lg:w-full ml-6" onClick={handleSearchClick}>
           <Image
             src={HeaderSearch}
             alt="Search"
@@ -136,6 +142,10 @@ const Header = () => {
 
       {
         openCategoryDrawer && <CategoriesDrawer handleMoreCategoryClick={handleMoreCategoryClick} />
+      }
+
+      {
+        openSearchDrawer && <SearchDrawer handleSearchClick={handleSearchClick} />
       }
       
     </header>

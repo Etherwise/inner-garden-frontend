@@ -14,9 +14,9 @@ const MobileNav = ({ open = false }) => {
 
   return (
     <div className={`
-      ${open ? "absolute right-0" : "hidden left-full"} top-[5%]
+      ${open ? "absolute right-0" : "hidden left-full"} top-[100%]
       lg:hidden flex flex-col items-center gap-6 bg-black
-      bg-inherit min-w-[200px] w-1/4 p-6 py-9 h-full z-50`}>
+      bg-inherit min-w-[200px] w-1/4 p-6 py-9 h-screen z-50`}>
         <section className="flex flex-col gap-y-3">
           <NavLink id={1} text="Gardens" href="/gardens" active={pathname == "/gardens"} />
           <NavLink id={2} text="Adversities" href="/adversities" active={pathname == "/adversities"} />
