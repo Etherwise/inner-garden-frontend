@@ -55,7 +55,7 @@ const Screen = () => {
     <div ref={octaPointsRef2} className="w-24 h-24 bg-white absolute bottom-[5%] right-[10%] flex items-center justify-center p-[5px]">
       <div ref={octaPointsInnerRef2} className="w-full h-full bg-orange-dark flex flex-col items-center justify-center">
          <p className="text-3xl font-bold text-white">20</p>
-         <p className="font-bold font-bold text-white">pts</p>
+         <p className="font-bold text-white">pts</p>
       </div>
     </div>
 
