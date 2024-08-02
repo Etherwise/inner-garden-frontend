@@ -117,7 +117,7 @@ const Screen = () => {
 </div>
 
     <section className="flex gap-5 my-20 px-10 w-full h-full">
-      <Image src={'/assets/avatar/avatar.svg'} alt="" width={1000} height={1000} />
+      <Image src={'/assets/avatar/avatar.svg'} alt="" width={100} height={100} className="w-[600px] 2xl:w-[400px] aspect-square" />
       <div>
         <p className="text-3xl font-bold text-[#5950A1]">jack jones</p>
         <p>
