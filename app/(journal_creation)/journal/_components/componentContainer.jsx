@@ -8,4 +8,6 @@ const ComponentContainer = forwardRef(({ children, className = '' }, ref) => {
   );
 });
 
+ComponentContainer.displayName = 'ComponentContainer';
+
 export default ComponentContainer;
