@@ -33,6 +33,8 @@ module.exports = {
         "purple-dark": "#5E3D84",
         "purple-soft-light": "#ECEAF5",
 
+        "pink-text"  : '#AE5CAA',
+
         "orange-mid": "#F9A819",
         "orange-dark": "#FAA81A",
 
