@@ -42,6 +42,9 @@ module.exports = {
         "yellow-light": "#FFF200",
       },
       dropShadow : {
+        'light-purple': [
+          '3px 0px 0px #D5D1ED', '-2px 0px 0px #D5D1ED', '0px 3px 0px #D5D1ED', '0px -2px 0px #D5D1ED'
+        ],
        'purple': [
             '0 6px 6px rgba(127, 17, 224, 1)'
         ],

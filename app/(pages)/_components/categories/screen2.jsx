@@ -22,10 +22,6 @@ export default function Screen2({ topics=[] }) {
             </RectangleCard>
           )
         }
-        {/* 
-        // big card 6 line
-        // small card 4 line
-         */}
         
       </div>
     </>
