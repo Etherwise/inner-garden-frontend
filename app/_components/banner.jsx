@@ -28,7 +28,7 @@ const Banner = ({ className="", shape="rect", angle=0, innerangle=0, imageurl=""
         break;
     }
     
-  }, [shape, angle]);
+  }, []);
 
   // useEffect(() => {
   //   elementRef.current.style

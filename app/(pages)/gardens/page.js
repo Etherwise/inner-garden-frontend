@@ -1,7 +1,7 @@
 import ExpressionFilter from "@/app/_components/expressions_filter";
 
-import Screen1 from "../../_components/categories/screen1";
-import Screen2 from "../../_components/categories/screen2";
+import Screen1 from "../_components/categories/screen1";
+import Screen2 from "../_components/categories/screen2";
 
 import { getCategories } from "@/app/_services/categories";
 

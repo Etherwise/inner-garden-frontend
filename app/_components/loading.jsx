@@ -14,17 +14,18 @@ const LoadingScreen = () => {
         setLoading(loading+1);
 
         setTimeout(() => {
-            setLoading(false)
+            setLoading(0)
         }, 300);
     }, [pathname])
 
     return (
         <>
             {
-                loading &&
+                loading ?
                 <div className="fixed top-0 left-0 grid place-items-center w-full h-full bg-purple-outer-octagon z-50">
                     <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-blue-500"></div>
                 </div>
+                :<></>
             }
         </>
     );
