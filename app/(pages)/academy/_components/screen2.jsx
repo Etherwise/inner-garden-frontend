@@ -6,13 +6,14 @@ import PlayIcon from "@/public/assets/academy/play_icon.svg";
 import RectangleCard from "@/app/_components/cards/rectangle_card";
 import LabelComponent from "@/app/_components/label";
 
-export default function Screen2({ data=[] }) {
+export default function Screen2({ data=[], children }) {
   return (
-    <>
-      <section>
-        (inner)Gardening 101
+    <div className="relative">
+      <section className="flex flex-col items-center gap-3 my-12">
+        <h2 className="text-yellow-dark font-extrabold text-4xl">(<span className="text-white font-extrabold">inner</span>)Gardening 101</h2>
+        <p className="text-purple-bg-light font-bold text-xl">where 2D journaling meets 3D virtual reality</p>
       </section>
-      <div className="flex gap-6 lg:mt-6">
+      <div className="flex gap-12">
         <RectangleCard cardImage={CardImage} className={{
             container: " drop-shadow-light-purple",
             main: "relative",
@@ -52,6 +53,13 @@ export default function Screen2({ data=[] }) {
           </section>
         </RectangleCard>
       </div>
-    </>
+
+      <section className="flex flex-col items-center gap-3 my-12">
+        <h2 className="text-yellow-dark font-extrabold text-4xl">(<span className="text-white font-extrabold">inner</span>)Gardening 201</h2>
+        <p className="text-purple-bg-light font-bold text-xl">where 2D journaling meets 3D virtual reality</p>
+      </section>
+
+      {children}
+    </div>
   );
 }

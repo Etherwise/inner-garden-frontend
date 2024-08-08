@@ -4,6 +4,7 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import Screen2 from "./_components/screen2";
+import WaitlistModal from "./_components/waitlist_modal";
 
 
 const MainPage = () => {
@@ -16,10 +17,12 @@ const MainPage = () => {
   
   return (
     <>
-      <div className="h-[50vh] border-2 border-black">
+      <div className="h-[50vh] border-2 border-black mb-3">
         
       </div>
-      <Screen2 />
+      <Screen2>
+        <WaitlistModal open={true} />
+      </Screen2>
     </>
   );
 }
